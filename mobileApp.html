@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom CSS file (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar with mega menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
+                aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="megaMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <a class="dropdown-item" href="woocommerceProject.html">WooCommerce</a>
+                            <a class="dropdown-item active" href="mobileApp.html">Mobile App</a>
+                            <!-- Add more projects as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Your website content goes here -->
+
+    <section class="py-5 mt-4 mb-4">
+        <div class="container">
+            <h2 class="text-center pb-4">Mobile App Projects</h2>
+            <div id="appCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#appCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#appCarousel" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="music-app-screenshot.jpg" alt="Music App Screenshot"
+                                    class="img-fluid rounded">
+                            </div>
+                            <div class="col-lg-6 mt-4 mt-lg-0">
+                                <h3>Music App</h3>
+                                <p>Discover and enjoy your favorite music with our Music App. Explore a vast library of
+                                    songs, create playlists, and follow your favorite artists.</p>
+                                <a href="#" class="btn btn-primary">View App Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="mobile-shop-screenshot.jpg" alt="Mobile Shop Screenshot"
+                                    class="img-fluid rounded">
+                            </div>
+                            <div class="col-lg-6 mt-4 mt-lg-0">
+                                <h3>Mobile Shop</h3>
+                                <p>Experience the latest in mobile technology with our Mobile Shop app. Browse and
+                                    purchase the latest smartphones and accessories.</p>
+                                <a href="#" class="btn btn-primary">View App Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#appCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#appCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add a button for toggling dark/light mode -->
+    <button id="darkModeToggle" class="btn btn-primary mode">Toggle Dark Mode</button>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 OgunbiyiElijah. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-md-right">
+                        <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+                        <li><span>Email: </span>ogunbiye@gmail.com</li>
+                        <li><span>Phone Number: </span>+2349076320678</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Bootstrap JS and your custom JavaScript file (script.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

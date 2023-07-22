@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom CSS file (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar with mega menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
+                aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="megaMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <a class="dropdown-item active" href="woocommerceProject.html">WooCommerce</a>
+                            <a class="dropdown-item" href="mobileApp.html">Mobile App</a>
+                            <!-- Add more projects as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Your website content goes here -->
+    <header class="hero bg-primary text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4">My WooCommerce Project</h1>
+            <p class="lead">A beautiful and responsive WooCommerce template for showcasing my work.</p>
+        </div>
+    </header>
+
+    <!-- WooCommerce Project Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="assets/ogas6.png" alt="Project Image" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <h2 class="mb-4">Project Overview</h2>
+                    <p>Build a Woocommerce Store with MVP attained</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Responsive design for all devices.</li>
+                        <li>integrated dropshipping store to Woocommerce</li>
+                        <li>Integrated WooCommerce functionality.</li>
+                        <li>Customizable product pages and categories.</li>
+                        <li>Secure payment gateway integration.</li>
+                        <li>Displaying product listings with essential information such as product name, description,
+                            price, and product images.</li>
+                        <li>Detailed product page with additional information, specifications, and customer reviews.
+                        </li>
+                        <li>Allow users to add products to their shopping cart and view the cart summary.</li>
+                        <li>Basic checkout process where users can enter shipping information, select payment methods,
+                            and complete their purchase.</li>
+                        <li>User registration and login options to create accounts for a personalized shopping
+                            experience.</li>
+                        <li>S search bar to allow users to quickly find specific products.</li>
+                        <li>Clear and intuitive navigation menus to help users explore the website and find products.
+                        </li>
+                        <li>Ensuring basic security measures are in place to protect user data and prevent unauthorized
+                            access.</li>
+                    </ul>
+                    <a href="https://ogascounty.com" target="_blank" class="btn btn-primary">View Live Site</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Add a button for toggling dark/light mode -->
+    <button id="darkModeToggle" class="btn btn-primary mode">Toggle Dark Mode</button>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 OgunbiyiElijah. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-md-right">
+                        <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+                        <li><span>Email: </span>ogunbiye@gmail.com</li>
+                        <li><span>Phone Number: </span>+2349076320678</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Bootstrap JS and your custom JavaScript file (script.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

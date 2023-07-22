@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom CSS file (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar with mega menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
+                aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="megaMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <a class="dropdown-item" href="woocommerceProject.html">WooCommerce</a>
+                            <a class="dropdown-item" href="#">Mobile App</a>
+                            <!-- Add more projects as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Your website content goes here -->
+
+    <!-- About Me Section -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="pass-photo.jpeg" alt="Profile Picture" class="img-fluid rounded-circle mb-4">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4 mt-4">About Me</h2>
+                <p>Hello, I'm Ogunbiyi Elijah, a passionate and creative web developer with a strong background in
+                    front-end
+                    development. I love building beautiful and responsive websites that provide a seamless user
+                    experience.</p>
+                <p>My journey in web development began several years ago, and I have since honed my skills in HTML, CSS,
+                    JavaScript, and various front-end frameworks like Bootstrap and React.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, attending tech meetups, or creating
+                    beautiful music.</p>
+                <!-- Add links to your social media profiles if desired -->
+                <div class="social-icons mt-4">
+                    <a href="#" class="mr-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mr-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="mr-3"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="work-experience" class="text-dark py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Work Experience</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="work-experience-card p-4 bg-white">
+                        <h4 class="mb-3">Technical Support</h4>
+                        <p class="work-experience-company">Vanguard Media Limited</p>
+                        <p class="work-experience-date">September 2017 - December 2017</p>
+                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
+                            data-target="#experience1" aria-expanded="false" aria-controls="experience1">
+                            View Details
+                        </button>
+                        <div class="collapse" id="experience1">
+                            <ul class="work-experience-description mt-3">
+                                <li>Working to resolve technical problems by providing step-by-step instructions,
+                                    guidance, or solutions to customers.</li>
+                                <li>Creating and updating technical documentation, including FAQs, troubleshooting
+                                    guides, and knowledge base articles to help users find solutions independently.</li>
+                                <li> Using remote access tools to connect to a customer's computer or device to
+                                    troubleshoot and fix issues directly.</li>
+                                <li>Identifying and diagnosing technical issues reported by customers or end-users.</li>
+                                <li>Adhering to established protocols, guidelines, and best practices for technical
+                                    support operations.</li>
+                                <li>Staying updated with the latest technologies and advancements to enhance technical
+                                    skills and knowledge.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more experiences -->
+                <!-- Experience 2 -->
+                <div class="col-md-12 mt-4">
+                    <div class="work-experience-card p-4 bg-white">
+                        <h4 class="mb-3">Front-end Developer</h4>
+                        <p class="work-experience-company">Bincom ICT Solutions</p>
+                        <p class="work-experience-date">November 2022 - July 2023</p>
+                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
+                            data-target="#experience2" aria-expanded="false" aria-controls="experience2">
+                            View Details
+                        </button>
+                        <div class="collapse" id="experience2">
+                            <ul class="work-experience-description mt-3">
+                                <li>Worked on front-end tasks and bug fixing for web applications.</li>
+                                <li>Learned various front-end technologies and best practices.</li>
+                                <li>Contributed to team meetings and brainstorming sessions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 3 -->
+                <div class="col-md-12 mt-4">
+                    <div class="work-experience-card p-4 bg-white">
+                        <h4 class="mb-3">Mobile Application Developer Intern</h4>
+                        <p class="work-experience-company">Bincom Dev Center</p>
+                        <p class="work-experience-date">November 2022 - July 2023</p>
+                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
+                            data-target="#experience3" aria-expanded="false" aria-controls="experience3">
+                            View Details
+                        </button>
+                        <div class="collapse" id="experience3">
+                            <ul class="work-experience-description mt-3">
+                                <li>Assisted in the development and testing of web applications.</li>
+                                <li>Participated in code reviews and QA processes.</li>
+                                <li>Working closely with senior developers to assist in the design, development,
+                                    testing, and maintenance of mobile applications for iOS or Android platforms.</li>
+                                <li>Writing and reviewing code for new features and improvements, following coding
+                                    standards and best practices.</li>
+                                <li>Identifying and fixing bugs or issues in the existing codebase, performing
+                                    debugging, and testing to ensure the app's functionality and performance.</li>
+                                <li>Assisting in testing the app on various devices to ensure cross-platform
+                                    compatibility and a smooth user experience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 4 -->
+                <!-- Add more experiences -->
+                <!-- Experience 5 -->
+                <div class="col-md-12 mt-4">
+                    <div class="work-experience-card p-4 bg-white">
+                        <h4 class="mb-3">Wordpress E-commerce Developer</h4>
+                        <p class="work-experience-company">OTESC</p>
+                        <p class="work-experience-date">June 2022 - Present</p>
+                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
+                            data-target="#experience5" aria-expanded="false" aria-controls="experience5">
+                            View Details
+                        </button>
+                        <div class="collapse" id="experience5">
+                            <ul class="work-experience-description mt-3">
+                                <li>Building and setting up WordPress websites with WooCommerce, including installing
+                                    and configuring the plugin, selecting and customizing themes, and setting up
+                                    essential eCommerce features.</li>
+                                <li>Modifying and customizing WordPress themes to match the client's brand, design
+                                    preferences, and unique requirements for the online store.</li>
+                                <li>Integrating and configuring various WooCommerce extensions and third-party plugins
+                                    to add specific functionality, such as payment gateways, shipping options, and
+                                    product variations.</li>
+                                <li>Managing product listings, categories, and attributes, ensuring accurate product
+                                    information, images, and pricing are displayed on the website.</li>
+                                <li>Integrating and configuring various payment gateways to enable secure and smooth
+                                    online transactions.</li>
+                                <li>Implementing security measures and keeping all plugins, themes, and the WordPress
+                                    core up to date to safeguard the website from vulnerabilities.</li>
+                                <li>Regularly backing up the website data and ensuring the ability to restore the
+                                    website in case of any unforeseen issues.</li>
+                                <li>Setting up and analyzing website analytics to track website traffic, sales, and
+                                    customer behavior, using data to make informed decisions and optimizations.</li>
+                                <li>Implementing basic search engine optimization (SEO) techniques to improve the
+                                    website's visibility and rankings on search engines.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonials" class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Client Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 text-center">
+                        <img src="path/to/client1-avatar.jpg" alt="Client 1" class="rounded-circle mb-3">
+                        <h4 class="mb-3">Samuel Obembe</h4>
+                        <p class="testimonial-text">"Elijah is an exceptional web developer with a keen eye for detail.
+                            He
+                            created a stunning website for my business that exceeded my expectations. His communication
+                            and professionalism are outstanding."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 text-center">
+                        <img src="path/to/client2-avatar.jpg" alt="Client 2" class="rounded-circle mb-3">
+                        <h4 class="mb-3">Dangana Fain Fidelis</h4>
+                        <p class="testimonial-text">"Working with Elijah was a pleasure. She transformed our outdated
+                            website into a modern and user-friendly platform. His coding skills and attention to detail
+                            are impressive. Highly recommended!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 text-center">
+                        <img src="path/to/client3-avatar.jpg" alt="Client 3" class="rounded-circle mb-3">
+                        <h4 class="mb-3">Asuabiat Robert</h4>
+                        <p class="testimonial-text">"I am delighted with the website Elijah built for my startup. He
+                            delivered the project on time and was always receptive to feedback. His expertise in web
+                            development is evident in the final product."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact form section -->
+    <section id="contact">
+        <div class="container mt-5">
+            <h2>Contact Me</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4 mb-4">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Add a button for toggling dark/light mode -->
+    <button id="darkModeToggle" class="btn btn-primary mode">Toggle Dark Mode</button>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                    <p>&copy; 2023 OgunbiyiElijah. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-md-right">
+                        <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+                        <li><span>Email: </span>ogunbiye@gmail.com</li>
+                        <li><span>Phone Number: </span>+2349076320678</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Bootstrap JS and your custom JavaScript file (script.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

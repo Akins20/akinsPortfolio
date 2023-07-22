@@ -1,0 +1,38 @@
+* {
+    transition: all 0.2s;
+}
+
+/* Add styles for dark mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.mode {
+    position: fixed;
+    bottom: 20px;
+    left: 2vw;
+}
+
+img {
+    height: 200px;
+    width: 400px;
+}
+body.testimonial-card {
+    background-color: #333;
+    color: #fff;
+}
+
+footer {
+    bottom: 0px;
+}
+
+/* Add custom styles for the work experience section */
+.work-experience-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.work-experience-card.show-description {
+    transform: translateY(-20px);
+}
