@@ -26,3 +26,5 @@ workExperienceCards.forEach(card => {
     card.classList.toggle('show-description');
   });
 });
+
+const cart = document

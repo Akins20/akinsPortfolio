@@ -16,7 +16,11 @@
     <!-- Navigation bar with mega menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="nav-item" style="margin-left: -80px;">
+                    <img src="assets/Logo2.png" alt="logo">
+                </span>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
                 aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,9 +52,9 @@
 
     <!-- Contact form section -->
     <section id="contact">
-        <div class="container mt-5">
-            <h2>Contact Me</h2>
-            <form action="send_email.php" method="post">
+        <div class="container pb-5">
+            <h2 class="pt-5">Contact Me</h2>
+            <form class="pt-3" action="mailto:ogunbiye@gmail.com" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" class="form-control" required>
@@ -61,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
+                    <textarea id="message" rows="6" name="message" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
@@ -69,7 +73,7 @@
     </section>
 
 
-    <button id="darkModeToggle" class="btn btn-primary mode">Toggle Dark Mode</button>
+    <!-- <button id="darkModeToggle" class="btn btn-primary mode">Toggle Dark Mode</button> -->
 
     <!-- Link to Bootstrap JS and your custom JavaScript file (script.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

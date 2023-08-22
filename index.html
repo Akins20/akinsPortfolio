@@ -16,7 +16,11 @@
     <!-- Navigation bar with mega menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
+            <a class="navbar-brand" href="index.html">
+                <span class="nav-item" style="margin-left: -80px;">
+                    <img src="assets/Logo2.png" alt="logo">
+                </span>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
                 aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +57,8 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="pass-photo.jpeg" alt="Profile Picture" class="img-fluid rounded-circle mb-4">
+                <img src="pass-photo.jpeg" height="200" width="400" alt="Profile Picture"
+                    class="img-fluid imgClass rounded-circle mb-4">
             </div>
             <div class="col-md-6">
                 <h2 class="mb-4 mt-4">About Me</h2>
@@ -193,14 +198,128 @@
         </div>
     </section>
 
+    <section id="skills" class="text-dark">
+        <h2 class="jumbotron text-center">My Skills</h2>
+        <div class="row ml-5 pl-5 mb-5">
+            <div class="skillCard ml-5">
+                <div class="skillHeader">Front-end Development</div>
+                <div class="skillBody">
+                    <div class="skill">
+                        <div class="skill-name">HTML</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 90%"></div>
+                        </div>
+                        <div class="skill-percent-number">90%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">CSS</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 80%"></div>
+                        </div>
+                        <div class="skill-percent-number">80%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">JavaScript</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 75%"></div>
+                        </div>
+                        <div class="skill-percent-number">75%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">React.js</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 55%"></div>
+                        </div>
+                        <div class="skill-percent-number">55%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Bootstrap</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 85%"></div>
+                        </div>
+                        <div class="skill-percent-number">85%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">REST API</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 55%"></div>
+                        </div>
+                        <div class="skill-percent-number">55%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skillCard ml-5">
+                <div class="skillHeader">CMS</div>
+                <div class="skillBody">
+                    <div class="skill">
+                        <div class="skill-name">Wordpress</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 90%"></div>
+                        </div>
+                        <div class="skill-percent-number">90%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">WIX</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 60%"></div>
+                        </div>
+                        <div class="skill-percent-number">60%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Shopify</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 75%"></div>
+                        </div>
+                        <div class="skill-percent-number">75%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Joomla</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 65%"></div>
+                        </div>
+                        <div class="skill-percent-number">65%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skillCard ml-5">
+                <div class="skillHeader">Mobile App Development</div>
+                <div class="skillBody">
+                    <div class="skill">
+                        <div class="skill-name">Cordova</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 90%"></div>
+                        </div>
+                        <div class="skill-percent-number">90%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">React Native</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 50%"></div>
+                        </div>
+                        <div class="skill-percent-number">50%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Ionic</div>
+                        <div class="skill-level">
+                            <div class="skill-percent" style="width: 70%"></div>
+                        </div>
+                        <div class="skill-percent-number">70%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section id="testimonials" class="py-5 bg-dark text-light">
         <div class="container">
             <h2 class="text-center mb-4">Client Testimonials</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="testimonial-card p-4 text-center">
-                        <img src="path/to/client1-avatar.jpg" alt="Client 1" class="rounded-circle mb-3">
+                    <div class="card p-4 text-center">
+                        <!-- <img src="path/to/client1-avatar.jpg" alt="Client 1" class="rounded-circle mb-3"> -->
                         <h4 class="mb-3">Samuel Obembe</h4>
                         <p class="testimonial-text">"Elijah is an exceptional web developer with a keen eye for detail.
                             He
@@ -209,8 +328,8 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="testimonial-card p-4 text-center">
-                        <img src="path/to/client2-avatar.jpg" alt="Client 2" class="rounded-circle mb-3">
+                    <div class="card p-4 text-center">
+                        <!-- <img src="path/to/client2-avatar.jpg" alt="Client 2" class="rounded-circle mb-3"> -->
                         <h4 class="mb-3">Dangana Fain Fidelis</h4>
                         <p class="testimonial-text">"Working with Elijah was a pleasure. She transformed our outdated
                             website into a modern and user-friendly platform. His coding skills and attention to detail
@@ -218,9 +337,9 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="testimonial-card p-4 text-center">
-                        <img src="path/to/client3-avatar.jpg" alt="Client 3" class="rounded-circle mb-3">
-                        <h4 class="mb-3">Asuabiat Robert</h4>
+                    <div class="card p-4 text-center">
+                        <!-- <img src="path/to/client3-avatar.jpg" alt="Client 3" class="rounded-circle mb-3"> -->
+                        <h4 class="mb-5">Asuabiat Robert</h4>
                         <p class="testimonial-text">"I am delighted with the website Elijah built for my startup. He
                             delivered the project on time and was always receptive to feedback. His expertise in web
                             development is evident in the final product."</p>
@@ -231,10 +350,10 @@
     </section>
 
     <!-- Contact form section -->
-    <section id="contact">
+    <section id="homeContact">
         <div class="container mt-5">
             <h2>Contact Me</h2>
-            <form>
+            <form action="mailto:ogunbiye@gmail.com" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" class="form-control" required>
