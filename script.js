@@ -2,6 +2,7 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 const darkModeClass = 'dark-mode';
+// const switcher = darkModeToggle.innerHTML = "Dark Mode";
 
 darkModeToggle.addEventListener('click', () => {
   body.classList.toggle(darkModeClass);
@@ -15,6 +16,7 @@ darkModeToggle.addEventListener('click', () => {
 const isDarkMode = localStorage.getItem('darkMode');
 if (isDarkMode === 'true') {
   body.classList.add(darkModeClass);
+
 } else {
   body.classList.remove(darkModeClass);
 }
