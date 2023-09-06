@@ -245,3 +245,25 @@ button:active {
         box-shadow: rgb(54, 54, 247) 0px 0px 30px 1px;
     }
 }
+
+.fidelis {
+    width: 100%;
+    height: 100%;
+}
+
+
+hr {
+    padding-bottom: 150px;
+}
+
+#projectSection{
+    margin: 30px;
+}
+
+.portfolio{
+    border-radius: 15px;
+}
+
+ul li{
+    list-style-type: none;
+}

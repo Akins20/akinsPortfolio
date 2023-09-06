@@ -29,4 +29,5 @@ workExperienceCards.forEach(card => {
   });
 });
 
-const cart = document
+// Initialize the carousel
+$('#portfolio').carousel();

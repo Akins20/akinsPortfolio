@@ -312,6 +312,104 @@
         </div>
     </section>
 
+    <h2 class="skillSection text-center">My Projects</h2>
+    <section id="projectSection">
+        <div id="portfolio" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+            <!-- Indicators -->
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div> -->
+
+            <!-- The slideshow -->
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <img src="assets/ogas1.png" class="fidelis" alt="Los Angeles" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/ogas2.png" class="fidelis" alt="Chicago" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/ogas3.png" class="fidelis" alt="somewhere" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/ogas4.png" class="fidelis" alt="work" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/ogas5.png" class="fidelis" alt="place" width="1100" height="500">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolio" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolio" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+        <div class="mt-4 mt-lg-0">
+            <h2 class="mb-4 mt-3">Project Overview</h2>
+            <div class="row">
+                <div class="col" class="projectDetails">
+                    <ul>
+                        <li>Responsive design for all devices.</li><br>
+                        <li>integrated dropshipping store to Woocommerce</li><br>
+                        <li>Integrated WooCommerce functionality.</li><br>
+                        <li>Customizable product pages and categories.</li><br>
+                        <li>Secure payment gateway integration.</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Displaying product listings with essential information such as product name, description,
+                            price, and product images.</li>
+                        <li>Detailed product page with additional information, specifications, and customer reviews.
+                        </li>
+                        <li>Allow users to add products to their shopping cart and view the cart summary.</li>
+                        <li>Basic checkout process where users can enter shipping information, select payment methods,
+                            and complete their purchase.</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>User registration and login options to create accounts for a personalized shopping
+                            experience.</li>
+                        <li>Search bar to allow users to quickly find specific products.</li>
+                        <li>Clear and intuitive navigation menus to help users explore the website and find products.
+                        </li>
+                        <li>Ensuring basic security measures are in place to protect user data and prevent unauthorized
+                            access.</li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn">
+                <a href="https://ogascounty.com" target="_blank">View Live Site</a>
+            </button>
+        </div>
+        <div class="container-fluid mt-5 cap">
+            <p>The result of this project is a fully functional and optimized WooCommerce store that serves as a dynamic
+                platform for online shopping. It stands as a testament to my proficiency in WordPress development,
+                e-commerce solutions, and my commitment to delivering excellence in web development projects.
+
+                This WordPress WooCommerce store not only meets but exceeds the client's expectations, providing a
+                secure, user-friendly, and feature-rich online shopping experience.
+
+                Explore the project in the carousel above to witness the elegance and functionality of this WooCommerce
+                store.
+            </p>
+        </div>
+        <hr class="text-light">
+    </section>
+
 
     <section id="testimonials" class="py-5 bg-dark text-light">
         <div class="container">
@@ -353,18 +451,18 @@
     <section id="homeContact">
         <div class="container mt-5">
             <h2>Contact Me</h2>
-            <form action="mailto:ogunbiye@gmail.com" method="post">
+            <form action="process.php" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" class="form-control" required>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" class="form-control" required></textarea>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Send</button>
             </form>
