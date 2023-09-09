@@ -1,8 +1,9 @@
+/* Global styles */
 * {
     transition: all 0.2s;
 }
 
-/* Add styles for dark mode */
+/* Dark mode styles */
 body.dark-mode {
     background-color: #131212;
     color: #fff;
@@ -14,17 +15,13 @@ body.dark-mode {
     left: 2vw;
 }
 
-/* 
-.img {
-    height: 200px;
-    width: 400px;
-} */
-
+/* Testimonial card */
 body.testimonial-card {
     background-color: #333;
     color: #fff;
 }
 
+/* Contact section */
 #contact {
     background: url("assets/contactBG.jpg");
     background-attachment: fixed;
@@ -37,19 +34,19 @@ footer {
     bottom: 0px;
 }
 
-/* Add custom styles for the work experience section */
+/* Work experience section */
 .work-experience-card {
     cursor: pointer;
     transition: transform 0.3s;
-    background-image: linear-gradient(43deg, #ffffff 0%, #7d7a7a 75%, #000000 100%);
+    background-image: linear-gradient(143deg, #ffffff, #000000);
     border-radius: 10px;
-
 }
 
 .work-experience-card.show-description {
     transform: translateY(-20px);
 }
 
+/* Card styles */
 .cart-background {
     position: relative;
     width: 100%;
@@ -61,23 +58,16 @@ footer {
     width: 230px;
     height: 100px;
     padding: 0.5rem;
-    background-image: linear-gradient(43deg, #ffffff 0%, #000000 46%, #747171 100%);
+    background-image: linear-gradient(43deg, #ffffff , #000000);
     border-radius: 8px;
     backdrop-filter: blur(5px);
-    border-bottom: 3px solid rgba(255, 255, 255, 0.440);
-    border-left: 2px rgba(255, 255, 255, 0.545) outset;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    border-left: 2px rgb(255, 255, 255) outset;
     box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
     transform: skewX(10deg);
     transition: .4s;
     overflow: hidden;
     color: white;
-}
-
-.wooSection{
-    background-color: black;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    margin-bottom: 2vh;
 }
 
 .card:hover {
@@ -100,26 +90,22 @@ footer {
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
 }
 
-.skillSection{
+/* Skill section */
+.skillSection {
     background-color: black;
     padding-top: 5vh;
     padding-bottom: 5vh;
     margin-bottom: 2vh;
-    animation-name: contin;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 2s;
-    animation-direction:alternate;
-    animation-iteration-count: infinite;
+    animation: contin 3s ease-in-out 2s alternate infinite;
 }
 
 @keyframes contin {
-    from{
+    from {
         background-color: black;
         color: white;
     }
 
-    to{
+    to {
         background-color: white;
         color: black;
     }
@@ -128,9 +114,8 @@ footer {
 .skillCard {
     width: 300px;
     background-color: #4158D0;
-    background-image: linear-gradient(43deg, #ffffff 0%, #636263 46%, #ffffff 100%);
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -138,7 +123,7 @@ footer {
 
 .skillHeader {
     background-color: #4158D0;
-    background-image: linear-gradient(43deg, #000000 0%, #636263 46%, #ffffff 100%);
+    background-color: black;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     color: #fff;
     padding: 20px;
@@ -180,10 +165,10 @@ footer {
     font-size: 16px;
 }
 
+/* Button styles */
 button {
     align-items: center;
-    /* background-color: #41d046; */
-    background-image: linear-gradient(43deg, #000000 0%, #636263 46%, #ffffff 100%);
+    background-image: linear-gradient(143deg, #000000, #ffffff);
     border: 0;
     border-radius: 8px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -209,61 +194,59 @@ button {
 button:active,
 button:hover {
     outline: 0;
-}
-
-button:active {
     transform: scale(0.9);
 }
 
-@keyframes move {
-    0% {
-        transform: translate(-50%, -50%);
-    }
-
-    100% {
-        transform: translate(calc(100% + 50px), -50%);
-    }
-}
-
-.footer{
-    background-image: linear-gradient(43deg, #000000 0%, #636263 50%, #000000 100%);
+/* Footer animation */
+.footer {
+    background-image: linear-gradient(43deg, #000000 0%, #ffffff 100%);
     border-top: 1px solid blue;
     box-shadow: rgb(54, 54, 247) 0px 0px 5px 1px;
-    animation-name: fot;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 2s;
-    animation-direction:alternate;
-    animation-iteration-count: infinite;
+    animation: fot 2s ease-in-out 2s alternate infinite;
 }
 
 @keyframes fot {
-    from{
+    from {
         box-shadow: rgb(54, 54, 247) 0px 0px 5px 1px;
     }
-    to{
+
+    to {
         box-shadow: rgb(54, 54, 247) 0px 0px 30px 1px;
     }
 }
 
+/* Other styles */
 .fidelis {
     width: 100%;
     height: 100%;
 }
 
-
 hr {
     padding-bottom: 150px;
 }
 
-#projectSection{
+#projectSection {
     margin: 30px;
 }
 
-.portfolio{
+.portfolio {
     border-radius: 15px;
 }
 
-ul li{
+ul li {
     list-style-type: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+
+    /* Adjust styles for smaller screens here */
+    .align {
+        flex-direction: column;
+    }
+
+    /* Example adjustment */
+    .card h1 {
+        font-size: 1.2rem;
+    }
 }

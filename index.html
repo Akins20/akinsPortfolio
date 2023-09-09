@@ -14,7 +14,7 @@
 
 <body>
     <!-- Navigation bar with mega menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" data-component="NavigationBar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="nav-item" style="margin-left: -80px;">
@@ -54,13 +54,13 @@
 
     <!-- About Me Section -->
 
-    <div class="container mt-5">
+    <div class="container mt-5" data-component="About">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" data-component="AboutImage">
                 <img src="./assets/passPhoto.jpeg" height="200" width="400" alt="Profile Picture"
                     class="img-fluid imgClass rounded-circle mb-4">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-component="AboutMe">
                 <h2 class="mb-4 mt-4">About Me</h2>
                 <p>Hello, I'm Ogunbiyi Elijah, a passionate and creative web developer with a strong background in
                     front-end
@@ -80,10 +80,10 @@
         </div>
     </div>
 
-    <section id="work-experience" class="text-dark py-5">
+    <section id="work-experience" class="text-dark py-5" data-component="WorkExperience">
         <div class="container">
             <h2 class="text-center mb-4">Work Experience</h2>
-            <div class="row">
+            <div class="row" data-component="WorkExperienceCard">
                 <div class="col-md-12">
                     <div class="work-experience-card p-4 bg-white">
                         <h4 class="mb-3">Technical Support</h4>
@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <section id="skills" class="text-dark">
+    <section id="skills" class="text-dark" data-component="SkillsSection">
         <h2 class="skillSection text-center">My Skills</h2>
         <div class="row ml-5 pl-5 mb-5">
             <div class="skillCard ml-5">
@@ -312,9 +312,9 @@
         </div>
     </section>
 
-    <h2 class="skillSection text-center">My Projects</h2>
-    <section id="projectSection">
-        <div id="portfolio" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <h2 class="skillSection text-center" data-component="ProjectHeader">My Projects</h2>
+    <section id="projectSection" data-component="ProjectSection">
+        <div id="portfolio" class="carousel slide" data-ride="carousel" data-interval="3000" data-component="ProjectCarousel">
 
             <!-- Indicators -->
             <!-- <div class="carousel-indicators">
@@ -356,7 +356,7 @@
             </button>
 
         </div>
-        <div class="mt-4 mt-lg-0">
+        <div class="mt-4 mt-lg-0" data-component="ProjectOverview">
             <h2 class="mb-4 mt-3">Project Overview</h2>
             <div class="row">
                 <div class="col" class="projectDetails">
@@ -395,7 +395,7 @@
                 <a href="https://ogascounty.com" target="_blank">View Live Site</a>
             </button>
         </div>
-        <div class="container-fluid mt-5 cap">
+        <div class="container-fluid mt-5 cap" data-component="ProjectSummary">
             <p>The result of this project is a fully functional and optimized WooCommerce store that serves as a dynamic
                 platform for online shopping. It stands as a testament to my proficiency in WordPress development,
                 e-commerce solutions, and my commitment to delivering excellence in web development projects.
@@ -411,7 +411,7 @@
     </section>
 
 
-    <section id="testimonials" class="py-5 bg-dark text-light">
+    <section id="testimonials" class="py-5 bg-dark text-light" data-component="ClientTestimonials">
         <div class="container">
             <h2 class="text-center mb-4">Client Testimonials</h2>
             <div class="row">
@@ -448,7 +448,7 @@
     </section>
 
     <!-- Contact form section -->
-    <section id="homeContact">
+    <section id="homeContact" data-component="ContactForm">
         <div class="container mt-5">
             <h2>Contact Me</h2>
             <form action="https://formspree.io/f/mleynole" method="POST">
@@ -470,9 +470,9 @@
     </section>
 
     <!-- Add a button for toggling dark/light mode -->
-    <button id="darkModeToggle" class="btn btn-primary mode">Switch</button>
+    <button id="darkModeToggle" class="btn btn-primary mode" data-component="SwitchModes">Switch</button>
 
-    <footer class="text-light py-4 footer">
+    <footer class="text-light py-4 footer" data-component="Footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-5">

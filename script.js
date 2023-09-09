@@ -1,33 +1,46 @@
-// Handle dark mode toggling
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const darkModeClass = 'dark-mode';
-// const switcher = darkModeToggle.innerHTML = "Dark Mode";
+// Advanced Dark Mode Toggling
 
-darkModeToggle.addEventListener('click', () => {
-  body.classList.toggle(darkModeClass);
+// Function to toggle dark mode
+function toggleDarkMode() {
+  const body = document.body;
+  const darkModeClass = 'dark-mode';
+  const isDarkMode = body.classList.toggle(darkModeClass);
 
   // Store the user's preference in local storage
-  const isDarkMode = body.classList.contains(darkModeClass);
-  localStorage.setItem('darkMode', isDarkMode);
-});
-
-// Check the user's preference from local storage and apply it on page load
-const isDarkMode = localStorage.getItem('darkMode');
-if (isDarkMode === 'true') {
-  body.classList.add(darkModeClass);
-
-} else {
-  body.classList.remove(darkModeClass);
+  localStorage.setItem('darkMode', isDarkMode.toString());
 }
 
-const workExperienceCards = document.querySelectorAll('.work-experience-card');
+// Function to initialize dark mode based on user preference
+function initializeDarkMode() {
+  const body = document.body;
+  const darkModeClass = 'dark-mode';
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
+  if (isDarkMode) {
+    body.classList.add(darkModeClass);
+  } else {
+    body.classList.remove(darkModeClass);
+  }
+}
+
+// Event listener for dark mode toggle button
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('click', toggleDarkMode);
+
+// Initialize dark mode on page load
+initializeDarkMode();
+
+// Advanced Work Experience Card Toggling
+
+// Function to toggle the description for a work experience card
+function toggleDescription(event) {
+  const card = event.currentTarget;
+  card.classList.toggle('show-description');
+}
+
+// Add event listeners to all work experience cards
+const workExperienceCards = document.querySelectorAll('.work-experience-card');
 workExperienceCards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('show-description');
-  });
+  card.addEventListener('click', toggleDescription);
 });
 
-// Initialize the carousel
-$('#portfolio').carousel();

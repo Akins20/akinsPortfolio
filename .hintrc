@@ -6,5 +6,13 @@
     "detect-css-reflows/composite": "off",
     "detect-css-reflows/paint": "off",
     "disown-opener": "off"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 116",
+    "not firefox <= 116",
+    "not ios_saf <= 16.5",
+    "not safari <= 16.5"
+  ]
 }
