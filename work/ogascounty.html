@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ogascounty · Elijah Ogunbiyi</title>
+  <meta name="description" content="An online clothing store I built end to end: Printify products, Stripe checkout, and orders that go to print on their own.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/work/ogascounty">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="Ogascounty · Elijah Ogunbiyi">
+  <meta property="og:description" content="An online clothing store I built end to end: Printify products, Stripe checkout, and orders that go to print on their own.">
+  <meta property="og:url" content="/work/ogascounty">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+  <div data-progress aria-hidden="true" class="fixed inset-x-0 top-0 z-[55] h-[3px] origin-left scale-x-0 bg-accent"></div>
+
+  <main id="main">
+    <article>
+    <header class="relative isolate overflow-x-clip pt-32 sm:pt-40">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="wrap">
+        <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
+          <p class="eyebrow">01 / 07 · E-commerce</p>
+          <p class="status text-ok"><span class="status-dot live"></span>Live</p>
+        </div>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Ogascounty<span class="text-accent">.</span></h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A faith-inspired clothing brand selling hoodies, tees and gifts to customers around the world. I built the whole store, and it runs itself: orders are paid, printed and shipped without anyone lifting a finger.</p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://ogascounty.com" target="_blank" rel="noopener" class="btn btn-primary">Visit ogascounty.com <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+
+        <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
+          <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Client</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">OTESC · Ogascounty</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
+            <dt class="eyebrow">Role</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Full-stack engineer</dd>
+          </div>
+          <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Stack</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Next.js · Stripe · Printify</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Status</dt>
+            <dd class="mt-2 text-[0.95rem] text-ok">Live · ships worldwide</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
+      <div class="relative rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 sm:pb-16 lg:p-12 lg:pb-20">
+        <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card">
+                <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
+                  <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
+                  <span class="mx-auto truncate rounded-md bg-bg/70 px-8 py-0.5 font-mono text-[10px] text-subtle">ogascounty.com</span>
+                </div>
+                <picture>
+                  <source type="image/webp" srcset="/assets/shots/ogascounty-960.webp 960w, /assets/shots/ogascounty-1600.webp 1600w" sizes="(min-width: 1280px) 1100px, 100vw">
+                  <img src="/assets/shots/ogascounty-1600.jpg" alt="Screenshot of Ogascounty on desktop" width="1600" height="1000" fetchpriority="high" decoding="async" class="block aspect-[16/10] w-full object-cover object-top">
+                </picture>
+              </div>
+        <div class="relative mx-auto mt-6 w-44 overflow-hidden rounded-[2rem] border-[6px] border-bg bg-bg shadow-card ring-1 ring-line-strong sm:absolute sm:right-6 sm:-bottom-10 sm:mt-0 sm:w-[21%] sm:max-w-[230px] lg:right-12">
+          <picture>
+            <source type="image/webp" srcset="/assets/shots/ogascounty-product-mobile.webp">
+            <img src="/assets/shots/ogascounty-product-mobile.jpg" alt="Screenshot of Ogascounty: a product page on a phone" width="585" height="1266" loading="lazy" decoding="async" class="block w-full rounded-[1.6rem]">
+          </picture>
+        </div>
+      </div>
+      <figcaption class="mt-6 text-center font-mono text-[0.72rem] text-subtle sm:mt-16">Live screenshots: ogascounty.com on desktop, a product page on a phone</figcaption>
+    </figure>
+
+    <div class="wrap mt-20 sm:mt-28">
+      <div class="prose-case mx-auto">
+<h2>The brief</h2>
+<p>Ogascounty sells faith-inspired clothing: hoodies, sweatshirts, tees and gifts, printed on demand and shipped worldwide.
+The shop had to look good, be easy to buy from, and run without somebody babysitting every order.</p>
+
+<h2>What I built</h2>
+<p>I built the store from top to bottom. The catalogue syncs in from Printify, so new designs appear on the site without anyone
+copying product details across by hand. Checkout runs on Stripe. When a payment goes through, a webhook picks it up and sends
+the order straight to Printify to be printed and shipped. Nobody has to log in and push orders along.</p>
+<p>Customers get everything they expect from a proper store: search, categories, gift ideas, an account with order history and
+tracking, a wishlist and a newsletter. Shipping is included in every price, so there are no nasty surprises at checkout.</p>
+
+
+        <figure class="my-14 lg:-mx-40" data-reveal>
+          <div class="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
+            <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card">
+                <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
+                  <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
+                  <span class="mx-auto truncate rounded-md bg-bg/70 px-8 py-0.5 font-mono text-[10px] text-subtle">ogascounty.com/shop</span>
+                </div>
+                <picture>
+                  <source type="image/webp" srcset="/assets/shots/ogascounty-shop-960.webp 960w, /assets/shots/ogascounty-shop-1600.webp 1600w" sizes="(min-width: 1024px) 760px, 100vw">
+                  <img src="/assets/shots/ogascounty-shop-1600.jpg" alt="The Ogascounty shop page on desktop" width="1600" height="1000" loading="lazy" decoding="async" class="block aspect-[16/10] w-full object-cover object-top">
+                </picture>
+              </div>
+            <div class="mx-auto w-44 overflow-hidden rounded-[2rem] border-[6px] border-bg bg-bg shadow-card ring-1 ring-line-strong sm:w-48">
+              <picture>
+            <source type="image/webp" srcset="/assets/shots/ogascounty-shop-mobile.webp">
+            <img src="/assets/shots/ogascounty-shop-mobile.jpg" alt="The Ogascounty shop page on a phone" width="585" height="1266" loading="lazy" decoding="async" class="block w-full rounded-[1.6rem]">
+          </picture>
+            </div>
+          </div>
+          <figcaption class="mt-5 text-center font-mono text-[0.72rem] text-subtle">The shop, on desktop and mobile</figcaption>
+        </figure>
+<h2>Making it sell</h2>
+<p>A store nobody can find doesn’t make money. I worked through the SEO so products show up properly in search, made every page
+fast and comfortable on a phone, and kept the checkout short so people have fewer reasons to give up halfway.</p>
+
+<h2>Keeping it running</h2>
+<p>Ogascounty is one of four live apps I moved from a hosted platform onto our own server, with automatic deploys on every push
+and scheduled database backups. The monthly hosting bill for those apps fell by 78%.</p>
+
+        <h2>Tech</h2>
+        <div class="flex flex-wrap gap-1.5"><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Stripe</span><span class="chip">Printify API</span><span class="chip">Webhooks</span><span class="chip">SEO</span><span class="chip">Docker</span><span class="chip">Nginx</span></div>
+      </div>
+    </div>
+    </article>
+
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
+      <a href="/work/chomp" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Chomp</span>
+        <span class="mt-2 text-sm text-muted">Games</span>
+      </a>
+      <a href="/work/otesc-store" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">OTESC Store</span>
+        <span class="mt-2 text-sm text-muted">Marketplace</span>
+      </a>
+    </nav>
+  </main>
+
+  <site-footer cta></site-footer>
+</body>
+</html>

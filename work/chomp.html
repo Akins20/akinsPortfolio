@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chomp · Elijah Ogunbiyi</title>
+  <meta name="description" content="An arcade maze game with endless generated levels and lag-free online co-op.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/work/chomp">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="Chomp · Elijah Ogunbiyi">
+  <meta property="og:description" content="An arcade maze game with endless generated levels and lag-free online co-op.">
+  <meta property="og:url" content="/work/chomp">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+  <div data-progress aria-hidden="true" class="fixed inset-x-0 top-0 z-[55] h-[3px] origin-left scale-x-0 bg-accent"></div>
+
+  <main id="main">
+    <article>
+    <header class="relative isolate overflow-x-clip pt-32 sm:pt-40">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="wrap">
+        <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
+          <p class="eyebrow">07 / 07 · Games</p>
+          <p class="status text-accent"><span class="status-dot "></span>Play Store review</p>
+        </div>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Chomp<span class="text-accent">.</span></h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">An arcade maze game in the spirit of the classics, written in C. Every level is brand new, every level is guaranteed to be winnable, and a friend can join you online.</p>
+        
+
+        <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
+          <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Platform</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Android</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
+            <dt class="eyebrow">Engine</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">C · raylib</dd>
+          </div>
+          <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Multiplayer</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Go server</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Status</dt>
+            <dd class="mt-2 text-[0.95rem] text-accent">Play Store review</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+        <div class="relative overflow-hidden rounded-xl" style="aspect-ratio: 560 / 360">
+          <canvas data-maze class="absolute inset-0 size-full" aria-hidden="true"></canvas>
+          <span class="chip absolute bottom-4 left-4 bg-surface!" data-maze-label>Level 1</span>
+        </div>
+      </div>
+    </figure>
+
+    <div class="wrap mt-20 sm:mt-28">
+      <div class="prose-case mx-auto">
+<h2>A new maze every time</h2>
+<p>Every level is generated on the spot, so no two games are the same. Before you ever see a maze, the game floods it from the start
+to prove every corner can be reached. No trapped pellets and no levels you can’t finish. The maze at the top of this page is
+doing exactly that, live in your browser.</p>
+
+<h2>Enemies that keep you guessing</h2>
+<p>There are four kinds of enemy, each with its own way of hunting you. They switch between spreading out and closing in, in waves,
+so the pressure builds, eases off, then builds again.</p>
+
+<h2>Co-op without lag</h2>
+<p>Two players can team up online through a small Go server. One phone runs the game while the other predicts its own movement
+and quietly corrects itself, so neither player feels any delay. If someone’s connection drops, they have ninety seconds to come
+back and take their seat.</p>
+
+        <h2>Tech</h2>
+        <div class="flex flex-wrap gap-1.5"><span class="chip">C</span><span class="chip">raylib</span><span class="chip">Go</span><span class="chip">Procedural generation</span><span class="chip">Real-time multiplayer</span></div>
+      </div>
+    </div>
+    </article>
+
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
+      <a href="/work/rooster" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Rooster</span>
+        <span class="mt-2 text-sm text-muted">Mobile · Messaging</span>
+      </a>
+      <a href="/work/ogascounty" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Ogascounty</span>
+        <span class="mt-2 text-sm text-muted">E-commerce</span>
+      </a>
+    </nav>
+  </main>
+
+  <site-footer cta></site-footer>
+</body>
+</html>

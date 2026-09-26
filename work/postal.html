@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Postal · Elijah Ogunbiyi</title>
+  <meta name="description" content="A free, no-paywall social media scheduler: write a post once and publish it everywhere.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/work/postal">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="Postal · Elijah Ogunbiyi">
+  <meta property="og:description" content="A free, no-paywall social media scheduler: write a post once and publish it everywhere.">
+  <meta property="og:url" content="/work/postal">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+  <div data-progress aria-hidden="true" class="fixed inset-x-0 top-0 z-[55] h-[3px] origin-left scale-x-0 bg-accent"></div>
+
+  <main id="main">
+    <article>
+    <header class="relative isolate overflow-x-clip pt-32 sm:pt-40">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="wrap">
+        <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
+          <p class="eyebrow">05 / 07 · SaaS · Social media</p>
+          <p class="status text-accent"><span class="status-dot "></span>In development</p>
+        </div>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Postal<span class="text-accent">.</span></h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">Social media schedulers are handy right up until you hit the paywall. Postal is my free alternative to Buffer: write a post once, choose where and when, and let it publish for you.</p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://github.com/Akins20/Postal" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a href="https://postal-web-nine.vercel.app" target="_blank" rel="noopener" class="btn btn-ghost">Open the web app <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+
+        <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
+          <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Type</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Product</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
+            <dt class="eyebrow">Backend</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Finished</dd>
+          </div>
+          <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Stack</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Go · PostgreSQL · Redis</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Status</dt>
+            <dd class="mt-2 text-[0.95rem] text-accent">Web app in progress</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+        <svg-include src="/assets/covers/postal.svg" class="block" style="aspect-ratio: 560 / 360"
+          label="A weekly social media calendar with scheduled posts and a post composer"></svg-include>
+      </div>
+    </figure>
+
+    <div class="wrap mt-20 sm:mt-28">
+      <div class="prose-case mx-auto">
+<h2>Where it’s at</h2>
+<p>The whole backend is finished and documented, and the web app is being built on top of it now.</p>
+
+<h2>What it does</h2>
+<ul>
+  <li>Teams and workspaces with roles and per-person permissions. One workspace can never see another’s data.</li>
+  <li>You connect your social accounts through each platform’s own sign-in, and their access keys are encrypted before they’re saved.</li>
+  <li>Write a post once, tweak it for each channel, save drafts, and get warned about each platform’s limits while you type.</li>
+  <li>Schedule for a set time or drop posts into your regular posting slots. A background worker publishes them on time.</li>
+  <li>Upload images and video, then see how each post performed and export the numbers as a spreadsheet.</li>
+</ul>
+
+<h2>It never posts twice</h2>
+<p>Social platforms fail sometimes, and when they do the post has to be retried. The risk is that it goes out twice and your
+followers see a duplicate. Postal gives every publish its own unique key, so however many times it retries, the post appears
+exactly once.</p>
+
+<h2>Ready for real use</h2>
+<p>Rate limits, usage quotas, an audit log and security headers were there from day one, and every part of the API is written down
+so web and mobile apps can be built against it quickly.</p>
+
+        <h2>Tech</h2>
+        <div class="flex flex-wrap gap-1.5"><span class="chip">Go</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">asynq</span><span class="chip">Cloudflare R2</span><span class="chip">OAuth 2.0</span><span class="chip">OpenAPI</span></div>
+      </div>
+    </div>
+    </article>
+
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
+      <a href="/work/freya" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">FREYA</span>
+        <span class="mt-2 text-sm text-muted">AI assistant</span>
+      </a>
+      <a href="/work/rooster" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Rooster</span>
+        <span class="mt-2 text-sm text-muted">Mobile · Messaging</span>
+      </a>
+    </nav>
+  </main>
+
+  <site-footer cta></site-footer>
+</body>
+</html>

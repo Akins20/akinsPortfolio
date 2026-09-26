@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Page not found · Elijah Ogunbiyi</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0d0d0c">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+
+  <main id="main" class="relative isolate overflow-x-clip">
+    <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+    <section class="wrap grid min-h-[100dvh] items-center gap-12 pt-32 pb-20 lg:grid-cols-12">
+      <div class="lg:col-span-6">
+        <p class="eyebrow">Error 404</p>
+        <h1 class="mt-5 font-display text-[clamp(4rem,12vw,9rem)] leading-[0.88] tracking-[-0.03em]">Lost <em>the plot</em>.</h1>
+        <p class="mt-8 max-w-md text-lg leading-relaxed text-muted">
+          This page doesn’t exist, or it’s moved. The good stuff is still where you left it.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="/" class="btn btn-primary">Back to the homepage</a>
+          <a href="/#work" class="btn btn-ghost">See my work</a>
+        </div>
+      </div>
+      <figure class="lg:col-span-6">
+        <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-6">
+          <div class="relative overflow-hidden rounded-xl" style="aspect-ratio: 560 / 360">
+            <canvas data-maze class="absolute inset-0 size-full" aria-hidden="true"></canvas>
+            <span class="chip absolute bottom-3 left-3 bg-surface!" data-maze-label>Level 1</span>
+          </div>
+        </div>
+        <figcaption class="mt-4 text-sm text-subtle">At least this maze always has a way out. It’s from <a href="/work/chomp" class="link text-fg">Chomp</a>, a game I made.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Working notes and docs don't need to be served
+PLAN.md
+UX-LAWS.md
+README.md
+.editorconfig

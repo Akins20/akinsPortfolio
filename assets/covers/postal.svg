@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" fill="none">
+  <!-- Calendar -->
+  <rect x="12.5" y="12.5" width="412" height="322" rx="12" class="fill-surface stroke-line-strong"/>
+  <path d="M28 30.5 42 25l-4.5 14-3-5.2z" class="fill-accent"/>
+  <text x="48" y="37" font-size="12" font-weight="600" class="fill-fg font-sans">Postal</text>
+  <text x="408" y="36" text-anchor="end" font-size="8.5" class="fill-subtle">Week 39 · Sep 22–28</text>
+  <path d="M12.5 50.5h412" class="stroke-line"/>
+  <g font-size="8" text-anchor="middle" class="fill-subtle font-sans">
+    <text x="51" y="66">Mon</text><text x="107" y="66">Tue</text><text x="163" y="66">Wed</text><text x="219" y="66">Thu</text><text x="275" y="66">Fri</text><text x="331" y="66">Sat</text><text x="387" y="66">Sun</text>
+  </g>
+  <g class="stroke-line">
+    <path d="M24 74.5h390M24 116.5h390M24 158.5h390M24 200.5h390M24 242.5h390M24 284.5h390"/>
+    <path d="M79.5 58v268M135.5 58v268M191.5 58v268M247.5 58v268M303.5 58v268M359.5 58v268"/>
+  </g>
+  <g font-size="7.5" font-weight="600" class="font-sans">
+    <rect x="27" y="80" width="49" height="16" rx="4" class="fill-fg"/><text x="33" y="91" class="fill-bg">X · 9:00</text>
+    <rect x="83" y="122" width="49" height="16" rx="4" class="fill-accent"/><text x="89" y="133" class="fill-bg">IG · 12:30</text>
+    <rect x="139" y="80" width="49" height="16" rx="4" class="fill-fg"/><text x="145" y="91" class="fill-bg">X · 9:15</text>
+    <rect x="139" y="248" width="49" height="16" rx="4" class="fill-ok"/><text x="145" y="259" class="fill-bg">TT · 18:00</text>
+    <rect x="195" y="164" width="49" height="16" rx="4" class="fill-accent"/><text x="201" y="175" class="fill-bg">IG · 15:00</text>
+    <rect x="251" y="80" width="49" height="16" rx="4" class="fill-fg"/><text x="257" y="91" class="fill-bg">X · 9:00</text>
+    <rect x="251" y="206" width="49" height="16" rx="4" class="fill-ok"/><text x="257" y="217" class="fill-bg">TT · 17:30</text>
+    <rect x="307" y="122" width="49" height="16" rx="4" class="fill-accent"/><text x="313" y="133" class="fill-bg">IG · 11:00</text>
+    <rect x="363" y="248" width="49" height="16" rx="4" class="fill-ok"/><text x="369" y="259" class="fill-bg">TT · 19:00</text>
+    <rect x="27.5" y="206.5" width="48" height="15" rx="4" class="stroke-accent" stroke-dasharray="3 3"/><text x="33" y="217" class="fill-accent">+ slot</text>
+  </g>
+
+  <!-- Composer -->
+  <g style="filter: drop-shadow(0 22px 32px rgb(0 0 0 / .32))">
+    <rect x="318.5" y="130.5" width="226" height="214" rx="14" class="fill-surface stroke-line-strong"/>
+  </g>
+  <text x="334" y="154" font-size="11" font-weight="600" class="fill-fg font-sans">New post</text>
+  <text x="530" y="154" text-anchor="end" font-size="8" class="fill-subtle">Draft saved</text>
+  <rect x="332" y="164" width="198" height="66" rx="8" class="fill-surface-2"/>
+  <g font-size="9" class="fill-fg font-sans"><text x="342" y="181">New arrivals are in. Fresh stock</text><text x="342" y="194">and same-day delivery across</text><text x="342" y="207">Lagos. Link in bio.</text></g>
+  <rect x="342" y="214" width="1.5" height="10" class="fill-accent"><animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/></rect>
+  <text x="332" y="248" font-size="8" class="fill-subtle">Post to</text>
+  <g font-size="8.5" class="font-sans">
+    <rect x="332.5" y="255.5" width="40" height="20" rx="10" class="fill-fg/10 stroke-fg/30"/><text x="352.5" y="268.5" text-anchor="middle" class="fill-fg">✓ X</text>
+    <rect x="378.5" y="255.5" width="74" height="20" rx="10" class="fill-accent/10 stroke-accent/50"/><text x="415.5" y="268.5" text-anchor="middle" class="fill-accent">✓ Instagram</text>
+    <rect x="458.5" y="255.5" width="62" height="20" rx="10" class="fill-ok/10 stroke-ok/50"/><text x="489.5" y="268.5" text-anchor="middle" class="fill-ok">✓ TikTok</text>
+  </g>
+  <rect x="332" y="296" width="198" height="32" rx="16" class="fill-btn"/>
+  <text x="431" y="316" text-anchor="middle" font-size="10" font-weight="600" class="fill-btn-fg font-sans">Schedule · Fri 9:00</text>
+  <text x="12.5" y="352" font-size="8.5" class="fill-subtle">Compose once · publish everywhere · never double-posts</text>
+</svg>

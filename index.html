@@ -1,499 +1,571 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Link to your custom CSS file (styles.css) -->
-    <link rel="stylesheet" href="styles.css">
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Elijah Ogunbiyi · Full-Stack &amp; AI Engineer</title>
+  <meta name="description" content="Elijah Ogunbiyi is a full-stack and AI engineer in Lagos, Nigeria. He builds online stores, marketplaces, news platforms, mobile apps, custom AI agents and AI-powered dashboards, and offers technical consulting.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="Elijah Ogunbiyi · Full-Stack & AI Engineer">
+  <meta property="og:description" content="Online stores, marketplaces, news platforms, mobile apps and AI integrations, built end to end. See the work.">
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/img/portrait-640.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <!-- Apply the saved theme before first paint (no flash) -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Elijah Ogunbiyi",
+    "alternateName": "Ogunbiyi Elijah",
+    "jobTitle": "Full-Stack & AI Engineer",
+    "description": "Full-stack and AI engineer building online stores, marketplaces, news platforms, mobile apps, custom AI agents and AI-powered dashboards.",
+    "email": "mailto:ogunbiye@gmail.com",
+    "image": "/assets/img/portrait-960.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Federal University of Technology, Akure" },
+      { "@type": "CollegeOrUniversity", "name": "University of the People" }
+    ],
+    "sameAs": ["https://github.com/Akins20", "https://www.linkedin.com/in/ogunbiyi-elijah"],
+    "knowsAbout": ["Full-stack development", "E-commerce", "Custom AI agents", "AI-powered dashboards", "Technical consulting", "Go", "TypeScript", "Next.js", "React Native", "PostgreSQL"]
+  }
+  </script>
 </head>
 
-<body>
-    <!-- Navigation bar with mega menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" data-component="NavigationBar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <span class="nav-item" style="margin-left: -80px;">
-                    <img src="assets/Logo2.png" alt="logo">
-                </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#megaMenu"
-                aria-controls="megaMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body id="top">
+  <site-header></site-header>
 
-            <div class="collapse navbar-collapse" id="megaMenu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Projects
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <a class="dropdown-item" href="woocommerceProject.html">WooCommerce</a>
-                            <!-- <a class="dropdown-item" href="#">Mobile App</a> -->
-                            <!-- Add more projects as needed -->
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <main id="main">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="relative isolate overflow-x-clip pt-28 pb-16 sm:pt-36 lg:pb-24" aria-labelledby="hero-title">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute top-1/4 -right-[15%] -z-10 size-[42rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
+
+      <div class="wrap grid items-end gap-12 lg:grid-cols-12 lg:gap-10">
+        <div class="lg:col-span-8">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3" data-reveal>
+            <p class="eyebrow">Full-Stack &amp; AI Engineer · Lagos, Nigeria</p>
+            <p class="status text-ok" data-availability><span class="status-dot live"></span>Available for freelance work</p>
+          </div>
+
+          <h1 id="hero-title" class="mt-6 font-display text-[clamp(4.5rem,14vw,12rem)] leading-[0.84] tracking-[-0.035em]" data-reveal style="--reveal-delay:80ms">
+            Elijah<br>Ogunbiyi<span class="text-accent">.</span>
+          </h1>
+
+          <p class="mt-9 max-w-xl text-lg leading-relaxed text-muted text-pretty sm:text-xl" data-reveal style="--reveal-delay:160ms">
+            I build <span class="text-fg">online stores, marketplaces, news sites and mobile apps</span> from the database up,
+            plus <span class="text-fg">custom AI agents and AI-powered dashboards</span> for businesses that want their data to do more.
+            Right now my code is taking orders on
+            <a href="/work/ogascounty" class="link text-fg">Ogascounty</a> and serving readers on
+            <a href="/work/lettstv" class="link text-fg">LettsTV</a> every day.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal style="--reveal-delay:220ms">
+            <a href="#work" class="btn btn-primary">See my work <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+            <a data-link="cv" href="/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf" download class="btn btn-ghost"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l3 3 3-3M12 11v7"/></svg> Download CV</a>
+            <span class="mx-1 hidden h-6 w-px bg-line-strong sm:block" aria-hidden="true"></span>
+            <a data-link="github" href="https://github.com/Akins20" target="_blank" rel="noopener" class="grid size-12 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="sr-only">GitHub</span></a>
+            <a data-link="linkedin" href="https://www.linkedin.com/in/ogunbiyi-elijah" target="_blank" rel="noopener" class="grid size-12 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><span class="sr-only">LinkedIn</span></a>
+          </div>
         </div>
-    </nav>
 
-    <!-- My website content goes here -->
+        <figure class="relative mx-auto w-full max-w-sm lg:col-span-4 lg:max-w-none" data-reveal style="--reveal-delay:200ms">
+          <div class="relative overflow-hidden rounded-[1.5rem] border border-line-strong bg-surface shadow-card">
+            <picture>
+              <source type="image/webp" srcset="/assets/img/portrait-640.webp 640w, /assets/img/portrait-960.webp 960w" sizes="(min-width: 1024px) 400px, 384px">
+              <img src="/assets/img/portrait-960.jpg" alt="Elijah Ogunbiyi" width="960" height="1280" fetchpriority="high" class="aspect-[4/5] w-full object-cover object-[50%_20%]">
+            </picture>
+            <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <figcaption class="absolute inset-x-4 bottom-4 flex items-center justify-between font-mono text-[0.72rem] text-white/85">
+              <span>Lagos, Nigeria</span>
+              <span><time data-clock>--:--</time> WAT</span>
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
 
-    <!-- About Me Section -->
-
-    <div class="container mt-5" data-component="About">
-        <div class="row">
-            <div class="col-md-6" data-component="AboutImage">
-                <img src="./assets/passPhoto.jpeg" height="200" width="400" alt="Profile Picture"
-                    class="img-fluid imgClass rounded-circle mb-4">
-            </div>
-            <div class="col-md-6" data-component="AboutMe">
-                <h2 class="mb-4 mt-4">About Me</h2>
-                <p>Hello, I'm Ogunbiyi Elijah, a passionate and creative web developer with a strong background in
-                    front-end
-                    development. I love building beautiful and responsive websites that provide a seamless user
-                    experience.</p>
-                <p>My journey in web development began several years ago, and I have since honed my skills in HTML, CSS,
-                    JavaScript, and various front-end frameworks like Bootstrap and React.</p>
-                <p>When I'm not coding, you can find me exploring new technologies, attending tech meetups, or creating
-                    beautiful music.</p>
-
-                <div class="social-icons mt-4">
-                    <a href="#" class="mr-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="mr-3"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="mr-3"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
+    <!-- What I build, as a slow ticker (decorative; the same niches are listed in About) -->
+    <div class="marquee overflow-hidden border-y border-line py-5" aria-hidden="true">
+      <div class="marquee-track flex w-max gap-10 font-display text-[1.75rem] leading-none whitespace-nowrap text-muted">
+        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Games</span><span class="text-accent">✦</span>
+        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Games</span><span class="text-accent">✦</span>
+      </div>
     </div>
 
-    <section id="work-experience" class="text-dark py-5" data-component="WorkExperience">
-        <div class="container">
-            <h2 class="text-center mb-4">Work Experience</h2>
-            <div class="row" data-component="WorkExperienceCard">
-                <div class="col-md-12">
-                    <div class="work-experience-card p-4 bg-white">
-                        <h4 class="mb-3">Technical Support</h4>
-                        <p class="work-experience-company">Vanguard Media Limited</p>
-                        <p class="work-experience-date">September 2017 - December 2017</p>
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
-                            data-target="#experience1" aria-expanded="false" aria-controls="experience1">
-                            View Details
-                        </button>
-                        <div class="collapse" id="experience1">
-                            <ul class="work-experience-description mt-3">
-                                <li>Working to resolve technical problems by providing step-by-step instructions,
-                                    guidance, or solutions to customers.</li>
-                                <li>Creating and updating technical documentation, including FAQs, troubleshooting
-                                    guides, and knowledge base articles to help users find solutions independently.</li>
-                                <li> Using remote access tools to connect to a customer's computer or device to
-                                    troubleshoot and fix issues directly.</li>
-                                <li>Identifying and diagnosing technical issues reported by customers or end-users.</li>
-                                <li>Adhering to established protocols, guidelines, and best practices for technical
-                                    support operations.</li>
-                                <li>Staying updated with the latest technologies and advancements to enhance technical
-                                    skills and knowledge.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more experiences -->
-                <!-- Experience 2 -->
-                <div class="col-md-12 mt-4">
-                    <div class="work-experience-card p-4 bg-white">
-                        <h4 class="mb-3">Front-end Developer</h4>
-                        <p class="work-experience-company">Bincom ICT Solutions</p>
-                        <p class="work-experience-date">November 2022 - July 2023</p>
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
-                            data-target="#experience2" aria-expanded="false" aria-controls="experience2">
-                            View Details
-                        </button>
-                        <div class="collapse" id="experience2">
-                            <ul class="work-experience-description mt-3">
-                                <li>Worked on front-end tasks and bug fixing for web applications.</li>
-                                <li>Learned various front-end technologies and best practices.</li>
-                                <li>Contributed to team meetings and brainstorming sessions.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience 3 -->
-                <div class="col-md-12 mt-4">
-                    <div class="work-experience-card p-4 bg-white">
-                        <h4 class="mb-3">Mobile Application Developer Intern</h4>
-                        <p class="work-experience-company">Bincom Dev Center</p>
-                        <p class="work-experience-date">November 2022 - July 2023</p>
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
-                            data-target="#experience3" aria-expanded="false" aria-controls="experience3">
-                            View Details
-                        </button>
-                        <div class="collapse" id="experience3">
-                            <ul class="work-experience-description mt-3">
-                                <li>Assisted in the development and testing of web applications.</li>
-                                <li>Participated in code reviews and QA processes.</li>
-                                <li>Working closely with senior developers to assist in the design, development,
-                                    testing, and maintenance of mobile applications for iOS or Android platforms.</li>
-                                <li>Writing and reviewing code for new features and improvements, following coding
-                                    standards and best practices.</li>
-                                <li>Identifying and fixing bugs or issues in the existing codebase, performing
-                                    debugging, and testing to ensure the app's functionality and performance.</li>
-                                <li>Assisting in testing the app on various devices to ensure cross-platform
-                                    compatibility and a smooth user experience.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience 4 -->
-                <!-- Add more experiences -->
-                <!-- Experience 5 -->
-                <div class="col-md-12 mt-4">
-                    <div class="work-experience-card p-4 bg-white">
-                        <h4 class="mb-3">Wordpress E-commerce Developer</h4>
-                        <p class="work-experience-company">OTESC</p>
-                        <p class="work-experience-date">June 2022 - Present</p>
-                        <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="collapse"
-                            data-target="#experience5" aria-expanded="false" aria-controls="experience5">
-                            View Details
-                        </button>
-                        <div class="collapse" id="experience5">
-                            <ul class="work-experience-description mt-3">
-                                <li>Building and setting up WordPress websites with WooCommerce, including installing
-                                    and configuring the plugin, selecting and customizing themes, and setting up
-                                    essential eCommerce features.</li>
-                                <li>Modifying and customizing WordPress themes to match the client's brand, design
-                                    preferences, and unique requirements for the online store.</li>
-                                <li>Integrating and configuring various WooCommerce extensions and third-party plugins
-                                    to add specific functionality, such as payment gateways, shipping options, and
-                                    product variations.</li>
-                                <li>Managing product listings, categories, and attributes, ensuring accurate product
-                                    information, images, and pricing are displayed on the website.</li>
-                                <li>Integrating and configuring various payment gateways to enable secure and smooth
-                                    online transactions.</li>
-                                <li>Implementing security measures and keeping all plugins, themes, and the WordPress
-                                    core up to date to safeguard the website from vulnerabilities.</li>
-                                <li>Regularly backing up the website data and ensuring the ability to restore the
-                                    website in case of any unforeseen issues.</li>
-                                <li>Setting up and analyzing website analytics to track website traffic, sales, and
-                                    customer behavior, using data to make informed decisions and optimizations.</li>
-                                <li>Implementing basic search engine optimization (SEO) techniques to improve the
-                                    website's visibility and rankings on search engines.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ================================================================
+         SELECTED WORK
+         ================================================================ -->
+    <section id="work" class="section-y" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="grid gap-6 border-b border-line pb-8 md:grid-cols-12 md:items-end" data-reveal>
+          <h2 id="work-title" class="font-display text-display md:col-span-7">Selected <em>work</em></h2>
+          <p class="max-w-md leading-relaxed text-muted md:col-span-5 md:justify-self-end">
+            Seven projects across e-commerce, media, AI and mobile. Open any of them for the full story:
+            what the client needed, what I built and how it turned out.
+          </p>
         </div>
-    </section>
 
-    <section id="skills" class="text-dark" data-component="SkillsSection">
-        <h2 class="skillSection text-center">My Skills</h2>
-        <div class="row ml-5 pl-5 mb-5">
-            <div class="skillCard ml-5">
-                <div class="skillHeader">Front-end Development</div>
-                <div class="skillBody">
-                    <div class="skill">
-                        <div class="skill-name">HTML</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-percent-number">90%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">CSS</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 80%"></div>
-                        </div>
-                        <div class="skill-percent-number">80%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">JavaScript</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 75%"></div>
-                        </div>
-                        <div class="skill-percent-number">75%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">React.js</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 55%"></div>
-                        </div>
-                        <div class="skill-percent-number">55%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">Bootstrap</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 85%"></div>
-                        </div>
-                        <div class="skill-percent-number">85%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">REST API</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 55%"></div>
-                        </div>
-                        <div class="skill-percent-number">55%</div>
-                    </div>
+        <div class="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-2 md:pb-32 lg:gap-x-14">
+
+          <!-- 01 · Ogascounty -->
+          <article class="group relative" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]">
+                <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
+                  <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
+                  <span class="mx-auto truncate rounded-md bg-bg/70 px-8 py-0.5 font-mono text-[10px] text-subtle">ogascounty.com</span>
                 </div>
+                <picture>
+                  <source type="image/webp" srcset="/assets/shots/ogascounty-960.webp 960w, /assets/shots/ogascounty-1600.webp 1600w" sizes="(min-width: 768px) 600px, 100vw">
+                  <img src="/assets/shots/ogascounty-1600.jpg" alt="Screenshot of the live Ogascounty store homepage" width="1600" height="1000" loading="lazy" decoding="async" class="block aspect-[16/10] w-full object-cover object-top">
+                </picture>
+              </div>
             </div>
-
-            <div class="skillCard ml-5">
-                <div class="skillHeader">CMS</div>
-                <div class="skillBody">
-                    <div class="skill">
-                        <div class="skill-name">Wordpress</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-percent-number">90%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">WIX</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 60%"></div>
-                        </div>
-                        <div class="skill-percent-number">60%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">Shopify</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 75%"></div>
-                        </div>
-                        <div class="skill-percent-number">75%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">Joomla</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 65%"></div>
-                        </div>
-                        <div class="skill-percent-number">65%</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skillCard ml-5">
-                <div class="skillHeader">Mobile App Development</div>
-                <div class="skillBody">
-                    <div class="skill">
-                        <div class="skill-name">Cordova</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-percent-number">90%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">React Native</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 50%"></div>
-                        </div>
-                        <div class="skill-percent-number">50%</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">Ionic</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="width: 70%"></div>
-                        </div>
-                        <div class="skill-percent-number">70%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <h2 class="skillSection text-center" data-component="ProjectHeader">My Projects</h2>
-    <section id="projectSection" data-component="ProjectSection">
-        <div id="portfolio" class="carousel slide" data-ride="carousel" data-interval="3000" data-component="ProjectCarousel">
-
-            <!-- Indicators -->
-            <!-- <div class="carousel-indicators">
-                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#portfolio" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div> -->
-
-            <!-- The slideshow -->
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                    <img src="assets/ogas1.png" class="fidelis" alt="Los Angeles" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/ogas2.png" class="fidelis" alt="Chicago" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/ogas3.png" class="fidelis" alt="somewhere" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/ogas4.png" class="fidelis" alt="work" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/ogas5.png" class="fidelis" alt="place" width="1100" height="500">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#portfolio" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#portfolio" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button> -->
-
-        </div>
-        <div class="mt-4 mt-lg-0" data-component="ProjectOverview">
-            <h2 class="mb-4 mt-3">Project Overview</h2>
-            <div class="row">
-                <div class="col" class="projectDetails">
-                    <ul>
-                        <li>Responsive design for all devices.</li><br>
-                        <li>integrated dropshipping store to Woocommerce</li><br>
-                        <li>Integrated WooCommerce functionality.</li><br>
-                        <li>Customizable product pages and categories.</li><br>
-                        <li>Secure payment gateway integration.</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li>Displaying product listings with essential information such as product name, description,
-                            price, and product images.</li>
-                        <li>Detailed product page with additional information, specifications, and customer reviews.
-                        </li>
-                        <li>Allow users to add products to their shopping cart and view the cart summary.</li>
-                        <li>Basic checkout process where users can enter shipping information, select payment methods,
-                            and complete their purchase.</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li>User registration and login options to create accounts for a personalized shopping
-                            experience.</li>
-                        <li>Search bar to allow users to quickly find specific products.</li>
-                        <li>Clear and intuitive navigation menus to help users explore the website and find products.
-                        </li>
-                        <li>Ensuring basic security measures are in place to protect user data and prevent unauthorized
-                            access.</li>
-                    </ul>
-                </div>
-            </div>
-            <button type="button" class="btn">
-                <a href="https://ogascounty.com" target="_blank">View Live Site</a>
-            </button>
-        </div>
-        <div class="container-fluid mt-5 cap" data-component="ProjectSummary">
-            <p>The result of this project is a fully functional and optimized WooCommerce store that serves as a dynamic
-                platform for online shopping. It stands as a testament to my proficiency in WordPress development,
-                e-commerce solutions, and my commitment to delivering excellence in web development projects.
-
-                This WordPress WooCommerce store not only meets but exceeds the client's expectations, providing a
-                secure, user-friendly, and feature-rich online shopping experience.
-
-                Explore the project in the carousel above to witness the elegance and functionality of this WooCommerce
-                store.
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">E-commerce</span>
+              <span class="text-subtle">01 / 07</span>
             </p>
-        </div>
-        <hr class="text-light">
-    </section>
-
-
-    <section id="testimonials" class="py-5" data-component="ClientTestimonials">
-        <div class="container">
-            <h2 class="text-center mb-4 pb-5">Client Testimonials</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card p-4 text-center">
-                        <!-- <img src="path/to/client1-avatar.jpg" alt="Client 1" class="rounded-circle mb-3"> -->
-                        <h4 class="mb-3">Samuel Obembe</h4>
-                        <p class="testimonial-text">"Elijah is an exceptional web developer with a keen eye for detail.
-                            He
-                            created a stunning website for my business that exceeded my expectations. His communication
-                            and professionalism are outstanding."</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card p-4 text-center">
-                        <!-- <img src="path/to/client2-avatar.jpg" alt="Client 2" class="rounded-circle mb-3"> -->
-                        <h4 class="mb-3">Dangana Fain Fidelis</h4>
-                        <p class="testimonial-text">"Working with Elijah was a pleasure. She transformed our outdated
-                            website into a modern and user-friendly platform. His coding skills and attention to detail
-                            are impressive. Highly recommended!"</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card p-4 text-center">
-                        <!-- <img src="path/to/client3-avatar.jpg" alt="Client 3" class="rounded-circle mb-3"> -->
-                        <h4 class="mb-5">Asuabiat Robert</h4>
-                        <p class="testimonial-text">"I am delighted with the website Elijah built for my startup. He
-                            delivered the project on time and was always receptive to feedback. His expertise in web
-                            development is evident in the final product."</p>
-                    </div>
-                </div>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/ogascounty" class="after:absolute after:inset-0">Ogascounty</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A faith-inspired clothing brand that ships worldwide. I built the whole store: products sync in from Printify, payments run through Stripe, and every paid order goes off to print on its own, so nobody has to push orders along.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-ok"><span class="status-dot live"></span>Live</span>
+              <span>Next.js · Stripe · Printify</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 02 · OTESC Store -->
+          <article class="group relative md:translate-y-32" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <svg-include src="/assets/covers/otesc-store.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
+                label="A seller dashboard, a shopping app and a rider app with live delivery tracking"></svg-include>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">Marketplace</span>
+              <span class="text-subtle">02 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/otesc-store" class="after:absolute after:inset-0">OTESC Store</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A marketplace with its own apps for shoppers, sellers, delivery riders and admins. Seven apps, one backend. A customer can split one order across several addresses, and each parcel gets its own rider and live tracking, all from a single payment.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-accent"><span class="status-dot"></span>In development</span>
+              <span>Go · Next.js · Expo</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 03 · LettsTV -->
+          <article class="group relative" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]">
+                <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
+                  <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
+                  <span class="mx-auto truncate rounded-md bg-bg/70 px-8 py-0.5 font-mono text-[10px] text-subtle">lettstv.com/c/technology</span>
+                </div>
+                <picture>
+                  <source type="image/webp" srcset="/assets/shots/lettstv-960.webp 960w, /assets/shots/lettstv-1600.webp 1600w" sizes="(min-width: 768px) 600px, 100vw">
+                  <img src="/assets/shots/lettstv-1600.jpg" alt="Screenshot of the live LettsTV technology page" width="1600" height="1000" loading="lazy" decoding="async" class="block aspect-[16/10] w-full object-cover object-top">
+                </picture>
+              </div>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">News &amp; media</span>
+              <span class="text-subtle">03 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/lettstv" class="after:absolute after:inset-0">LettsTV</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A Nigerian news platform covering politics, business, tech and sport. I’ve been its only engineer since the first line of code, and I built its AI editorial pipeline: stories are prepared automatically, and an editor approves every one before it goes live.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-ok"><span class="status-dot live"></span>Live</span>
+              <span>Next.js · React · Node.js</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 04 · FREYA -->
+          <article class="group relative md:translate-y-32" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <svg-include src="/assets/covers/freya.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
+                label="The FREYA assistant building a four-page website, checking every link and fixing a broken form"></svg-include>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">AI assistant</span>
+              <span class="text-subtle">04 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/freya" class="after:absolute after:inset-0">FREYA</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">My own AI assistant for the desktop. Ask her for a website and she writes it, tests every link, fixes what’s broken and opens it on your screen. She drives a real browser and real apps, and you can simply talk to her.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-ok"><span class="status-dot"></span>Open source</span>
+              <span>Go · Gemini · Claude</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 05 · Postal -->
+          <article class="group relative" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <svg-include src="/assets/covers/postal.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
+                label="A weekly social media calendar with scheduled posts and a post composer"></svg-include>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">SaaS · Social media</span>
+              <span class="text-subtle">05 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/postal" class="after:absolute after:inset-0">Postal</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A free alternative to Buffer. Write a post once, pick your channels and a time, and Postal publishes it for you. If a platform glitches halfway through, it tries again without ever posting twice.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-accent"><span class="status-dot"></span>In development</span>
+              <span>Go · PostgreSQL · Redis</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 06 · Rooster -->
+          <article class="group relative md:translate-y-32" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <svg-include src="/assets/covers/rooster.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
+                label="The Rooster messenger app with chats and private contact matching"></svg-include>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">Mobile · Messaging</span>
+              <span class="text-subtle">06 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/rooster" class="after:absolute after:inset-0">Rooster</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">An Android messenger with chats, channels and video messages. It finds your friends without uploading your contacts: numbers are scrambled on your phone first, so the server never sees your address book.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-accent"><span class="status-dot"></span>Play Store review</span>
+              <span>Kotlin · Go</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- 07 · Chomp -->
+          <article class="group relative" data-reveal>
+            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+              <div class="relative overflow-hidden rounded-xl" style="aspect-ratio: 560 / 360">
+                <canvas data-maze class="absolute inset-0 size-full" aria-hidden="true"></canvas>
+                <span class="chip absolute bottom-3 left-3 bg-surface!" data-maze-label>Level 1</span>
+              </div>
+            </div>
+            <p class="mt-6 flex items-center justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+              <span class="text-accent">Games</span>
+              <span class="text-subtle">07 / 07</span>
+            </p>
+            <div class="mt-3 flex items-start justify-between gap-6">
+              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/chomp" class="after:absolute after:inset-0">Chomp</a></h3>
+              <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">An arcade maze game I wrote in C. Every level is generated fresh and checked so it can always be finished, and two friends can play together online without lag. The maze on this card is being built live.</p>
+            <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[0.72rem] text-subtle">
+              <span class="inline-flex items-center gap-1.5 text-accent"><span class="status-dot"></span>Play Store review</span>
+              <span>C · raylib · Go</span>
+              <span class="ml-auto inline-flex items-center gap-1.5 text-fg">See how I built it <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </p>
+          </article>
+          <!-- More -->
+          <a href="https://github.com/Akins20" data-link="github" target="_blank" rel="noopener" class="group flex min-h-[18rem] flex-col justify-between rounded-[1.25rem] border border-dashed border-line-strong p-8 transition-colors hover:border-accent hover:bg-surface md:translate-y-32" data-reveal>
+            <span class="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-subtle">Side projects &amp; experiments</span>
+            <span>
+              <span class="block font-display text-[2.6rem] leading-[0.95]">There’s more <em>on GitHub</em>.</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-muted transition-colors group-hover:text-fg">github.com/Akins20 <svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </span>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- Contact form section -->
-    <section id="homeContact" data-component="ContactForm">
-        <div class="container mt-5">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/mleynole" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
+    <!-- ================================================================
+         ABOUT
+         ================================================================ -->
+    <section id="about" class="section-y border-t border-line" aria-labelledby="about-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
+        <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title" class="mt-5 font-display text-display text-balance">Hi, I’m <em>Elijah</em>.</h2>
+        </div>
+
+        <div class="lg:col-span-7 lg:col-start-6" data-reveal>
+          <div class="space-y-5 text-lg leading-relaxed text-muted text-pretty sm:text-xl">
+            <p>
+              I’m a full-stack engineer from Lagos. For the last four years I’ve built products from end to end:
+              the database, the backend, the web and mobile apps on top, and the servers they run on.
+            </p>
+            <p>
+              That means one person understands your whole product. No passing work between five freelancers, and no
+              finger-pointing when something breaks. I’ve done it for an online store, a marketplace, a news site and a
+              handful of apps, and lately I’ve been doing a lot with AI, including building my own assistant,
+              <a href="/work/freya" class="link text-fg">FREYA</a>.
+            </p>
+            <p>
+              I’m taking on freelance projects now, and I also do technical consultations if you want a second opinion
+              before you build. If you’ve got a store to launch, an agent to build, a dashboard your team will actually use,
+              or an old system that needs rescuing, I’d love to hear about it.
+            </p>
+          </div>
+
+          <h3 class="mt-14 eyebrow">What I build</h3>
+          <ul class="mt-5 grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-line sm:grid-cols-2">
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">E-commerce &amp; marketplaces</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Stores and multi-vendor marketplaces with payments, delivery and order tracking.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Custom AI agents</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Agents built around your workflow that read, decide and act inside the tools you already use.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">AI-powered dashboards</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Dashboards that explain your numbers, flag what changed and answer questions about your data.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">News &amp; content platforms</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Publishing sites that load fast, rank on Google, and can run an AI newsroom with editors in charge.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Web &amp; mobile apps</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">SaaS tools, internal systems and iOS or Android apps, with the backend behind them.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Technical consulting</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">A second pair of eyes on your architecture, stack, AI plans or a codebase that’s got messy.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         EXPERIENCE & SKILLS
+         ================================================================ -->
+    <section id="experience" class="section-y border-t border-line bg-surface/40" aria-labelledby="experience-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
+        <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start" data-reveal>
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title" class="mt-5 font-display text-display text-balance">Where I’ve <em>worked</em>.</h2>
+          <a data-link="cv" href="/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf" download class="btn btn-ghost mt-8"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l3 3 3-3M12 11v7"/></svg> Full CV (PDF)</a>
+        </div>
+
+        <div class="lg:col-span-7 lg:col-start-6">
+          <!-- Timeline: one connecting line ties the roles together -->
+          <ol class="relative ml-1.5 border-l border-line-strong" data-reveal-stagger="80">
+            <li class="relative pb-12 pl-8" data-reveal>
+              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-accent bg-bg"></span>
+              <p class="font-mono text-xs text-subtle">Jul 2025 – Present · Lagos</p>
+              <h3 class="mt-2 text-xl font-medium">AI Engineer <span class="text-muted">· Lustrew Dynamics</span></h3>
+              <p class="mt-3 leading-relaxed text-muted">I build AI agents and the systems around them. I joined as a full-stack engineer and moved onto the AI team after six months.</p>
+            </li>
+            <li class="relative pb-12 pl-8" data-reveal>
+              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <p class="font-mono text-xs text-subtle">2023 – Present · Remote</p>
+              <h3 class="mt-2 text-xl font-medium">Full-Stack Engineer <span class="text-muted">· OTESC</span></h3>
+              <p class="mt-3 leading-relaxed text-muted">I build and run OTESC’s products, including Ogascounty, LettsTV and the OTESC Store marketplace. I moved our apps off an old stack onto FastAPI and Next.js, set up automatic releases, and cut the hosting bill by 78% by moving four live apps onto our own server.</p>
+            </li>
+            <li class="relative pb-12 pl-8" data-reveal>
+              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <p class="font-mono text-xs text-subtle">2025 · 6-month contract · Remote</p>
+              <h3 class="mt-2 text-xl font-medium">Backend Engineer <span class="text-muted">· Food Surplus Limited</span></h3>
+              <p class="mt-3 leading-relaxed text-muted">I built their inventory system for food distribution. Stock updates in real time across five distribution centres, stays correct when two people change the same item at once, and each team only sees what it should.</p>
+            </li>
+            <li class="relative pl-8" data-reveal>
+              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <p class="font-mono text-xs text-subtle">2022 – 2023 · Lagos</p>
+              <h3 class="mt-2 text-xl font-medium">Mobile App Developer, Intern <span class="text-muted">· Bincom Dev Center</span></h3>
+              <p class="mt-3 leading-relaxed text-muted">Built React Native features for iOS and Android, made slow screens faster, and chased down the crashes that only ever happen on one platform.</p>
+            </li>
+          </ol>
+
+          <div class="mt-16 grid gap-10 sm:grid-cols-2" data-reveal>
+            <div>
+              <h3 class="eyebrow">Education</h3>
+              <ul class="mt-5 space-y-5">
+                <li>
+                  <p class="font-medium">B.Sc. Computer Science</p>
+                  <p class="mt-1 text-sm text-muted">University of the People · expected 2026</p>
+                </li>
+                <li>
+                  <p class="font-medium">B.Sc. Information &amp; Communication Technology</p>
+                  <p class="mt-1 text-sm text-muted">Federal University of Technology, Akure · 2023</p>
+                </li>
+                <li>
+                  <p class="font-medium">Oracle APEX &amp; Database Management</p>
+                  <p class="mt-1 text-sm text-muted">Oracle University · certification</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="eyebrow">Skills</h3>
+              <dl class="mt-5 space-y-5">
+                <div>
+                  <dt class="text-sm text-subtle">Frontend &amp; mobile</dt>
+                  <dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Kotlin</span><span class="chip">Tailwind</span></dd>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                <div>
+                  <dt class="text-sm text-subtle">Backend</dt>
+                  <dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Go</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">FastAPI</span></dd>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
+                <div>
+                  <dt class="text-sm text-subtle">Payments &amp; data</dt>
+                  <dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Stripe</span><span class="chip">Paystack</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span></dd>
                 </div>
-                <button type="submit" class="btn btn-primary mt-4 mb-4">Send</button>
+                <div>
+                  <dt class="text-sm text-subtle">AI &amp; infrastructure</dt>
+                  <dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">AI agents</span><span class="chip">Docker</span><span class="chip">Kubernetes</span></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CONTACT
+         ================================================================ -->
+    <section id="contact" class="section-y relative isolate overflow-x-clip border-t border-line" aria-labelledby="contact-title">
+      <div aria-hidden="true" class="pointer-events-none absolute top-1/3 -left-60 -z-10 size-[40rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
+      <div class="wrap">
+        <div data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title" class="mt-5 font-display text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.9] tracking-[-0.025em]">
+            Let’s work <em>together</em>.
+          </h2>
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+            Tell me what you’re building and where you’re stuck, or book a technical consultation. I read every message myself, and if WhatsApp is easier for you, that works too.
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <!-- Direct channels (first on phones: a tap is quicker than a form) -->
+          <div class="lg:col-span-5" data-reveal>
+            <ul class="divide-y divide-line border-y border-line">
+              <li class="flex items-center gap-4 py-5">
+                <div class="min-w-0">
+                  <p class="eyebrow">Email</p>
+                  <a data-link="email" href="mailto:ogunbiye@gmail.com" class="mt-1.5 block truncate text-xl transition-colors hover:text-accent sm:text-2xl" data-text="email">ogunbiye@gmail.com</a>
+                </div>
+                <button type="button" data-copy="email" class="ml-auto grid size-12 shrink-0 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg">
+                  <svg class="size-[1.1rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="sr-only">Copy email address</span>
+                </button>
+              </li>
+              <li class="flex items-center gap-4 py-5">
+                <div class="min-w-0">
+                  <p class="eyebrow">WhatsApp</p>
+                  <a data-link="whatsapp" href="https://wa.me/2348113209561" target="_blank" rel="noopener" class="mt-1.5 block text-xl transition-colors hover:text-accent sm:text-2xl" data-text="whatsappDisplay">+234 811 320 9561</a>
+                </div>
+                <a data-link="whatsapp" href="https://wa.me/2348113209561" target="_blank" rel="noopener" class="ml-auto grid size-12 shrink-0 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg">
+                  <svg class="size-[1.1rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">Open a WhatsApp chat</span>
+                </a>
+              </li>
+              <li class="flex items-center gap-4 py-5">
+                <div class="min-w-0">
+                  <p class="eyebrow">LinkedIn</p>
+                  <a data-link="linkedin" href="https://www.linkedin.com/in/ogunbiyi-elijah" target="_blank" rel="noopener" class="mt-1.5 block text-xl transition-colors hover:text-accent sm:text-2xl">in/ogunbiyi-elijah</a>
+                </div>
+                <a data-link="linkedin" href="https://www.linkedin.com/in/ogunbiyi-elijah" target="_blank" rel="noopener" class="ml-auto grid size-12 shrink-0 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg">
+                  <svg class="size-[1.1rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">Open LinkedIn profile</span>
+                </a>
+              </li>
+            </ul>
+            <p class="mt-6 flex items-center gap-3 font-mono text-[0.78rem] text-muted">
+              <span class="status-dot live text-ok"></span>
+              It’s <time data-clock class="text-fg">--:--</time> in Lagos (WAT, UTC+1)
+            </p>
+          </div>
+
+          <!-- Form -->
+          <div class="card p-6 sm:p-10 lg:col-span-7" data-reveal>
+            <form data-contact-form action="https://formspree.io/f/mleynole" method="POST" novalidate class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label for="f-name" class="field-label">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required class="field" placeholder="Your name" aria-describedby="e-name">
+                <p id="e-name" data-error-for="name" hidden class="mt-2 text-sm text-danger"></p>
+              </div>
+              <div>
+                <label for="f-email" class="field-label">Email</label>
+                <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required class="field" placeholder="you@company.com" aria-describedby="e-email">
+                <p id="e-email" data-error-for="email" hidden class="mt-2 text-sm text-danger"></p>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-message" class="field-label">Message</label>
+                <textarea id="f-message" name="message" rows="6" required class="field resize-y" placeholder="What are you building, and how can I help?" aria-describedby="e-message"></textarea>
+                <p id="e-message" data-error-for="message" hidden class="mt-2 text-sm text-danger"></p>
+              </div>
+
+              <!-- Honeypot: hidden from people, tempting to bots -->
+              <div aria-hidden="true" class="absolute -left-[9999px] h-px w-px overflow-hidden">
+                <label for="f-gotcha">Leave this empty</label>
+                <input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="sm:col-span-2">
+                <button type="submit" class="btn btn-primary h-14 w-full text-base disabled:opacity-60">
+                  <span data-label>Send message</span> <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+              <p data-form-status hidden role="alert" class="rounded-xl border border-danger/40 bg-danger/10 px-4 py-3 text-sm text-fg sm:col-span-2"></p>
             </form>
-        </div>
-    </section>
 
-    <!-- Add a button for toggling dark/light mode -->
-    <button id="darkModeToggle" class="btn btn-primary mode" data-component="SwitchModes">Switch</button>
-
-    <footer class="text-light py-4 footer" data-component="Footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mt-5">
-                    <p>&copy; 2023 OgunbiyiElijah. All rights reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-inline text-md-right">
-                        <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                        <li><span>Email: </span>ogunbiye@gmail.com</li>
-                        <li><span>Phone Number: </span>+2349076320678</li>
-                    </ul>
-                </div>
+            <div data-form-success hidden tabindex="-1" class="flex min-h-[22rem] flex-col items-start justify-center outline-none">
+              <span class="grid size-14 place-items-center rounded-full bg-ok/15 text-2xl text-ok">✓</span>
+              <h3 class="mt-6 font-display text-title">Got it. <em>Thank you!</em></h3>
+              <p class="mt-3 max-w-md leading-relaxed text-muted">Your message is on its way to me. I’ll reply to <span data-success-email class="text-fg"></span> soon. If it’s urgent, WhatsApp is the quickest way to reach me.</p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a data-link="whatsapp" href="https://wa.me/2348113209561" target="_blank" rel="noopener" class="btn btn-primary">Message on WhatsApp</a>
+                <button type="button" data-form-reset class="btn btn-ghost">Send another</button>
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Link to Bootstrap JS and your custom JavaScript file (script.js) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+  <site-footer></site-footer>
 </body>
-
 </html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>OTESC Store · Elijah Ogunbiyi</title>
+  <meta name="description" content="A seven-app marketplace for shoppers, sellers, delivery riders and admins, running on one platform.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/work/otesc-store">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="OTESC Store · Elijah Ogunbiyi">
+  <meta property="og:description" content="A seven-app marketplace for shoppers, sellers, delivery riders and admins, running on one platform.">
+  <meta property="og:url" content="/work/otesc-store">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+  <div data-progress aria-hidden="true" class="fixed inset-x-0 top-0 z-[55] h-[3px] origin-left scale-x-0 bg-accent"></div>
+
+  <main id="main">
+    <article>
+    <header class="relative isolate overflow-x-clip pt-32 sm:pt-40">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="wrap">
+        <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
+          <p class="eyebrow">02 / 07 · Marketplace</p>
+          <p class="status text-accent"><span class="status-dot "></span>In development</p>
+        </div>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">OTESC Store<span class="text-accent">.</span></h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A marketplace where independent sellers list products, customers shop and riders deliver. That’s really seven products in one, and they all run on a single backend I built.</p>
+        
+
+        <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
+          <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Client</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">OTESC</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
+            <dt class="eyebrow">Scope</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">7 apps · web and mobile</dd>
+          </div>
+          <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Stack</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Go · Next.js · Expo</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Status</dt>
+            <dd class="mt-2 text-[0.95rem] text-accent">In development</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+        <svg-include src="/assets/covers/otesc-store.svg" class="block" style="aspect-ratio: 560 / 360"
+          label="A seller dashboard, a shopping app and a rider app with live delivery tracking"></svg-include>
+      </div>
+    </figure>
+
+    <div class="wrap mt-20 sm:mt-28">
+      <div class="prose-case mx-auto">
+<h2>The brief</h2>
+<p>OTESC wanted a proper marketplace, not just a shop. Customers need a storefront, sellers need somewhere to manage products and
+orders, admins need oversight, and riders need an app that tells them where to go. That adds up to seven apps: web apps for
+customers, sellers and admins, and mobile apps for shopping, selling and delivering.</p>
+
+<h2>What I built</h2>
+<p>All seven apps run on one Go backend, so when the rules for orders or pricing change, they change everywhere at once. The web
+apps are built with Next.js and the mobile apps with Expo, so they work on both iPhone and Android.</p>
+<p>The part I’m proudest of is split shipping. A customer can send one checkout to several addresses, say a gift to their mum and
+an order for themselves. Each address becomes its own order, with its own rider and live tracking, but the customer only pays
+once through Paystack. Refunds are capped at whatever is left of that payment, so however many of those orders get refunded,
+the business can never pay back more than it took.</p>
+
+<h2>Small things that add up</h2>
+<p>Prices appear instantly in the apps and are then confirmed by the server. A shared set of test cases makes sure the two always
+agree, so a customer never sees one price and gets charged another.</p>
+<p>Maps, routing and delivery batching run on free OpenStreetMap-based services by default, so the business isn’t paying Google
+every time someone types an address. Switching to Google Maps is one setting if they ever want it.</p>
+
+<h2>Built to grow</h2>
+<p>Seven apps in one codebase can get tangled quickly. I set up automatic checks that run on every change and stop code from
+reaching into places it shouldn’t, so the project stays easy to work on as it grows.</p>
+
+        <h2>Tech</h2>
+        <div class="flex flex-wrap gap-1.5"><span class="chip">Go</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Expo</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Paystack</span><span class="chip">Turborepo</span></div>
+      </div>
+    </div>
+    </article>
+
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
+      <a href="/work/ogascounty" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Ogascounty</span>
+        <span class="mt-2 text-sm text-muted">E-commerce</span>
+      </a>
+      <a href="/work/lettstv" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">LettsTV</span>
+        <span class="mt-2 text-sm text-muted">News &amp; media</span>
+      </a>
+    </nav>
+  </main>
+
+  <site-footer cta></site-footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FREYA · Elijah Ogunbiyi</title>
+  <meta name="description" content="My own desktop AI assistant: she builds things, checks her own work and fixes what’s broken before saying she’s done.">
+  <meta name="author" content="Elijah Ogunbiyi">
+  <meta name="theme-color" content="#0d0d0c">
+
+  <!-- SEO: absolute URLs are filled in by `npm run build` from site.config.json -->
+  <link rel="canonical" href="/work/freya">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elijah Ogunbiyi">
+  <meta property="og:title" content="FREYA · Elijah Ogunbiyi">
+  <meta property="og:description" content="My own desktop AI assistant: she builds things, checks her own work and fixes what’s broken before saying she’s done.">
+  <meta property="og:url" content="/work/freya">
+  <meta property="og:image" content="/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/assets/img/og.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+        document.querySelector('meta[name="theme-color"]').content = '#f4f1ea';
+      }
+    } catch (e) {}
+  </script>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body id="top">
+  <site-header></site-header>
+  <div data-progress aria-hidden="true" class="fixed inset-x-0 top-0 z-[55] h-[3px] origin-left scale-x-0 bg-accent"></div>
+
+  <main id="main">
+    <article>
+    <header class="relative isolate overflow-x-clip pt-32 sm:pt-40">
+      <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="wrap">
+        <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
+          <p class="eyebrow">04 / 07 · AI assistant</p>
+          <p class="status text-ok"><span class="status-dot "></span>Open source</p>
+        </div>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">FREYA<span class="text-accent">.</span></h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">My own AI assistant, and the reason I trust AI with real work. Freya builds things, checks them herself, fixes what’s broken and only then tells you she’s done.</p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://github.com/Akins20/FREYA" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+
+        <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
+          <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Type</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Personal project</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
+            <dt class="eyebrow">Runs on</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Desktop · voice · terminal</dd>
+          </div>
+          <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Stack</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Go, no outside libraries</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
+            <dt class="eyebrow">Status</dt>
+            <dd class="mt-2 text-[0.95rem] text-ok">Open source</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+        <svg-include src="/assets/covers/freya.svg" class="block" style="aspect-ratio: 560 / 360"
+          label="The FREYA assistant building a four-page website, checking every link and fixing a broken form"></svg-include>
+      </div>
+    </figure>
+
+    <div class="wrap mt-20 sm:mt-28">
+      <div class="prose-case mx-auto">
+<h2>What it is</h2>
+<p>Freya runs on your desktop, in her own window or a terminal, and you can type to her or just talk. I wrote her in Go without a
+single outside library, so she’s one small program that builds in seconds. The thinking is done by Gemini or Claude.</p>
+
+<h2>The problem she solves</h2>
+<p>Most AI tools will tell you a job is finished when it isn’t. Ask for a website and you get pages with broken links and a contact
+form that goes nowhere. I kept running into this, so I built Freya to check her own work.</p>
+<blockquote>Telling her to be careful made her a little better. Having her count the broken links as she wrote them took the number to zero, and it stayed there.</blockquote>
+
+<h2>What she can do</h2>
+<ul>
+  <li>Drive a real Chrome browser: click, type, upload files, switch tabs and read pages that keep loading as you scroll.</li>
+  <li>Use desktop apps by reading their buttons, fields and menus, the same way a screen reader does.</li>
+  <li>Build a website, check every link and image, serve it and open it on your screen.</li>
+  <li>Remember where your things live, like which email you use and where your calendar is.</li>
+  <li>Around 150 tools in all, plus voice input and spoken replies.</li>
+</ul>
+
+<h2>Careful with your stuff</h2>
+<p>Anything that can’t be undone asks you first, in her window, with a preview of exactly what will change. For the really serious
+actions a quick “yes” isn’t enough. You have to type the word out.</p>
+
+<h2>Lean on purpose</h2>
+<p>About 52,000 lines of Go and 21,000 lines of tests, built on a 2014 laptop with no graphics card. If she runs well there, she’ll
+run well anywhere.</p>
+
+        <h2>Tech</h2>
+        <div class="flex flex-wrap gap-1.5"><span class="chip">Go</span><span class="chip">Chrome DevTools Protocol</span><span class="chip">AT-SPI</span><span class="chip">Gemini</span><span class="chip">Claude</span><span class="chip">Speech-to-text</span></div>
+      </div>
+    </div>
+    </article>
+
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
+      <a href="/work/lettstv" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">LettsTV</span>
+        <span class="mt-2 text-sm text-muted">News &amp; media</span>
+      </a>
+      <a href="/work/postal" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+        <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Postal</span>
+        <span class="mt-2 text-sm text-muted">SaaS · Social media</span>
+      </a>
+    </nav>
+  </main>
+
+  <site-footer cta></site-footer>
+</body>
+</html>

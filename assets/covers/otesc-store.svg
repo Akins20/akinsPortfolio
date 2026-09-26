@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" fill="none">
+  <!-- Seller dashboard -->
+  <rect x="12.5" y="40.5" width="290" height="252" rx="12" class="fill-surface stroke-line-strong"/>
+  <path d="M12.5 64.5h290" class="stroke-line"/>
+  <circle cx="28" cy="52.5" r="3.5" class="fill-line-strong"/><circle cx="40" cy="52.5" r="3.5" class="fill-line-strong"/><circle cx="52" cy="52.5" r="3.5" class="fill-line-strong"/>
+  <text x="140" y="56" text-anchor="middle" font-size="9" class="fill-subtle font-sans">Seller dashboard</text>
+  <text x="28" y="86" font-size="9" class="fill-subtle font-sans">Today’s sales</text>
+  <text x="28" y="110" font-size="22" class="fill-fg font-display">₦412,500</text>
+  <text x="28" y="126" font-size="8.5" class="fill-ok">↑ 18% on yesterday</text>
+  <g class="fill-line-strong">
+    <rect x="28" y="170" width="18" height="30" rx="3"/><rect x="54" y="154" width="18" height="46" rx="3"/><rect x="80" y="162" width="18" height="38" rx="3"/>
+    <rect x="106" y="140" width="18" height="60" rx="3"/><rect x="132" y="148" width="18" height="52" rx="3"/><rect x="158" y="126" width="18" height="74" rx="3"/>
+  </g>
+  <rect x="184" y="112" width="18" height="88" rx="3" class="fill-accent"/>
+  <g font-size="8" text-anchor="middle" class="fill-subtle"><text x="37" y="213">M</text><text x="63" y="213">T</text><text x="89" y="213">W</text><text x="115" y="213">T</text><text x="141" y="213">F</text><text x="167" y="213">S</text><text x="193" y="213">S</text></g>
+  <rect x="28.5" y="228.5" width="196" height="22" rx="6" class="stroke-line"/>
+  <text x="38" y="243" font-size="8.5" class="fill-muted">#4821 · 2 items</text><circle cx="208" cy="239.5" r="3" class="fill-accent"/>
+  <rect x="28.5" y="256.5" width="196" height="22" rx="6" class="stroke-line"/>
+  <text x="38" y="271" font-size="8.5" class="fill-muted">#4820 · 5 items</text><circle cx="208" cy="267.5" r="3" class="fill-ok"/>
+
+  <!-- Shop app -->
+  <g style="filter: drop-shadow(0 20px 28px rgb(0 0 0 / .3))">
+    <rect x="226.5" y="14.5" width="150" height="326" rx="24" class="fill-bg stroke-line-strong"/>
+  </g>
+  <rect x="232" y="20" width="139" height="315" rx="19" class="fill-surface"/>
+  <rect x="284" y="25" width="36" height="9" rx="4.5" class="fill-bg"/>
+  <rect x="241" y="44" width="121" height="19" rx="9.5" class="fill-surface-2"/>
+  <text x="252" y="56.5" font-size="8" class="fill-subtle font-sans">Search products</text>
+  <text x="241" y="82" font-size="9.5" font-weight="500" class="fill-fg font-sans">Popular near you</text>
+  <g>
+    <rect x="241" y="90" width="57" height="46" rx="8" class="fill-accent/20"/><circle cx="269.5" cy="113" r="12" class="fill-accent/60"/>
+    <rect x="305" y="90" width="57" height="46" rx="8" class="fill-ok/20"/><rect x="323" y="101" width="21" height="25" rx="4" class="fill-ok/60"/>
+    <rect x="241" y="170" width="57" height="46" rx="8" class="fill-fg/10"/><path d="M256 204l13-20 13 20z" class="fill-fg/30"/>
+    <rect x="305" y="170" width="57" height="46" rx="8" class="fill-accent/10"/><circle cx="333.5" cy="193" r="10" class="fill-accent/40"/>
+  </g>
+  <g font-size="8" class="font-sans">
+    <text x="241" y="148" class="fill-muted">Sneakers</text><text x="241" y="160" font-weight="600" class="fill-fg">₦24,500</text>
+    <text x="305" y="148" class="fill-muted">Juice pack</text><text x="305" y="160" font-weight="600" class="fill-fg">₦4,200</text>
+    <text x="241" y="228" class="fill-muted">Lamp</text><text x="241" y="240" font-weight="600" class="fill-fg">₦12,000</text>
+    <text x="305" y="228" class="fill-muted">Headphones</text><text x="305" y="240" font-weight="600" class="fill-fg">₦31,900</text>
+  </g>
+  <rect x="241" y="254" width="121" height="30" rx="8" class="fill-surface-2"/>
+  <text x="250" y="266.5" font-size="7.5" class="fill-subtle font-sans">Delivering to</text>
+  <text x="250" y="277.5" font-size="8.5" class="fill-fg font-sans">2 addresses</text>
+  <rect x="241" y="294" width="121" height="28" rx="14" class="fill-btn"/>
+  <text x="301.5" y="311.5" font-size="9" text-anchor="middle" font-weight="600" class="fill-btn-fg font-sans">Checkout · 3 items</text>
+
+  <!-- Rider app -->
+  <g style="filter: drop-shadow(0 20px 28px rgb(0 0 0 / .3))">
+    <rect x="394.5" y="46.5" width="150" height="300" rx="24" class="fill-bg stroke-line-strong"/>
+  </g>
+  <rect x="400" y="52" width="139" height="289" rx="19" class="fill-surface"/>
+  <g class="stroke-line" stroke-width="6" stroke-linecap="round">
+    <path d="M400 92h139M400 150h139M430 52v150M500 52v150"/>
+  </g>
+  <path d="M422 176V150h78V92h24" class="stroke-accent" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 6"/>
+  <circle cx="422" cy="176" r="5" class="fill-ok"/>
+  <circle cx="524" cy="92" r="9" class="fill-accent/25"/><circle cx="524" cy="92" r="4.5" class="fill-accent"/>
+  <circle cx="500" cy="121" r="7" class="fill-fg"/><circle cx="500" cy="121" r="3" class="fill-bg"/>
+  <path d="M400 206h139v116a19 19 0 0 1-19 19H419a19 19 0 0 1-19-19z" class="fill-surface-2"/>
+  <text x="412" y="226" font-size="9.5" font-weight="500" class="fill-fg font-sans">2 drops on this trip</text>
+  <g font-size="8.5" class="font-sans">
+    <circle cx="418" cy="246" r="6" class="fill-ok/20"/><text x="418" y="249" text-anchor="middle" font-size="7.5" class="fill-ok">1</text>
+    <text x="430" y="249" class="fill-muted">Lekki Phase 1</text><text x="526" y="249" text-anchor="end" class="fill-ok">Done</text>
+    <circle cx="418" cy="268" r="6" class="fill-accent/20"/><text x="418" y="271" text-anchor="middle" font-size="7.5" class="fill-accent">2</text>
+    <text x="430" y="271" class="fill-fg">Ikoyi</text><text x="526" y="271" text-anchor="end" class="fill-accent">8 min</text>
+  </g>
+  <rect x="412" y="290" width="115" height="26" rx="13" class="fill-btn"/>
+  <text x="469.5" y="306.5" font-size="9" text-anchor="middle" font-weight="600" class="fill-btn-fg font-sans">Arrived</text>
+</svg>
