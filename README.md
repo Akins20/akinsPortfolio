@@ -16,7 +16,7 @@ drives don't report file changes), use `POLL=1 npm run dev`.
 ## Build
 
 ```bash
-npm run build        # minified CSS + SEO URLs/sitemap
+npm run build        # minified CSS + SEO URLs/sitemap, then copies the site into dist/
 ```
 
 Commit `assets/css/site.css` after building. It's generated, but committing it means the site works as
@@ -70,7 +70,7 @@ test message after deploying to confirm the endpoint is still active on your For
 ## Deploy (Vercel)
 
 1. Push the repo to GitHub and import it in Vercel, or run `vercel` from this folder.
-2. Vercel runs `npm run build` automatically. `vercel.json` adds clean URLs (`/work/freya`), caching and
-   security headers.
+2. Vercel runs `npm run build` and serves the `dist/` folder it produces (set in `vercel.json`, along with
+   clean URLs like `/work/freya`, caching and security headers).
 3. Once you know the live address, put it in `site.config.json` (`"url": "https://your-domain.com"`) and
    redeploy, so link previews on WhatsApp, LinkedIn and X show the share image.
