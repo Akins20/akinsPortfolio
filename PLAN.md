@@ -89,7 +89,7 @@ Legend: `[ ]` todo · `[x]` done
 - [x] Research UI principles beyond Laws of UX (Nielsen, Norman, Gestalt, CRAP, motion) → `UX-LAWS.md`
 - [x] Motion system: load choreography, richer scroll reveals, hover/press states, page transitions,
       theme-switch transition, animated mobile menu — all off under reduced motion
-- [ ] Regenerate pages, QA, commit & push
+- [x] Regenerate pages, QA, commit & push
 
 ## Phase 6 — QA & ship
 - [x] Playwright screenshots: desktop / mobile × dark / light, every page
