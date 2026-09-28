@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">05 / 07 · SaaS · Social media</p>
           <p class="status text-accent"><span class="status-dot "></span>In development</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Postal<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-postal">Postal<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">Social media schedulers are handy right up until you hit the paywall. Postal is my free alternative to Buffer: write a post once, choose where and when, and let it publish for you.</p>
         <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://github.com/Akins20/Postal" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a href="https://postal-web-nine.vercel.app" target="_blank" rel="noopener" class="btn btn-ghost">Open the web app <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12" style="view-transition-name: shot-postal">
         <svg-include src="/assets/covers/postal.svg" class="block" style="aspect-ratio: 560 / 360"
           label="A weekly social media calendar with scheduled posts and a post composer"></svg-include>
       </div>
@@ -91,10 +94,10 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>Where it’s at</h2>
+<h2 data-split data-reveal>Where it’s at</h2>
 <p>The whole backend is finished and documented, and the web app is being built on top of it now.</p>
 
-<h2>What it does</h2>
+<h2 data-split data-reveal>What it does</h2>
 <ul>
   <li>Teams and workspaces with roles and per-person permissions. One workspace can never see another’s data.</li>
   <li>You connect your social accounts through each platform’s own sign-in, and their access keys are encrypted before they’re saved.</li>
@@ -103,12 +106,12 @@
   <li>Upload images and video, then see how each post performed and export the numbers as a spreadsheet.</li>
 </ul>
 
-<h2>It never posts twice</h2>
+<h2 data-split data-reveal>It never posts twice</h2>
 <p>Social platforms fail sometimes, and when they do the post has to be retried. The risk is that it goes out twice and your
 followers see a duplicate. Postal gives every publish its own unique key, so however many times it retries, the post appears
 exactly once.</p>
 
-<h2>Ready for real use</h2>
+<h2 data-split data-reveal>Ready for real use</h2>
 <p>Rate limits, usage quotas, an audit log and security headers were there from day one, and every part of the API is written down
 so web and mobile apps can be built against it quickly.</p>
 
@@ -118,18 +121,19 @@ so web and mobile apps can be built against it quickly.</p>
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/freya" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/freya" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">FREYA</span>
         <span class="mt-2 text-sm text-muted">AI assistant</span>
       </a>
-      <a href="/work/rooster" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/rooster" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Rooster</span>
         <span class="mt-2 text-sm text-muted">Mobile · Messaging</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>

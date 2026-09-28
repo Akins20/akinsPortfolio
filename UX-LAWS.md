@@ -1,8 +1,10 @@
-# Laws of UX in this portfolio
+# Laws of UX & UI principles in this portfolio
 
-[lawsofux.com](https://lawsofux.com/) currently lists **30** laws (earlier versions of the site had
-fewer). Every one of them is used somewhere on this site. Below is each law in a line, followed by
-exactly where and how it shows up.
+Part 1 covers all **30** laws on [lawsofux.com](https://lawsofux.com/). Part 2 covers the classic UI
+principles (Nielsen, Norman, Shneiderman, Gestalt and visual design) plus the motion guidelines the
+animations follow. Each entry says exactly where and how it shows up on the site.
+
+## Part 1 — Laws of UX
 
 ---
 
@@ -14,14 +16,14 @@ phone frames so the work looks as polished as it is. First impressions buy patie
 
 ### 2. Choice Overload
 *Too many options make people freeze.*
-The header has three links, a theme switch and one button. Each project card does one thing: open the project. The
+The header has four links, a theme switch and one button. Each project card does one thing: open the project. The
 contact form was cut from seven fields to three (name, email, message).
 
 ### 3. Chunking
 *Information is easier to take in when it's grouped into small, meaningful pieces.*
-Every project card is split the same way: niche → name → two-line story → status and stack. Project
-pages are short sections with plain headings (The brief, What I built, Making it sell…). Skills sit in four
-small groups, experience is one role per row, and the WhatsApp number is written in groups
+Every project card is split the same way: niche → name → two-line story → status and stack. Services are
+split into five groups of four to nine items, plus four ways to work together. Project pages are short
+sections with plain headings (The brief, What I built, Making it sell…). Skills sit in four small groups, experience is one role per row, and the WhatsApp number is written in groups
 (+234 811 320 9561).
 
 ### 4. Cognitive Bias
@@ -73,8 +75,8 @@ form, and a friendly 404 page with a clear way home.
 
 ### 12. Law of Common Region
 *Things inside the same boundary are seen as a group.*
-Each project's picture and details live inside one bordered card. The form sits in its own card. "What I
-build" is a bordered grid, and the key facts on each project page sit in one ruled strip.
+Each project's picture and details live inside one bordered card. The form sits in its own card. "Ways I
+can help" is a bordered grid, each services group sits between two rules, and the key facts on each project page sit in one ruled strip.
 
 ### 13. Law of Proximity
 *Things close together are seen as related.*
@@ -94,9 +96,9 @@ underlined the same way.
 
 ### 16. Law of Uniform Connectedness
 *Visually connected things feel more related than things that aren't.*
-The experience timeline is one continuous line joining every role. Screenshots sit inside browser and phone
+The experience timeline is one continuous line joining every role, and it draws itself as you scroll. Screenshots sit inside browser and phone
 frames that tie them to their project, and each card's status and stack sit on a rule attached to that card.
-The underline under the active nav link ties the header to the section on screen.
+A single underline slides between nav links, tying the header to the section on screen.
 
 ### 17. Mental Model
 *People bring expectations from similar sites.*
@@ -105,7 +107,7 @@ Project pages follow the usual case-study shape: what it is, the brief, what I b
 
 ### 18. Miller's Law
 *People hold roughly 7 (±2) things in working memory.*
-Seven projects on the homepage. Four navigation targets. Four skill groups of no more than six chips each.
+Seven projects on the homepage. Five navigation targets. Services in five groups, none longer than nine. Four skill groups of no more than six chips each.
 Four key facts at the top of each project page.
 
 ### 19. Occam's Razor
@@ -130,7 +132,8 @@ WhatsApp opens with a message already written, and the email address copies with
 
 ### 23. Peak-End Rule
 *People judge an experience by its best moment and its ending.*
-The peaks are the hero (name and photo), the real product screenshots and the live maze. The ending is a
+The peaks are the hero (your name rising in letter by letter as the photo wipes in), the real product
+screenshots, the card that morphs into its project page, and the live maze. The ending is a
 big, warm "Let's work together", then a friendly "Got it. Thank you!" after sending, with WhatsApp offered if
 it's urgent. Even the 404 page ends on a smile.
 
@@ -172,3 +175,71 @@ About and Experience headings stay in view while you read.
 *People remember unfinished tasks and want to complete them.*
 The reading-progress bar shows a story that isn't finished yet. "03 / 07" tells you there's more to see, and
 "See how I built it →" on every card promises the rest of the story. The maze keeps generating new levels.
+
+---
+
+## Part 2 — UI principles
+
+### Nielsen's 10 usability heuristics
+
+| Heuristic | Where it shows up |
+|---|---|
+| Visibility of system status | Active nav underline, reading-progress bar, "Sending…" on the form, success tick, live Lagos clock, toast when the email is copied |
+| Match with the real world | Plain words everywhere ("Get in touch", "See how I built it"), no jargon in client-facing copy |
+| User control and freedom | Escape closes the menu, "Send another" after sending, "All work" back link, theme switch works both ways, "Back to top" |
+| Consistency and standards | One button style per role, same card layout for every project, conventional header and footer |
+| Error prevention | Correct input types and autofill, required fields checked before sending, spam trap instead of a CAPTCHA |
+| Recognition rather than recall | Key facts repeated on project pages, next/previous projects named, sticky section headings |
+| Flexibility and efficiency | Hidden shortcuts for keyboard users: T switches theme, ← → move between projects |
+| Aesthetic and minimalist design | Only the person, the work, services and contact; everything else was cut |
+| Recognise and recover from errors | Plain-language messages under the field at fault, plus a direct email link if sending fails |
+| Help and documentation | Little needed; a one-line shortcut tip on project pages and in the footer |
+
+### Don Norman's design principles
+
+| Principle | Where it shows up |
+|---|---|
+| Affordances | Cards, buttons and fields look pressable, typeable or clickable |
+| Signifiers | Arrow circles on cards, the "View" cursor label, underlines on links, amber on the main action |
+| Feedback | Every hover and press responds within ~120ms; the form, copy button and theme switch all confirm what happened |
+| Mapping | "Previous" sits on the left and "Next" on the right, and the ← → keys match them |
+| Constraints | The send button is disabled while sending; email and name fields only accept what makes sense |
+| Conceptual model | A portfolio that works like every portfolio: intro, work, services, about, experience, contact |
+
+### Shneiderman's 8 golden rules
+
+Consistency (one visual system), shortcuts (T, ← →), informative feedback (states and toasts), dialogs that
+close (a clear "Got it. Thank you!" after sending), simple error handling (inline messages), easy reversal
+(theme, menu, "Send another"), the user in control (no autoplay sound, no pop-ups, motion respects system
+settings) and low memory load (facts repeated where they're needed).
+
+### Gestalt and visual design (contrast, repetition, alignment, proximity)
+
+- **Contrast & hierarchy:** a big serif for headings against a quiet sans for reading; amber reserved for
+  what matters; secondary text dimmed.
+- **Repetition:** the same eyebrow → heading → body rhythm in every section; the "E." mark and amber full
+  stop repeat from the logo to the footer.
+- **Alignment:** everything sits on one 12-column grid with shared left edges.
+- **Figure/ground & focal point:** each section has one clear focal element (the name, a cover, a heading),
+  with grain and soft glows kept in the background.
+
+### Motion guidelines
+
+The animations follow [NN/g](https://www.nngroup.com/articles/animation-duration/) and
+[Material Design](https://m3.material.io/styles/motion/easing-and-duration) guidance:
+
+- **Durations:** hover and press feedback 120–220ms, larger UI changes around 380ms, page transitions under
+  500ms. Scroll reveals run a little longer because they carry no interaction.
+- **Easing:** things entering ease out (fast start, gentle stop), things leaving ease in, nothing moves at a
+  linear speed.
+- **Purpose:** motion either orients (a card morphing into its project page, the timeline drawing),
+  gives feedback (press, send, copy), or directs attention (the hero choreography). Nothing loops for
+  decoration except the slow ticker and background glows.
+- **Performance:** only transform, opacity and clip-path are animated, so it stays smooth.
+- **Respect:** with "reduce motion" turned on, every animation, parallax and page transition switches off.
+
+Sources: [Nielsen Norman Group, 10 usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) ·
+[UX Magazine, Don Norman's principles](https://uxmag.com/articles/understanding-don-normans-principles-of-interaction) ·
+[IxDF, Shneiderman's eight golden rules](https://ixdf.org/literature/article/shneiderman-s-eight-golden-rules-will-help-you-design-better-interfaces) ·
+[NN/g, animation duration](https://www.nngroup.com/articles/animation-duration/) ·
+[Material Design 3, easing and duration](https://m3.material.io/styles/motion/easing-and-duration)

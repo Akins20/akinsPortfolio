@@ -15,7 +15,7 @@ class SiteFooter extends HTMLElement {
       <section class="wrap section-y border-t border-line" aria-label="Contact">
         <p class="eyebrow">Like what you see?</p>
         <a href="/#contact" class="group mt-5 inline-flex items-baseline gap-4 font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] tracking-[-0.02em]">
-          <span>Let’s work <em>together</em>.</span>
+          <span class="bg-[linear-gradient(var(--accent),var(--accent))] bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-1 transition-[background-size] duration-500 ease-out-expo group-hover:bg-[length:100%_2px]">Let’s work <em>together</em>.</span>
           ${icon('arrow-ne', 'arrow-ne size-[0.5em] shrink-0 text-accent')}
         </a>
         <p class="mt-6 text-muted">
@@ -28,9 +28,13 @@ class SiteFooter extends HTMLElement {
       ${cta}
       <footer class="border-t border-line">
         <div class="wrap flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between">
-          <div>
-            <a href="/" class="font-display text-[1.6rem] leading-none tracking-tight">${SITE.name}<span class="text-accent">.</span></a>
-            <p class="mt-2 font-mono text-[0.72rem] text-subtle">© ${year} · ${SITE.location} · <time data-clock>--:--</time> ${SITE.timeZoneLabel}</p>
+          <div class="flex items-center gap-4">
+            <img src="/assets/img/logo-mark-dark.svg" alt="" width="44" height="44" class="size-11 rounded-[0.7rem]">
+            <div>
+              <a href="/" class="font-display text-[1.6rem] leading-none tracking-tight">${SITE.name}<span class="text-accent">.</span></a>
+              <p class="mt-2 font-mono text-[0.72rem] text-subtle">© ${year} · ${SITE.location} · <time data-clock>--:--</time> ${SITE.timeZoneLabel}</p>
+              <p class="mt-1 hidden font-mono text-[0.7rem] text-subtle/80 [@media(hover:hover)]:block">Shortcuts: <kbd class="rounded border border-line px-1">T</kbd> theme · <kbd class="rounded border border-line px-1">←</kbd> <kbd class="rounded border border-line px-1">→</kbd> projects</p>
+            </div>
           </div>
           <ul class="flex flex-wrap items-center gap-2">
             <li><a href="${LINKS.github}" ${ext} class="grid size-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg">${icon('github', 'size-[1.05rem]')}<span class="sr-only">GitHub</span></a></li>

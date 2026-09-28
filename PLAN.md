@@ -79,6 +79,18 @@ Legend: `[ ]` todo · `[x]` done
 ## Phase 5b — Laws of UX
 - [x] All 30 laws applied and documented in `UX-LAWS.md`
 
+## Phase 7 — Brand, services & motion (round 2)
+- [x] Fix Vercel build: output to `dist/`
+- [x] New portrait (LinkedIn photo), cropped 4:5
+- [x] Brand mark "E." (amber tile for favicon/SEO, dark tile in-page) + logo lockups
+- [x] Full icon set: favicon.svg/.ico/32/48, apple-touch, 192/512, maskable
+- [x] Integrate: header/footer mark, head links, manifest, OG image, JSON-LD (WebSite + photo)
+- [x] Services section from Elijah's confirmed capability list
+- [x] Research UI principles beyond Laws of UX (Nielsen, Norman, Gestalt, CRAP, motion) → `UX-LAWS.md`
+- [x] Motion system: load choreography, richer scroll reveals, hover/press states, page transitions,
+      theme-switch transition, animated mobile menu — all off under reduced motion
+- [ ] Regenerate pages, QA, commit & push
+
 ## Phase 6 — QA & ship
 - [x] Playwright screenshots: desktop / mobile × dark / light, every page
 - [x] Console-error sweep + internal link check

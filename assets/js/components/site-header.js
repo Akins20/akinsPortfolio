@@ -14,17 +14,15 @@ class SiteHeader extends HTMLElement {
         (item) => `
         <li>
           <a href="${item.href}" data-nav="${item.id}"
-             class="nav-link relative block px-3 py-2 text-[0.9rem] text-muted transition-colors hover:text-fg
-                    after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent
-                    after:transition-transform after:duration-300 hover:after:scale-x-100">${item.label}</a>
+             class="nav-link relative block px-3 py-2 text-[0.9rem] text-muted transition-colors duration-200 hover:text-fg">${item.label}</a>
         </li>`,
       )
       .join('');
 
-    const mobileItems = SITE.nav
+    const mobileItems = [...SITE.nav, { label: 'Contact', href: '/#contact' }]
       .map(
         (item, i) => `
-        <li class="border-b border-line">
+        <li class="border-b border-line" data-menu-item style="--i:${i}">
           <a href="${item.href}" class="flex items-baseline justify-between py-4 font-display text-[2.6rem] leading-none tracking-tight">
             ${item.label}<span class="font-mono text-xs text-subtle">0${i + 1}</span>
           </a>
@@ -38,19 +36,23 @@ class SiteHeader extends HTMLElement {
         <div class="site-header-bar border-b border-transparent">
           <div class="wrap flex h-[4.5rem] items-center justify-between gap-6">
             <a href="/" class="group flex items-center gap-3" aria-label="${SITE.name}, home">
-              <span class="inline-flex size-9 items-center justify-center rounded-full border border-line-strong font-display text-[1.3rem] leading-none transition-colors group-hover:border-accent"><span>E</span><span class="text-accent">.</span></span>
+              <img src="/assets/img/logo-mark-dark.svg" alt="" width="36" height="36"
+                   class="size-9 rounded-[0.6rem] transition-transform duration-300 ease-out-expo group-hover:-rotate-6 group-hover:scale-105">
               <span class="font-display text-[1.35rem] leading-none tracking-tight">${SITE.name}</span>
             </a>
 
             <nav aria-label="Primary" class="hidden lg:block">
-              <ul class="flex items-center gap-1">${navItems}</ul>
+              <ul class="relative flex items-center gap-1" data-nav-list>
+                ${navItems}
+                <li aria-hidden="true" data-nav-indicator class="nav-indicator pointer-events-none absolute bottom-1 h-px bg-accent opacity-0" style="left:0;width:0"></li>
+              </ul>
             </nav>
 
             <div class="flex items-center gap-2">
               <button type="button" data-theme-toggle
-                class="grid size-10 place-items-center rounded-full border border-line text-muted transition-colors hover:border-line-strong hover:text-fg">
+                class="grid size-10 place-items-center rounded-full border border-line text-muted transition-[color,border-color,rotate] duration-300 hover:border-line-strong hover:text-fg active:rotate-45">
               </button>
-              <a href="/#contact" data-nav="contact" class="btn btn-primary btn-sm hidden sm:inline-flex">
+              <a href="/#contact" data-nav="contact" data-magnetic="0.25" class="btn btn-primary btn-sm hidden sm:inline-flex">
                 Get in touch ${icon('arrow', 'arrow size-4')}
               </a>
               <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu"
@@ -62,11 +64,10 @@ class SiteHeader extends HTMLElement {
           </div>
         </div>
 
-        <div id="mobile-menu" hidden class="fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-bg lg:hidden">
+        <div id="mobile-menu" inert class="fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-bg lg:hidden">
           <div class="wrap flex min-h-full flex-col pt-4 pb-10">
             <ul class="border-t border-line">${mobileItems}</ul>
-            <a href="/#contact" class="btn btn-primary mt-8 h-14 w-full text-base">Get in touch ${icon('arrow', 'arrow size-4')}</a>
-            <div class="mt-auto grid grid-cols-2 gap-3 pt-10 text-sm text-muted">
+            <div class="mt-auto grid grid-cols-2 gap-3 pt-10 text-sm text-muted" data-menu-item style="--i:5">
               <a class="link" href="${LINKS.email}">${SITE.email}</a>
               <a class="link justify-self-end" href="${LINKS.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>
               <a class="link" href="${LINKS.github}" target="_blank" rel="noopener">GitHub</a>
@@ -79,6 +80,7 @@ class SiteHeader extends HTMLElement {
     this.#setupTheme();
     this.#setupMenu();
     this.#setupScrollState();
+    this.#setupIndicator();
     if (isHome()) this.#setupSectionSpy();
   }
 
@@ -86,32 +88,32 @@ class SiteHeader extends HTMLElement {
     const btn = this.querySelector('[data-theme-toggle]');
     const paint = () => {
       const dark = currentTheme() === 'dark';
-      btn.innerHTML = `${icon(dark ? 'sun' : 'moon', 'size-[1.1rem]')}<span class="sr-only">Switch to ${dark ? 'light' : 'dark'} theme</span>`;
+      btn.innerHTML = `${icon(dark ? 'sun' : 'moon', 'size-[1.1rem]')}<span class="sr-only">Switch to ${dark ? 'light' : 'dark'} theme (shortcut: T)</span>`;
     };
     paint();
-    btn.addEventListener('click', () => {
-      toggleTheme();
-      paint();
-    });
+    btn.addEventListener('click', () => toggleTheme(btn));
+    document.addEventListener('themechange', paint);
   }
 
   #setupMenu() {
     const btn = this.querySelector('[data-menu-toggle]');
     const menu = this.querySelector('#mobile-menu');
+    const isOpen = () => menu.hasAttribute('data-open');
     const setOpen = (open) => {
       btn.setAttribute('aria-expanded', String(open));
       btn.innerHTML = `<span class="sr-only">${open ? 'Close' : 'Open'} menu</span>${icon(open ? 'close' : 'menu', 'size-5')}`;
-      menu.hidden = !open;
+      menu.toggleAttribute('data-open', open);
+      menu.inert = !open;
       document.documentElement.style.overflow = open ? 'hidden' : '';
       if (open) this.setAttribute('data-scrolled', '');
       else if (window.scrollY < 8) this.removeAttribute('data-scrolled');
     };
-    btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+    btn.addEventListener('click', () => setOpen(!isOpen()));
     menu.addEventListener('click', (e) => {
       if (e.target.closest('a')) setOpen(false);
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !menu.hidden) {
+      if (e.key === 'Escape' && isOpen()) {
         setOpen(false);
         btn.focus();
       }
@@ -125,6 +127,32 @@ class SiteHeader extends HTMLElement {
     addEventListener('scroll', update, { passive: true });
   }
 
+  // A single underline that slides to the hovered or current nav link.
+  #setupIndicator() {
+    const list = this.querySelector('[data-nav-list]');
+    const bar = this.querySelector('[data-nav-indicator]');
+    if (!list || !bar) return;
+    const moveTo = (link) => {
+      if (!link) {
+        bar.style.opacity = '0';
+        return;
+      }
+      const l = link.getBoundingClientRect();
+      const p = list.getBoundingClientRect();
+      bar.style.left = `${l.left - p.left + 12}px`;
+      bar.style.width = `${l.width - 24}px`;
+      bar.style.opacity = '1';
+    };
+    const current = () => list.querySelector('.nav-link[aria-current="true"]');
+    list.querySelectorAll('.nav-link').forEach((a) => {
+      a.addEventListener('pointerenter', () => moveTo(a));
+      a.addEventListener('focus', () => moveTo(a));
+    });
+    list.addEventListener('pointerleave', () => moveTo(current()));
+    this.addEventListener('navchange', () => moveTo(current()));
+    addEventListener('resize', () => moveTo(current()));
+  }
+
   #setupSectionSpy() {
     const links = new Map(
       [...this.querySelectorAll('[data-nav]')].map((a) => [a.dataset.nav, a]),
@@ -136,6 +164,7 @@ class SiteHeader extends HTMLElement {
           if (!entry.isIntersecting) continue;
           links.forEach((a) => a.removeAttribute('aria-current'));
           links.get(entry.target.id)?.setAttribute('aria-current', 'true');
+          this.dispatchEvent(new Event('navchange'));
         }
       },
       { rootMargin: '-45% 0px -50% 0px' },

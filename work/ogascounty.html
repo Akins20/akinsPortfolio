@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">01 / 07 · E-commerce</p>
           <p class="status text-ok"><span class="status-dot live"></span>Live</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Ogascounty<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-ogascounty">Ogascounty<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A faith-inspired clothing brand selling hoodies, tees and gifts to customers around the world. I built the whole store, and it runs itself: orders are paid, printed and shipped without anyone lifting a finger.</p>
         <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://ogascounty.com" target="_blank" rel="noopener" class="btn btn-primary">Visit ogascounty.com <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="relative rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 sm:pb-16 lg:p-12 lg:pb-20">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="relative rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 sm:pb-16 lg:p-12 lg:pb-20" style="view-transition-name: shot-ogascounty">
         <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card">
                 <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
                   <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
@@ -106,11 +109,11 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>The brief</h2>
+<h2 data-split data-reveal>The brief</h2>
 <p>Ogascounty sells faith-inspired clothing: hoodies, sweatshirts, tees and gifts, printed on demand and shipped worldwide.
 The shop had to look good, be easy to buy from, and run without somebody babysitting every order.</p>
 
-<h2>What I built</h2>
+<h2 data-split data-reveal>What I built</h2>
 <p>I built the store from top to bottom. The catalogue syncs in from Printify, so new designs appear on the site without anyone
 copying product details across by hand. Checkout runs on Stripe. When a payment goes through, a webhook picks it up and sends
 the order straight to Printify to be printed and shipped. Nobody has to log in and push orders along.</p>
@@ -139,11 +142,11 @@ tracking, a wishlist and a newsletter. Shipping is included in every price, so t
           </div>
           <figcaption class="mt-5 text-center font-mono text-[0.72rem] text-subtle">The shop, on desktop and mobile</figcaption>
         </figure>
-<h2>Making it sell</h2>
+<h2 data-split data-reveal>Making it sell</h2>
 <p>A store nobody can find doesn’t make money. I worked through the SEO so products show up properly in search, made every page
 fast and comfortable on a phone, and kept the checkout short so people have fewer reasons to give up halfway.</p>
 
-<h2>Keeping it running</h2>
+<h2 data-split data-reveal>Keeping it running</h2>
 <p>Ogascounty is one of four live apps I moved from a hosted platform onto our own server, with automatic deploys on every push
 and scheduled database backups. The monthly hosting bill for those apps fell by 78%.</p>
 
@@ -153,18 +156,19 @@ and scheduled database backups. The monthly hosting bill for those apps fell by 
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/chomp" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/chomp" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Chomp</span>
         <span class="mt-2 text-sm text-muted">Games</span>
       </a>
-      <a href="/work/otesc-store" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/otesc-store" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">OTESC Store</span>
         <span class="mt-2 text-sm text-muted">Marketplace</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>

@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">06 / 07 · Mobile · Messaging</p>
           <p class="status text-accent"><span class="status-dot "></span>Play Store review</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Rooster<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-rooster">Rooster<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A messaging app for Android. I built both halves, the app in Kotlin and the Go server behind it, and it finds your friends without ever uploading your contacts.</p>
         
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12" style="view-transition-name: shot-rooster">
         <svg-include src="/assets/covers/rooster.svg" class="block" style="aspect-ratio: 560 / 360"
           label="The Rooster messenger app with chats and private contact matching"></svg-include>
       </div>
@@ -91,7 +94,7 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>What it does</h2>
+<h2 data-split data-reveal>What it does</h2>
 <ul>
   <li>One-to-one chats, plus channels for bigger groups.</li>
   <li>Photos and video messages right in the conversation.</li>
@@ -99,12 +102,12 @@
   <li>Everything around your account, from signing up to deleting it.</li>
 </ul>
 
-<h2>Finding friends without giving up your contacts</h2>
+<h2 data-split data-reveal>Finding friends without giving up your contacts</h2>
 <p>Most messaging apps upload your whole address book to work out who you know. Rooster doesn’t. Each number is scrambled into a
 fingerprint on your phone, and only those fingerprints are compared on the server. It can tell you who’s on Rooster without
 ever seeing your contacts.</p>
 
-<h2>Where it’s at</h2>
+<h2 data-split data-reveal>Where it’s at</h2>
 <p>The app and server are finished, and Rooster is waiting on Google Play review.</p>
 
         <h2>Tech</h2>
@@ -113,18 +116,19 @@ ever seeing your contacts.</p>
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/postal" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/postal" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Postal</span>
         <span class="mt-2 text-sm text-muted">SaaS · Social media</span>
       </a>
-      <a href="/work/chomp" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/chomp" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Chomp</span>
         <span class="mt-2 text-sm text-muted">Games</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>

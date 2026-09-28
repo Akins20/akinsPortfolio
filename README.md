@@ -32,12 +32,12 @@ src/css/main.css           All styling: theme colours, fonts, components (edit t
 assets/css/site.css        Built stylesheet (generated, don't edit)
 assets/js/config.js        Email, WhatsApp, links, CV path, form endpoint, nav, availability
 assets/js/components/      <site-header>, <site-footer>, <svg-include>
-assets/js/*.js             Theme, reveal animations, clock, contact form, maze, progress bar
+assets/js/*.js             Theme, motion (motion.js, reveal.js), clock, contact form, maze, shortcuts
 assets/shots/              Real screenshots of live projects (desktop + mobile)
 assets/covers/             Illustrated project covers (SVG, follow the theme)
-assets/img/                Portrait, avatar, favicons, share image (og.png)
+assets/img/                Portrait, logo files (logo.svg, logo-mark*.svg), icons, share image (og.png)
 site.config.json           Your live URL, used for link previews and the sitemap
-UX-LAWS.md                 How each of the 30 Laws of UX is applied
+UX-LAWS.md                 How the Laws of UX and UI principles are applied
 ```
 
 ## Common edits
@@ -57,6 +57,10 @@ contact section and WhatsApp links all read from it. Set `available: false` to h
 
 **Screenshots.** Put new images in `assets/shots/`: desktop at 1600×1000 (plus a 960-wide WebP) and
 mobile at 585×1266, in WebP with a JPEG fallback.
+
+**Motion.** Durations and easings are tokens at the top of `src/css/main.css` (`--dur-*`, `--ease-*`).
+Add `data-reveal` to fade something in, `data-reveal="clip"` to wipe it in, `data-split` to make a heading
+rise word by word. Everything turns off automatically for visitors who prefer reduced motion.
 
 **Colours and fonts.** The theme tokens are at the top of `src/css/main.css`, in a dark block and a light
 block. Change a token and both themes update everywhere.

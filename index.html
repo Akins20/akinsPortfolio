@@ -21,19 +21,22 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preload" href="/assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/img/portrait-640.webp" as="image" type="image/webp">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/img/portrait-480.webp 480w, /assets/img/portrait-640.webp 640w" imagesizes="(min-width: 1024px) 400px, 384px">
   <link rel="stylesheet" href="/assets/css/site.css">
 
   <!-- Apply the saved theme before first paint (no flash) -->
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -41,7 +44,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 
   <script type="application/ld+json">
   {
@@ -52,15 +55,18 @@
     "jobTitle": "Full-Stack & AI Engineer",
     "description": "Full-stack and AI engineer building online stores, marketplaces, news platforms, mobile apps, custom AI agents and AI-powered dashboards.",
     "email": "mailto:ogunbiye@gmail.com",
-    "image": "/assets/img/portrait-960.jpg",
+    "image": "/assets/img/portrait-640.jpg",
     "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "Federal University of Technology, Akure" },
       { "@type": "CollegeOrUniversity", "name": "University of the People" }
     ],
     "sameAs": ["https://github.com/Akins20", "https://www.linkedin.com/in/ogunbiyi-elijah"],
-    "knowsAbout": ["Full-stack development", "E-commerce", "Custom AI agents", "AI-powered dashboards", "Technical consulting", "Go", "TypeScript", "Next.js", "React Native", "PostgreSQL"]
+    "knowsAbout": ["Full-stack development", "E-commerce", "Shopify", "WooCommerce", "Custom AI agents", "AI-powered dashboards", "Workflow automation", "Chrome extensions", "Desktop apps", "Technical consulting", "Go", "TypeScript", "Next.js", "React Native", "PostgreSQL"]
   }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebSite", "name": "Elijah Ogunbiyi", "alternateName": "Elijah Ogunbiyi · Full-Stack & AI Engineer", "url": "/" }
   </script>
 </head>
 
@@ -74,7 +80,7 @@
          ================================================================ -->
     <section class="relative isolate overflow-x-clip pt-28 pb-16 sm:pt-36 lg:pb-24" aria-labelledby="hero-title">
       <div aria-hidden="true" class="bg-blueprint pointer-events-none absolute inset-0 -z-10"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute top-1/4 -right-[15%] -z-10 size-[42rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
+      <div aria-hidden="true" class="drift pointer-events-none absolute top-1/4 -right-[15%] -z-10 size-[42rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
 
       <div class="wrap grid items-end gap-12 lg:grid-cols-12 lg:gap-10">
         <div class="lg:col-span-8">
@@ -83,7 +89,7 @@
             <p class="status text-ok" data-availability><span class="status-dot live"></span>Available for freelance work</p>
           </div>
 
-          <h1 id="hero-title" class="mt-6 font-display text-[clamp(4.5rem,14vw,12rem)] leading-[0.84] tracking-[-0.035em]" data-reveal style="--reveal-delay:80ms">
+          <h1 id="hero-title" class="mt-6 font-display text-[clamp(4.5rem,14vw,12rem)] leading-[0.84] tracking-[-0.035em]" data-reveal data-split="chars" style="--reveal-delay:120ms">
             Elijah<br>Ogunbiyi<span class="text-accent">.</span>
           </h1>
 
@@ -96,19 +102,19 @@
           </p>
 
           <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal style="--reveal-delay:220ms">
-            <a href="#work" class="btn btn-primary">See my work <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-            <a data-link="cv" href="/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf" download class="btn btn-ghost"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l3 3 3-3M12 11v7"/></svg> Download CV</a>
+            <a href="#work" class="btn btn-primary" data-magnetic="0.3">See my work <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+            <a data-link="cv" href="/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf" download class="btn btn-ghost" data-magnetic="0.3"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l3 3 3-3M12 11v7"/></svg> Download CV</a>
             <span class="mx-1 hidden h-6 w-px bg-line-strong sm:block" aria-hidden="true"></span>
             <a data-link="github" href="https://github.com/Akins20" target="_blank" rel="noopener" class="grid size-12 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="sr-only">GitHub</span></a>
             <a data-link="linkedin" href="https://www.linkedin.com/in/ogunbiyi-elijah" target="_blank" rel="noopener" class="grid size-12 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:border-fg/40 hover:text-fg"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><span class="sr-only">LinkedIn</span></a>
           </div>
         </div>
 
-        <figure class="relative mx-auto w-full max-w-sm lg:col-span-4 lg:max-w-none" data-reveal style="--reveal-delay:200ms">
-          <div class="relative overflow-hidden rounded-[1.5rem] border border-line-strong bg-surface shadow-card">
+        <figure class="relative mx-auto w-full max-w-sm lg:col-span-4 lg:max-w-none">
+          <div class="relative overflow-hidden rounded-[1.5rem] border border-line-strong bg-surface shadow-card" data-reveal="clip" style="--reveal-delay:250ms">
             <picture>
-              <source type="image/webp" srcset="/assets/img/portrait-640.webp 640w, /assets/img/portrait-960.webp 960w" sizes="(min-width: 1024px) 400px, 384px">
-              <img src="/assets/img/portrait-960.jpg" alt="Elijah Ogunbiyi" width="960" height="1280" fetchpriority="high" class="aspect-[4/5] w-full object-cover object-[50%_20%]">
+              <source type="image/webp" srcset="/assets/img/portrait-480.webp 480w, /assets/img/portrait-640.webp 640w" sizes="(min-width: 1024px) 400px, 384px">
+              <img src="/assets/img/portrait-640.jpg" alt="Elijah Ogunbiyi" width="640" height="800" fetchpriority="high" data-parallax="0.06" class="aspect-[4/5] w-full object-cover">
             </picture>
             <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 to-transparent"></div>
             <figcaption class="absolute inset-x-4 bottom-4 flex items-center justify-between font-mono text-[0.72rem] text-white/85">
@@ -123,8 +129,8 @@
     <!-- What I build, as a slow ticker (decorative; the same niches are listed in About) -->
     <div class="marquee overflow-hidden border-y border-line py-5" aria-hidden="true">
       <div class="marquee-track flex w-max gap-10 font-display text-[1.75rem] leading-none whitespace-nowrap text-muted">
-        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Games</span><span class="text-accent">✦</span>
-        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Games</span><span class="text-accent">✦</span>
+        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Desktop apps</span><span class="text-accent">✦</span><span>Chrome extensions</span><span class="text-accent">✦</span>
+        <span>E-commerce stores</span><span class="text-accent">✦</span><span>Custom AI agents</span><span class="text-accent">✦</span><span>Marketplaces</span><span class="text-accent">✦</span><span>AI-powered dashboards</span><span class="text-accent">✦</span><span>News &amp; media</span><span class="text-accent">✦</span><span>SaaS tools</span><span class="text-accent">✦</span><span>Mobile apps</span><span class="text-accent">✦</span><span>Technical consulting</span><span class="text-accent">✦</span><span>Desktop apps</span><span class="text-accent">✦</span><span>Chrome extensions</span><span class="text-accent">✦</span>
       </div>
     </div>
 
@@ -134,7 +140,7 @@
     <section id="work" class="section-y" aria-labelledby="work-title">
       <div class="wrap">
         <div class="grid gap-6 border-b border-line pb-8 md:grid-cols-12 md:items-end" data-reveal>
-          <h2 id="work-title" class="font-display text-display md:col-span-7">Selected <em>work</em></h2>
+          <h2 id="work-title" class="font-display text-display md:col-span-7" data-split>Selected <em>work</em></h2>
           <p class="max-w-md leading-relaxed text-muted md:col-span-5 md:justify-self-end">
             Seven projects across e-commerce, media, AI and mobile. Open any of them for the full story:
             what the client needed, what I built and how it turned out.
@@ -144,8 +150,8 @@
         <div class="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-2 md:pb-32 lg:gap-x-14">
 
           <!-- 01 · Ogascounty -->
-          <article class="group relative" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-ogascounty">
               <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]">
                 <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
                   <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
@@ -162,7 +168,7 @@
               <span class="text-subtle">01 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/ogascounty" class="after:absolute after:inset-0">Ogascounty</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-ogascounty"><a href="/work/ogascounty" class="after:absolute after:inset-0">Ogascounty</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A faith-inspired clothing brand that ships worldwide. I built the whole store: products sync in from Printify, payments run through Stripe, and every paid order goes off to print on its own, so nobody has to push orders along.</p>
@@ -173,8 +179,8 @@
             </p>
           </article>
           <!-- 02 · OTESC Store -->
-          <article class="group relative md:translate-y-32" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative md:translate-y-32" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-otesc-store">
               <svg-include src="/assets/covers/otesc-store.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
                 label="A seller dashboard, a shopping app and a rider app with live delivery tracking"></svg-include>
             </div>
@@ -183,7 +189,7 @@
               <span class="text-subtle">02 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/otesc-store" class="after:absolute after:inset-0">OTESC Store</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-otesc-store"><a href="/work/otesc-store" class="after:absolute after:inset-0">OTESC Store</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A marketplace with its own apps for shoppers, sellers, delivery riders and admins. Seven apps, one backend. A customer can split one order across several addresses, and each parcel gets its own rider and live tracking, all from a single payment.</p>
@@ -194,8 +200,8 @@
             </p>
           </article>
           <!-- 03 · LettsTV -->
-          <article class="group relative" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-lettstv">
               <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]">
                 <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
                   <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
@@ -212,7 +218,7 @@
               <span class="text-subtle">03 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/lettstv" class="after:absolute after:inset-0">LettsTV</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-lettstv"><a href="/work/lettstv" class="after:absolute after:inset-0">LettsTV</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A Nigerian news platform covering politics, business, tech and sport. I’ve been its only engineer since the first line of code, and I built its AI editorial pipeline: stories are prepared automatically, and an editor approves every one before it goes live.</p>
@@ -223,8 +229,8 @@
             </p>
           </article>
           <!-- 04 · FREYA -->
-          <article class="group relative md:translate-y-32" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative md:translate-y-32" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-freya">
               <svg-include src="/assets/covers/freya.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
                 label="The FREYA assistant building a four-page website, checking every link and fixing a broken form"></svg-include>
             </div>
@@ -233,7 +239,7 @@
               <span class="text-subtle">04 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/freya" class="after:absolute after:inset-0">FREYA</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-freya"><a href="/work/freya" class="after:absolute after:inset-0">FREYA</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">My own AI assistant for the desktop. Ask her for a website and she writes it, tests every link, fixes what’s broken and opens it on your screen. She drives a real browser and real apps, and you can simply talk to her.</p>
@@ -244,8 +250,8 @@
             </p>
           </article>
           <!-- 05 · Postal -->
-          <article class="group relative" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-postal">
               <svg-include src="/assets/covers/postal.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
                 label="A weekly social media calendar with scheduled posts and a post composer"></svg-include>
             </div>
@@ -254,7 +260,7 @@
               <span class="text-subtle">05 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/postal" class="after:absolute after:inset-0">Postal</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-postal"><a href="/work/postal" class="after:absolute after:inset-0">Postal</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">A free alternative to Buffer. Write a post once, pick your channels and a time, and Postal publishes it for you. If a platform glitches halfway through, it tries again without ever posting twice.</p>
@@ -265,8 +271,8 @@
             </p>
           </article>
           <!-- 06 · Rooster -->
-          <article class="group relative md:translate-y-32" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative md:translate-y-32" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-rooster">
               <svg-include src="/assets/covers/rooster.svg" class="block transition-transform duration-700 ease-out-expo group-hover:scale-[1.025]" style="aspect-ratio: 560 / 360"
                 label="The Rooster messenger app with chats and private contact matching"></svg-include>
             </div>
@@ -275,7 +281,7 @@
               <span class="text-subtle">06 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/rooster" class="after:absolute after:inset-0">Rooster</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-rooster"><a href="/work/rooster" class="after:absolute after:inset-0">Rooster</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">An Android messenger with chats, channels and video messages. It finds your friends without uploading your contacts: numbers are scrambled on your phone first, so the server never sees your address book.</p>
@@ -286,8 +292,8 @@
             </p>
           </article>
           <!-- 07 · Chomp -->
-          <article class="group relative" data-reveal>
-            <div class="overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 transition-colors duration-300 group-hover:border-line-strong sm:p-7">
+          <article class="group relative" data-reveal data-vt data-cursor="View">
+            <div class="lift spotlight overflow-hidden rounded-[1.25rem] border border-line bg-surface p-5 group-hover:border-line-strong sm:p-7" data-reveal="clip" data-vt style="view-transition-name: shot-chomp">
               <div class="relative overflow-hidden rounded-xl" style="aspect-ratio: 560 / 360">
                 <canvas data-maze class="absolute inset-0 size-full" aria-hidden="true"></canvas>
                 <span class="chip absolute bottom-3 left-3 bg-surface!" data-maze-label>Level 1</span>
@@ -298,7 +304,7 @@
               <span class="text-subtle">07 / 07</span>
             </p>
             <div class="mt-3 flex items-start justify-between gap-6">
-              <h3 class="font-display text-[2.6rem] leading-none"><a href="/work/chomp" class="after:absolute after:inset-0">Chomp</a></h3>
+              <h3 class="font-display text-[2.6rem] leading-none" style="view-transition-name: title-chomp"><a href="/work/chomp" class="after:absolute after:inset-0">Chomp</a></h3>
               <span aria-hidden="true" class="grid size-12 shrink-0 place-items-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-bg"><svg class="arrow-ne size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <p class="mt-4 max-w-lg leading-relaxed text-muted text-pretty">An arcade maze game I wrote in C. Every level is generated fresh and checked so it can always be finished, and two friends can play together online without lag. The maze on this card is being built live.</p>
@@ -320,6 +326,125 @@
       </div>
     </section>
 
+
+    <!-- ================================================================
+         SERVICES
+         ================================================================ -->
+    <section id="services" class="section-y border-t border-line bg-surface/40" aria-labelledby="services-title">
+      <div class="wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
+        <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start" data-reveal>
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title" class="mt-5 font-display text-display text-balance" data-split>What I can build <em>for you</em>.</h2>
+          <p class="mt-6 max-w-sm leading-relaxed text-muted">
+            If it runs on the web, a phone or a desktop and needs a solid backend behind it, there’s a good chance I’ve built
+            something like it. Not sure where your idea fits? Start with a technical consultation.
+          </p>
+          <a href="#contact" class="btn btn-primary mt-8" data-magnetic="0.3">Book a consultation <svg class="arrow size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="lg:col-span-7 lg:col-start-6">
+          <div class="divide-y divide-line border-y border-line">
+            <div class="grid gap-5 py-9 sm:grid-cols-[11rem_1fr] sm:gap-8">
+              <div>
+                <p class="font-mono text-xs text-subtle" data-reveal>01</p>
+                <h3 class="mt-2 font-display text-[1.75rem] leading-[1.02]" data-reveal data-split>AI &amp; automation</h3>
+              </div>
+              <ul class="grid gap-x-8 gap-y-3 text-[0.95rem] leading-snug text-muted sm:grid-cols-2" data-reveal-stagger="45">
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Custom AI agents that handle multi-step work end to end</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Customer-support assistants for your website or app</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Chat with your documents and company knowledge</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>AI-powered dashboards you can question in plain English</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Workflow automation across email, spreadsheets, CRMs, browsers and desktop apps</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>AI content pipelines with a human editor in the loop</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Voice agents that listen and talk back</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Document and image AI: OCR, invoices, receipts, image recognition</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>AI added to the app you already have (OpenAI, Claude, Gemini)</span></li>
+              </ul>
+            </div>
+            <div class="grid gap-5 py-9 sm:grid-cols-[11rem_1fr] sm:gap-8">
+              <div>
+                <p class="font-mono text-xs text-subtle" data-reveal>02</p>
+                <h3 class="mt-2 font-display text-[1.75rem] leading-[1.02]" data-reveal data-split>E-commerce</h3>
+              </div>
+              <ul class="grid gap-x-8 gap-y-3 text-[0.95rem] leading-snug text-muted sm:grid-cols-2" data-reveal-stagger="45">
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Custom online stores</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Shopify stores and themes</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>WooCommerce and WordPress stores</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Multi-vendor marketplaces</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Print-on-demand and dropshipping</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Payments with Stripe, Paystack and Flutterwave</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Delivery, logistics and rider tracking</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Inventory and order management</span></li>
+              </ul>
+            </div>
+            <div class="grid gap-5 py-9 sm:grid-cols-[11rem_1fr] sm:gap-8">
+              <div>
+                <p class="font-mono text-xs text-subtle" data-reveal>03</p>
+                <h3 class="mt-2 font-display text-[1.75rem] leading-[1.02]" data-reveal data-split>Web platforms</h3>
+              </div>
+              <ul class="grid gap-x-8 gap-y-3 text-[0.95rem] leading-snug text-muted sm:grid-cols-2" data-reveal-stagger="45">
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Business websites and landing pages</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>SaaS products with subscriptions and teams</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Admin dashboards and internal tools</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>News, blog and media sites</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Booking and appointment systems</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>School and e-learning platforms</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Real-time chat and video calling</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Church, NGO and community platforms</span></li>
+              </ul>
+            </div>
+            <div class="grid gap-5 py-9 sm:grid-cols-[11rem_1fr] sm:gap-8">
+              <div>
+                <p class="font-mono text-xs text-subtle" data-reveal>04</p>
+                <h3 class="mt-2 font-display text-[1.75rem] leading-[1.02]" data-reveal data-split>Apps &amp; extensions</h3>
+              </div>
+              <ul class="grid gap-x-8 gap-y-3 text-[0.95rem] leading-snug text-muted sm:grid-cols-2" data-reveal-stagger="45">
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>iOS and Android apps with React Native and Expo</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Native Android apps in Kotlin</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Desktop apps</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Chrome extensions</span></li>
+              </ul>
+            </div>
+            <div class="grid gap-5 py-9 sm:grid-cols-[11rem_1fr] sm:gap-8">
+              <div>
+                <p class="font-mono text-xs text-subtle" data-reveal>05</p>
+                <h3 class="mt-2 font-display text-[1.75rem] leading-[1.02]" data-reveal data-split>Backend &amp; infrastructure</h3>
+              </div>
+              <ul class="grid gap-x-8 gap-y-3 text-[0.95rem] leading-snug text-muted sm:grid-cols-2" data-reveal-stagger="45">
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>APIs, REST and GraphQL</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Real-time features: live updates and tracking</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Sign-in, accounts and user roles</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Database design and migrations</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Deployment and DevOps: Docker, CI/CD, VPS, AWS, GCP</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Server moves that cut your hosting bill</span></li>
+                <li class="flex gap-3" data-reveal><span aria-hidden="true" class="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-accent"></span><span>Speeding up slow apps and scaling them</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="mt-14 eyebrow" data-reveal>Ways I can help</h3>
+          <ul class="mt-5 grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-line sm:grid-cols-2" data-reveal>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Technical consultations</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">A paid call to plan a build, choose a stack or pressure-test an AI idea before you spend money on it.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">MVPs for startups</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">From idea to a working first version you can put in front of real users and investors.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Taking over existing apps</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Picking up an app someone else started, steadying it, then making it better.</p>
+            </li>
+            <li class="bg-bg p-6">
+              <p class="font-display text-[1.6rem] leading-none">Monthly maintenance</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Updates, fixes and new features on a retainer, so your product keeps moving.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ================================================================
          ABOUT
          ================================================================ -->
@@ -327,7 +452,7 @@
       <div class="wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start" data-reveal>
           <p class="eyebrow">About</p>
-          <h2 id="about-title" class="mt-5 font-display text-display text-balance">Hi, I’m <em>Elijah</em>.</h2>
+          <h2 id="about-title" class="mt-5 font-display text-display text-balance" data-split>Hi, I’m <em>Elijah</em>.</h2>
         </div>
 
         <div class="lg:col-span-7 lg:col-start-6" data-reveal>
@@ -348,34 +473,6 @@
               or an old system that needs rescuing, I’d love to hear about it.
             </p>
           </div>
-
-          <h3 class="mt-14 eyebrow">What I build</h3>
-          <ul class="mt-5 grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-line sm:grid-cols-2">
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">E-commerce &amp; marketplaces</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Stores and multi-vendor marketplaces with payments, delivery and order tracking.</p>
-            </li>
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">Custom AI agents</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Agents built around your workflow that read, decide and act inside the tools you already use.</p>
-            </li>
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">AI-powered dashboards</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Dashboards that explain your numbers, flag what changed and answer questions about your data.</p>
-            </li>
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">News &amp; content platforms</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">Publishing sites that load fast, rank on Google, and can run an AI newsroom with editors in charge.</p>
-            </li>
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">Web &amp; mobile apps</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">SaaS tools, internal systems and iOS or Android apps, with the backend behind them.</p>
-            </li>
-            <li class="bg-bg p-6">
-              <p class="font-display text-[1.6rem] leading-none">Technical consulting</p>
-              <p class="mt-2 text-[0.95rem] leading-relaxed text-muted">A second pair of eyes on your architecture, stack, AI plans or a codebase that’s got messy.</p>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -387,33 +484,33 @@
       <div class="wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start" data-reveal>
           <p class="eyebrow">Experience</p>
-          <h2 id="experience-title" class="mt-5 font-display text-display text-balance">Where I’ve <em>worked</em>.</h2>
+          <h2 id="experience-title" class="mt-5 font-display text-display text-balance" data-split>Where I’ve <em>worked</em>.</h2>
           <a data-link="cv" href="/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf" download class="btn btn-ghost mt-8"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l3 3 3-3M12 11v7"/></svg> Full CV (PDF)</a>
         </div>
 
         <div class="lg:col-span-7 lg:col-start-6">
           <!-- Timeline: one connecting line ties the roles together -->
-          <ol class="relative ml-1.5 border-l border-line-strong" data-reveal-stagger="80">
+          <ol class="timeline relative ml-1.5 border-l border-line-strong" data-reveal-stagger="80">
             <li class="relative pb-12 pl-8" data-reveal>
-              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-accent bg-bg"></span>
+              <span aria-hidden="true" class="timeline-dot absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
               <p class="font-mono text-xs text-subtle">Jul 2025 – Present · Lagos</p>
               <h3 class="mt-2 text-xl font-medium">AI Engineer <span class="text-muted">· Lustrew Dynamics</span></h3>
               <p class="mt-3 leading-relaxed text-muted">I build AI agents and the systems around them. I joined as a full-stack engineer and moved onto the AI team after six months.</p>
             </li>
             <li class="relative pb-12 pl-8" data-reveal>
-              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <span aria-hidden="true" class="timeline-dot absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
               <p class="font-mono text-xs text-subtle">2023 – Present · Remote</p>
               <h3 class="mt-2 text-xl font-medium">Full-Stack Engineer <span class="text-muted">· OTESC</span></h3>
               <p class="mt-3 leading-relaxed text-muted">I build and run OTESC’s products, including Ogascounty, LettsTV and the OTESC Store marketplace. I moved our apps off an old stack onto FastAPI and Next.js, set up automatic releases, and cut the hosting bill by 78% by moving four live apps onto our own server.</p>
             </li>
             <li class="relative pb-12 pl-8" data-reveal>
-              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <span aria-hidden="true" class="timeline-dot absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
               <p class="font-mono text-xs text-subtle">2025 · 6-month contract · Remote</p>
               <h3 class="mt-2 text-xl font-medium">Backend Engineer <span class="text-muted">· Food Surplus Limited</span></h3>
               <p class="mt-3 leading-relaxed text-muted">I built their inventory system for food distribution. Stock updates in real time across five distribution centres, stays correct when two people change the same item at once, and each team only sees what it should.</p>
             </li>
             <li class="relative pl-8" data-reveal>
-              <span aria-hidden="true" class="absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
+              <span aria-hidden="true" class="timeline-dot absolute top-1.5 -left-[7px] size-3 rounded-full border-2 border-line-strong bg-bg"></span>
               <p class="font-mono text-xs text-subtle">2022 – 2023 · Lagos</p>
               <h3 class="mt-2 text-xl font-medium">Mobile App Developer, Intern <span class="text-muted">· Bincom Dev Center</span></h3>
               <p class="mt-3 leading-relaxed text-muted">Built React Native features for iOS and Android, made slow screens faster, and chased down the crashes that only ever happen on one platform.</p>
@@ -468,14 +565,14 @@
          CONTACT
          ================================================================ -->
     <section id="contact" class="section-y relative isolate overflow-x-clip border-t border-line" aria-labelledby="contact-title">
-      <div aria-hidden="true" class="pointer-events-none absolute top-1/3 -left-60 -z-10 size-[40rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
+      <div aria-hidden="true" class="drift pointer-events-none absolute top-1/3 -left-60 -z-10 size-[40rem] rounded-full bg-[var(--glow)] blur-[150px]"></div>
       <div class="wrap">
-        <div data-reveal>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title" class="mt-5 font-display text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.9] tracking-[-0.025em]">
+        <div>
+          <p class="eyebrow" data-reveal>Contact</p>
+          <h2 id="contact-title" class="mt-5 font-display text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.9] tracking-[-0.025em]" data-split data-reveal>
             Let’s work <em>together</em>.
           </h2>
-          <p class="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal>
             Tell me what you’re building and where you’re stuck, or book a technical consultation. I read every message myself, and if WhatsApp is easier for you, that works too.
           </p>
         </div>
@@ -552,7 +649,7 @@
             </form>
 
             <div data-form-success hidden tabindex="-1" class="flex min-h-[22rem] flex-col items-start justify-center outline-none">
-              <span class="grid size-14 place-items-center rounded-full bg-ok/15 text-2xl text-ok">✓</span>
+              <span class="tick grid size-14 place-items-center rounded-full bg-ok/15 text-ok"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
               <h3 class="mt-6 font-display text-title">Got it. <em>Thank you!</em></h3>
               <p class="mt-3 max-w-md leading-relaxed text-muted">Your message is on its way to me. I’ll reply to <span data-success-email class="text-fg"></span> soon. If it’s urgent, WhatsApp is the quickest way to reach me.</p>
               <div class="mt-8 flex flex-wrap gap-3">

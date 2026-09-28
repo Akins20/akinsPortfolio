@@ -20,6 +20,7 @@ const PATTERNS = [
   /(<meta property="og:image" content=")(?:https?:\/\/[^/"]+)?(\/[^"]*")/g,
   /(<meta name="twitter:image" content=")(?:https?:\/\/[^/"]+)?(\/[^"]*")/g,
   /("image": ")(?:https?:\/\/[^/"]+)?(\/assets\/[^"]*")/g,
+  /("url": ")(?:https?:\/\/[^/"]+)?(\/[^"]*")/g,
 ];
 
 for (const page of pages) {

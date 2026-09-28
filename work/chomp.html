@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">07 / 07 · Games</p>
           <p class="status text-accent"><span class="status-dot "></span>Play Store review</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">Chomp<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-chomp">Chomp<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">An arcade maze game in the spirit of the classics, written in C. Every level is brand new, every level is guaranteed to be winnable, and a friend can join you online.</p>
         
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12" style="view-transition-name: shot-chomp">
         <div class="relative overflow-hidden rounded-xl" style="aspect-ratio: 560 / 360">
           <canvas data-maze class="absolute inset-0 size-full" aria-hidden="true"></canvas>
           <span class="chip absolute bottom-4 left-4 bg-surface!" data-maze-label>Level 1</span>
@@ -93,16 +96,16 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>A new maze every time</h2>
+<h2 data-split data-reveal>A new maze every time</h2>
 <p>Every level is generated on the spot, so no two games are the same. Before you ever see a maze, the game floods it from the start
 to prove every corner can be reached. No trapped pellets and no levels you can’t finish. The maze at the top of this page is
 doing exactly that, live in your browser.</p>
 
-<h2>Enemies that keep you guessing</h2>
+<h2 data-split data-reveal>Enemies that keep you guessing</h2>
 <p>There are four kinds of enemy, each with its own way of hunting you. They switch between spreading out and closing in, in waves,
 so the pressure builds, eases off, then builds again.</p>
 
-<h2>Co-op without lag</h2>
+<h2 data-split data-reveal>Co-op without lag</h2>
 <p>Two players can team up online through a small Go server. One phone runs the game while the other predicts its own movement
 and quietly corrects itself, so neither player feels any delay. If someone’s connection drops, they have ninety seconds to come
 back and take their seat.</p>
@@ -113,18 +116,19 @@ back and take their seat.</p>
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/rooster" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/rooster" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Rooster</span>
         <span class="mt-2 text-sm text-muted">Mobile · Messaging</span>
       </a>
-      <a href="/work/ogascounty" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/ogascounty" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Ogascounty</span>
         <span class="mt-2 text-sm text-muted">E-commerce</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>

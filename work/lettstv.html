@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">03 / 07 · News &amp; media</p>
           <p class="status text-ok"><span class="status-dot live"></span>Live</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">LettsTV<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-lettstv">LettsTV<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A Nigerian news platform covering politics, business, tech and sport. I’ve been its only engineer since the first commit, and I built the AI editorial pipeline that helps the newsroom keep up, with an editor signing off on every story.</p>
         <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://lettstv.com" target="_blank" rel="noopener" class="btn btn-primary">Visit lettstv.com <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="relative rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 sm:pb-16 lg:p-12 lg:pb-20">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="relative rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 sm:pb-16 lg:p-12 lg:pb-20" style="view-transition-name: shot-lettstv">
         <div class="overflow-hidden rounded-[0.9rem] border border-line-strong bg-bg shadow-card">
                 <div class="flex h-8 items-center gap-1.5 border-b border-line bg-surface-2 px-3.5" aria-hidden="true">
                   <i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i><i class="size-2 rounded-full bg-line-strong"></i>
@@ -106,11 +109,11 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>The brief</h2>
+<h2 data-split data-reveal>The brief</h2>
 <p>The editors needed a site that could publish quickly, look credible, and get their stories in front of people on Google and
 social media. They also needed it to keep working while the newsroom grew.</p>
 
-<h2>What I built</h2>
+<h2 data-split data-reveal>What I built</h2>
 <p>On the reader side there’s the home page, article pages, and topic pages that follow a story over time. Readers can sign in
 with an account they already have, and when a story comes with a report or a document, they can read the PDF right inside the
 article instead of being sent somewhere else.</p>
@@ -138,18 +141,18 @@ article instead of being sent somewhere else.</p>
           </div>
           <figcaption class="mt-5 text-center font-mono text-[0.72rem] text-subtle">Every section gets its own look</figcaption>
         </figure>
-<h2>An AI newsroom, with editors in charge</h2>
+<h2 data-split data-reveal>An AI newsroom, with editors in charge</h2>
 <p>News moves fast, and a small team can’t write everything by hand. So I built LettsTV an AI editorial pipeline. It does the
 repetitive work of preparing stories automatically, then hands each one to an editor in the admin. Nothing goes live until
 a person has read it and approved it.</p>
 <p>The team gets the speed of automation and keeps full editorial control. That’s the balance I aim for whenever I put AI into
 a real business: it takes the busywork, and people keep the final say.</p>
 
-<h2>Getting found</h2>
+<h2 data-split data-reveal>Getting found</h2>
 <p>For a news site, being found is everything. Every article goes out with the search and link-preview information it needs, so
 stories show up properly on Google and look right when someone shares them on WhatsApp, X or Facebook.</p>
 
-<h2>Running it</h2>
+<h2 data-split data-reveal>Running it</h2>
 <p>Being the only engineer on a live site means building new features while people are reading, fixing problems fast and keeping
 pages quick. I also moved LettsTV onto our own server with automatic deploys, as part of a move that cut hosting costs by 78%.</p>
 
@@ -159,18 +162,19 @@ pages quick. I also moved LettsTV onto our own server with automatic deploys, as
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/otesc-store" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/otesc-store" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">OTESC Store</span>
         <span class="mt-2 text-sm text-muted">Marketplace</span>
       </a>
-      <a href="/work/freya" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/freya" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">FREYA</span>
         <span class="mt-2 text-sm text-muted">AI assistant</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>

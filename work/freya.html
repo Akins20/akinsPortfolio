@@ -21,8 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/assets/img/og.png">
 
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/img/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -32,6 +33,8 @@
 
   <script>
     document.documentElement.classList.add('js');
+    // Arriving through a page transition? Shared elements must show at once.
+    addEventListener('pagereveal', (e) => { if (e.viewTransition) document.documentElement.classList.add('vt'); });
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.dataset.theme = 'light';
@@ -39,7 +42,7 @@
       }
     } catch (e) {}
   </script>
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/main.js" blocking="render"></script>
 </head>
 
 <body id="top">
@@ -57,7 +60,7 @@
           <p class="eyebrow">04 / 07 · AI assistant</p>
           <p class="status text-ok"><span class="status-dot "></span>Open source</p>
         </div>
-        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal style="--reveal-delay:60ms">FREYA<span class="text-accent">.</span></h1>
+        <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-freya">FREYA<span class="text-accent">.</span></h1>
         <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">My own AI assistant, and the reason I trust AI with real work. Freya builds things, checks them herself, fixes what’s broken and only then tells you she’s done.</p>
         <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://github.com/Akins20/FREYA" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 
@@ -82,8 +85,8 @@
       </div>
     </header>
 
-    <figure class="wrap mt-14 sm:mt-20" data-reveal style="--reveal-delay:200ms">
-      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12">
+    <figure class="wrap mt-14 sm:mt-20" data-reveal data-vt style="--reveal-delay:200ms">
+      <div class="rounded-[1.5rem] border border-line bg-surface p-4 shadow-card sm:p-8 lg:p-12" style="view-transition-name: shot-freya">
         <svg-include src="/assets/covers/freya.svg" class="block" style="aspect-ratio: 560 / 360"
           label="The FREYA assistant building a four-page website, checking every link and fixing a broken form"></svg-include>
       </div>
@@ -91,16 +94,16 @@
 
     <div class="wrap mt-20 sm:mt-28">
       <div class="prose-case mx-auto">
-<h2>What it is</h2>
+<h2 data-split data-reveal>What it is</h2>
 <p>Freya runs on your desktop, in her own window or a terminal, and you can type to her or just talk. I wrote her in Go without a
 single outside library, so she’s one small program that builds in seconds. The thinking is done by Gemini or Claude.</p>
 
-<h2>The problem she solves</h2>
+<h2 data-split data-reveal>The problem she solves</h2>
 <p>Most AI tools will tell you a job is finished when it isn’t. Ask for a website and you get pages with broken links and a contact
 form that goes nowhere. I kept running into this, so I built Freya to check her own work.</p>
 <blockquote>Telling her to be careful made her a little better. Having her count the broken links as she wrote them took the number to zero, and it stayed there.</blockquote>
 
-<h2>What she can do</h2>
+<h2 data-split data-reveal>What she can do</h2>
 <ul>
   <li>Drive a real Chrome browser: click, type, upload files, switch tabs and read pages that keep loading as you scroll.</li>
   <li>Use desktop apps by reading their buttons, fields and menus, the same way a screen reader does.</li>
@@ -109,11 +112,11 @@ form that goes nowhere. I kept running into this, so I built Freya to check her 
   <li>Around 150 tools in all, plus voice input and spoken replies.</li>
 </ul>
 
-<h2>Careful with your stuff</h2>
+<h2 data-split data-reveal>Careful with your stuff</h2>
 <p>Anything that can’t be undone asks you first, in her window, with a preview of exactly what will change. For the really serious
 actions a quick “yes” isn’t enough. You have to type the word out.</p>
 
-<h2>Lean on purpose</h2>
+<h2 data-split data-reveal>Lean on purpose</h2>
 <p>About 52,000 lines of Go and 21,000 lines of tests, built on a 2014 laptop with no graphics card. If she runs well there, she’ll
 run well anywhere.</p>
 
@@ -123,18 +126,19 @@ run well anywhere.</p>
     </div>
     </article>
 
-    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2">
-      <a href="/work/lettstv" class="group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+    <nav aria-label="More projects" class="wrap mt-28 grid gap-4 sm:grid-cols-2" data-project-nav>
+      <a href="/work/lettstv" data-prev class="lift group flex flex-col rounded-[1.25rem] border border-line p-6 transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">LettsTV</span>
         <span class="mt-2 text-sm text-muted">News &amp; media</span>
       </a>
-      <a href="/work/postal" class="group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/postal" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Postal</span>
         <span class="mt-2 text-sm text-muted">SaaS · Social media</span>
       </a>
     </nav>
+    <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>
   </main>
 
   <site-footer cta></site-footer>
