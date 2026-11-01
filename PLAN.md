@@ -74,7 +74,7 @@ Legend: `[ ]` todo · `[x]` done
 - [x] `scripts/seo.mjs`: absolute URLs + `sitemap.xml` + `robots.txt` from `site.config.json`
 - [x] Lazy images, WebP, preloaded fonts, reserved aspect ratios (no layout shift)
 - [x] Accessibility pass: skip link, landmarks, focus rings, alt text, 40px+ touch targets, one h1 per page
-- [ ] Set the real domain in `site.config.json` once deployed
+- [x] Set the real domain in `site.config.json` (https://akins-portfolio-dun.vercel.app)
 
 ## Phase 5b — Laws of UX
 - [x] All 30 laws applied and documented in `UX-LAWS.md`
@@ -98,8 +98,8 @@ Legend: `[ ]` todo · `[x]` done
 - [x] `vercel.json` (clean URLs, caching, security headers), `.vercelignore`
 - [x] README
 - [ ] First real form submission (Elijah, to confirm the Formspree endpoint is live)
-- [ ] Deploy to Vercel — **only on Elijah's go-ahead**
-- [ ] Commit & push — **only on Elijah's go-ahead**
+- [x] Deploy to Vercel (auto-deploys on every push to main)
+- [x] Commit & push
 
 ## Phase 8 — Developer-portfolio redesign (round 3)
 
@@ -172,3 +172,5 @@ greys (#161616), square corners, 1px rules, blue links (#78a9ff), green only for
   drawn mockups removed. Step 3 (captures, notes) waits on Elijah.
 - 2026-11-01 — Added Bold Petals (Next.js, Firebase, Paystack; facts from the live site). FREYA promoted to a featured
   project with screenshots of sites she built; her ADA dashboard output and contact pages (his name/email) left out.
+- 2026-11-01 — Live at https://akins-portfolio-dun.vercel.app. Absolute share/canonical URLs, sitemap, and a share
+  image per featured case study (assets/img/og/).
