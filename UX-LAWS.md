@@ -59,7 +59,7 @@ without jumping back to the start.
 
 ### 9. Goal-Gradient Effect
 *People speed up as they get closer to a goal.*
-Project pages have a reading-progress bar across the top. Cards are numbered "03 / 07" so visitors can see
+Project pages have a reading-progress bar across the top. Cards are numbered "03 / 06" so visitors can see
 how far through the work they are. The form's three fields make it feel almost done before it's started.
 
 ### 10. Hick's Law
@@ -86,11 +86,11 @@ have generous space between them. Space inside a section is always smaller than 
 ### 14. Law of Prägnanz
 *People read shapes in their simplest form.*
 Simple shapes and a restrained palette throughout: a round "E." monogram, plain rectangles and circles in
-the illustrated covers, and a maze drawn with nothing but lines and one accent colour.
+the illustrated covers, and a 404 maze drawn with nothing but lines and one accent colour.
 
 ### 15. Law of Similarity
 *Things that look alike are seen as alike.*
-All seven project cards share the same layout. Every tag uses the same chip style. Status colours mean
+All six project cards share the same layout. Every tag uses the same chip style. Status colours mean
 the same thing everywhere: green for live or open source, amber for in progress. Every text link is
 underlined the same way.
 
@@ -107,7 +107,7 @@ Project pages follow the usual case-study shape: what it is, the brief, what I b
 
 ### 18. Miller's Law
 *People hold roughly 7 (±2) things in working memory.*
-Seven projects on the homepage. Five navigation targets. Services in five groups, none longer than nine. Four skill groups of no more than six chips each.
+Six projects on the homepage. Five navigation targets. Services in five groups, none longer than nine. Four skill groups of no more than six chips each.
 Four key facts at the top of each project page.
 
 ### 19. Occam's Razor
@@ -118,7 +118,7 @@ removed. What's left is the person, the work and a way to get in touch, built wi
 ### 20. Paradox of the Active User
 *People don't read instructions; they start using things straight away.*
 Nothing needs explaining. Every card carries an arrow that invites a click, buttons look like buttons, and
-form errors appear in plain words right under the field that needs fixing. The Chomp maze plays itself.
+form errors appear in plain words right under the field that needs fixing.
 
 ### 21. Pareto Principle
 *Roughly 80% of the value comes from 20% of the things.*
@@ -133,7 +133,7 @@ WhatsApp opens with a message already written, and the email address copies with
 ### 23. Peak-End Rule
 *People judge an experience by its best moment and its ending.*
 The peaks are the hero (your name rising in letter by letter as the photo wipes in), the real product
-screenshots, the card that morphs into its project page, and the live maze. The ending is a
+screenshots, and the card that morphs into its project page. The ending is a
 big, warm "Let's work together", then a friendly "Got it. Thank you!" after sending, with WhatsApp offered if
 it's urgent. Even the 404 page ends on a smile.
 
@@ -151,7 +151,7 @@ There are no banner-shaped boxes, pop-ups or flashing elements for visitors to l
 ### 26. Serial Position Effect
 *People remember the first and last items best.*
 The page opens with my name and ends with the contact section. The work starts with the strongest live
-project (Ogascounty) and ends on the most memorable one (Chomp's live maze). The header starts with
+project (Ogascounty) and ends on another live one (Rooster, on Google Play). The header starts with
 "Work" and ends with "Get in touch".
 
 ### 27. Tesler's Law
@@ -173,8 +173,8 @@ About and Experience headings stay in view while you read.
 
 ### 30. Zeigarnik Effect
 *People remember unfinished tasks and want to complete them.*
-The reading-progress bar shows a story that isn't finished yet. "03 / 07" tells you there's more to see, and
-"See how I built it →" on every card promises the rest of the story. The maze keeps generating new levels.
+The reading-progress bar shows a story that isn't finished yet. "03 / 06" tells you there's more to see, and
+"See how I built it →" on every card promises the rest of the story.
 
 ---
 

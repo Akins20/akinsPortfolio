@@ -1,5 +1,5 @@
-// Chomp card: generates a maze, floods it to prove every cell is reachable
-// (the same check the game runs on each level), then a chomper follows the
+// 404 page: generates a maze, floods it to prove every cell is reachable
+// (so there is always a way out), then a chomper follows the
 // shortest route to the exit. New level every loop. Colours follow the theme.
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;

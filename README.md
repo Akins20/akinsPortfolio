@@ -53,7 +53,7 @@ contact section and WhatsApp links all read from it. Set `available: false` to h
 **Add a project.**
 1. Copy an existing `work/*.html` page and change the text, facts and links.
 2. Add a card for it in the `#work` section of `index.html` (copy an `<article>` block).
-3. Update the "01 / 07" counters and the previous/next links on the neighbouring pages.
+3. Update the "01 / 06" counters and the previous/next links on the neighbouring pages.
 
 **Screenshots.** Put new images in `assets/shots/`: desktop at 1600×1000 (plus a 960-wide WebP) and
 mobile at 585×1266, in WebP with a JPEG fallback.

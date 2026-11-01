@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Rooster · Elijah Ogunbiyi</title>
-  <meta name="description" content="An Android messenger with chats, channels, video messages and private contact discovery.">
+  <meta name="description" content="A messaging and calling app for Android, live on Google Play, that finds your friends without uploading your contacts.">
   <meta name="author" content="Elijah Ogunbiyi">
   <meta name="theme-color" content="#0d0d0c">
 
@@ -13,7 +13,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Elijah Ogunbiyi">
   <meta property="og:title" content="Rooster · Elijah Ogunbiyi">
-  <meta property="og:description" content="An Android messenger with chats, channels, video messages and private contact discovery.">
+  <meta property="og:description" content="A messaging and calling app for Android, live on Google Play, that finds your friends without uploading your contacts.">
   <meta property="og:url" content="/work/rooster">
   <meta property="og:image" content="/assets/img/og.png">
   <meta property="og:image:width" content="1200">
@@ -57,29 +57,29 @@
         <a href="/#work" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All work</a>
 
         <div class="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2" data-reveal>
-          <p class="eyebrow">06 / 07 · Mobile · Messaging</p>
-          <p class="status text-accent"><span class="status-dot "></span>Play Store review</p>
+          <p class="eyebrow">06 / 06 · Mobile · Messaging</p>
+          <p class="status text-ok"><span class="status-dot live"></span>Live</p>
         </div>
         <h1 class="mt-5 font-display text-[clamp(3.75rem,12vw,10rem)] leading-[0.88] tracking-[-0.03em]" data-reveal data-vt style="--reveal-delay:60ms; view-transition-name: title-rooster">Rooster<span class="text-accent">.</span></h1>
-        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A messaging app for Android. I built both halves, the app in Kotlin and the Go server behind it, and it finds your friends without ever uploading your contacts.</p>
-        
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-muted text-pretty sm:text-2xl" data-reveal style="--reveal-delay:120ms">A messaging and calling app for Android, live on Google Play. I built both halves, the app in Kotlin and the Go server behind it, and it finds your friends without ever uploading your contacts.</p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay:160ms"><a href="https://play.google.com/store/apps/details?id=com.otesc.rooster" target="_blank" rel="noopener" class="btn btn-primary">Get it on Google Play <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 
         <dl class="mt-14 grid grid-cols-2 border-y border-line md:grid-cols-4" data-reveal style="--reveal-delay:180ms">
           <div class="border-line py-5 pr-4  ">
+            <dt class="eyebrow">Client</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">OTESC</dd>
+          </div>
+          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
             <dt class="eyebrow">Platform</dt>
             <dd class="mt-2 text-[0.95rem] text-fg">Android</dd>
           </div>
-          <div class="border-line py-5 pl-5 border-l  md:border-l md:pl-6">
-            <dt class="eyebrow">App</dt>
-            <dd class="mt-2 text-[0.95rem] text-fg">Kotlin</dd>
-          </div>
           <div class="border-line py-5 pr-4 border-t md:border-t-0 md:border-l md:pl-6">
-            <dt class="eyebrow">Server</dt>
-            <dd class="mt-2 text-[0.95rem] text-fg">Go</dd>
+            <dt class="eyebrow">Stack</dt>
+            <dd class="mt-2 text-[0.95rem] text-fg">Kotlin · Go</dd>
           </div>
           <div class="border-line py-5 pl-5 border-l border-t md:border-t-0 md:border-l md:pl-6">
             <dt class="eyebrow">Status</dt>
-            <dd class="mt-2 text-[0.95rem] text-accent">Play Store review</dd>
+            <dd class="mt-2 text-[0.95rem] text-ok">Live on Google Play</dd>
           </div>
         </dl>
       </div>
@@ -96,10 +96,11 @@
       <div class="prose-case mx-auto">
 <h2 data-split data-reveal>What it does</h2>
 <ul>
-  <li>One-to-one chats, plus channels for bigger groups.</li>
-  <li>Photos and video messages right in the conversation.</li>
-  <li>Accessibility and data-saving settings that genuinely change how the app behaves.</li>
-  <li>Everything around your account, from signing up to deleting it.</li>
+  <li>Chats and groups with text, photos, video, voice notes and files. Reply, react, edit, forward and pin.</li>
+  <li>Voice and video calls, one to one or in a group, with call waiting so a second call never cuts off the first.</li>
+  <li>Workspaces with teams, channels and shared files for bigger communities.</li>
+  <li>Built-in tasks and reminders, an assistant, a social feed, a private cloud drive and an in-app browser.</li>
+  <li>Personal chats and calls are end-to-end encrypted, and there are no ads.</li>
 </ul>
 
 <h2 data-split data-reveal>Finding friends without giving up your contacts</h2>
@@ -107,8 +108,9 @@
 fingerprint on your phone, and only those fingerprints are compared on the server. It can tell you who’s on Rooster without
 ever seeing your contacts.</p>
 
-<h2 data-split data-reveal>Where it’s at</h2>
-<p>The app and server are finished, and Rooster is waiting on Google Play review.</p>
+<h2 data-split data-reveal>Live and growing</h2>
+<p>Rooster is out on Google Play and keeps getting regular updates. The latest one turned workspaces into full organisations,
+with teams, shared files, an org chart and one search across all of it.</p>
 
         <h2>Tech</h2>
         <div class="flex flex-wrap gap-1.5"><span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">Go</span></div>
@@ -122,10 +124,10 @@ ever seeing your contacts.</p>
         <span class="mt-4 font-display text-[2.2rem] leading-none">Postal</span>
         <span class="mt-2 text-sm text-muted">SaaS · Social media</span>
       </a>
-      <a href="/work/chomp" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
+      <a href="/work/ogascounty" data-next class="lift group flex flex-col items-end rounded-[1.25rem] border border-line p-6 text-right transition-colors hover:border-line-strong hover:bg-surface sm:p-8">
         <span class="inline-flex items-center gap-2 font-mono text-xs text-subtle">Next project <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="mt-4 font-display text-[2.2rem] leading-none">Chomp</span>
-        <span class="mt-2 text-sm text-muted">Games</span>
+        <span class="mt-4 font-display text-[2.2rem] leading-none">Ogascounty</span>
+        <span class="mt-2 text-sm text-muted">E-commerce</span>
       </a>
     </nav>
     <p class="wrap mt-4 hidden text-center font-mono text-[0.7rem] text-subtle [@media(hover:hover)]:block">Tip: use <kbd class="rounded border border-line px-1">←</kbd> and <kbd class="rounded border border-line px-1">→</kbd> to move between projects</p>

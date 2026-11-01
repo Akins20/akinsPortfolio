@@ -15,7 +15,7 @@ Legend: `[ ]` todo · `[x]` done
 
 - A **personal portfolio**, not a landing page: name and photo, the work, about, experience, contact.
 - Title: **Full-Stack & AI Engineer**. Full-stack is the core; "AI integration" is the client-facing service.
-- Lead with the **niches**: e-commerce, marketplaces, news & media, AI assistants, SaaS, mobile, games.
+- Lead with the **niches**: e-commerce, marketplaces, news & media, AI assistants, SaaS, mobile.
 - Copy in plain, first-person language. Outcomes and specifics, not buzzwords.
 - Real screenshots for live sites (Ogascounty, LettsTV); illustrated covers for the rest.
 - Built with all 30 laws on lawsofux.com in mind (see `UX-LAWS.md`).
@@ -27,11 +27,11 @@ Legend: `[ ]` todo · `[x]` done
 /                     Home
   hero                 Name + photo, niche-led intro, CV / GitHub / LinkedIn, availability
   ticker               The niches, as a slow marquee
-  #work                7 projects + GitHub card (staggered gallery)
+  #work                6 projects + GitHub card (staggered gallery)
   #about               Story + "What I build"
   #experience          Timeline, education, skills
   #contact             Email / WhatsApp / LinkedIn + 3-field form
-/work/<slug>          ogascounty, otesc-store, lettstv, freya, postal, rooster, chomp
+/work/<slug>          ogascounty, otesc-store, lettstv, freya, postal, rooster
 /404
 ```
 
@@ -56,7 +56,7 @@ Legend: `[ ]` todo · `[x]` done
 
 ## Phase 3 — Project pages
 - [x] Template: niche + status, title, lede, key facts, cover, story sections, tech, prev/next
-- [x] Ogascounty · OTESC Store · LettsTV · FREYA · Postal · Rooster · Chomp
+- [x] Ogascounty · OTESC Store · LettsTV · FREYA · Postal · Rooster
 - [x] Reading progress bar
 - [x] LettsTV screenshots from a category page (not the homepage)
 - [x] Ogascounty: add mobile shop + single product screenshots
@@ -66,7 +66,7 @@ Legend: `[ ]` todo · `[x]` done
 - [x] Contact form → Formspree via `fetch`, validation, honeypot, success/error states
 - [x] Copy-email button + toast, WhatsApp with pre-filled message
 - [x] Lagos local-time clock
-- [x] 404 page (with the Chomp maze)
+- [x] 404 page (with a self-solving maze)
 
 ## Phase 5 — SEO, performance, accessibility
 - [x] Titles, descriptions, Open Graph + Twitter cards, JSON-LD `Person`
@@ -114,3 +114,5 @@ Legend: `[ ]` todo · `[x]` done
 - 2026-09-26 — QA: all pages clean at desktop/mobile × dark/light; form, copy, theme and menu tested.
 - 2026-09-26 — WhatsApp → +234 811 320 9561. Added custom AI agents, AI dashboards, technical consulting,
   LettsTV's AI editorial pipeline. Removed Ogascounty traffic/abandonment numbers; 78% hosting cut kept (confirmed).
+- 2026-11-01 — Rooster is live on Google Play (com.otesc.rooster): status, store link and features updated.
+  Chomp removed: a game broke the pattern of client-style work. The 404 keeps its maze, without the Chomp link.
