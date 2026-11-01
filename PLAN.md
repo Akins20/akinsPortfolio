@@ -27,11 +27,11 @@ Legend: `[ ]` todo · `[x]` done
 /                     Home
   hero                 Name + photo, niche-led intro, CV / GitHub / LinkedIn, availability
   ticker               The niches, as a slow marquee
-  #work                6 projects + GitHub card (staggered gallery)
+  #work                5 featured projects + "Also building" list + GitHub link
   #about               Story + "What I build"
   #experience          Timeline, education, skills
   #contact             Email / WhatsApp / LinkedIn + 3-field form
-/work/<slug>          ogascounty, otesc-store, lettstv, freya, postal, rooster
+/work/<slug>          ogascounty, boldpetals, lettstv, rooster, freya, otesc-store, postal
 /404
 ```
 
@@ -142,7 +142,10 @@ greys (#161616), square corners, 1px rules, blue links (#78a9ff), green only for
 - [x] Case-study pages on the same system
 
 ### Step 3 — Developer proof (needs Elijah)
-- [ ] Real captures for OTESC Store and Postal (dev builds) and a FREYA screen recording
+- [x] FREYA: real material from her install on Elijah's PC (six sites she built in her workspace, plus a real
+      tool-by-tool run from her README); her window was not captured because it shows his private history
+- [x] OTESC Store and Postal stay benched under "Also building" until they ship (Elijah's call)
+- [x] Bold Petals (boldpetals.com) added as a featured project with a case study, from the live site
 - [ ] Notes: 2–3 short write-ups in Elijah's voice (hosting cut, Freya checking her work,
       Rooster's private contact matching)
 - [ ] Short muted screen recordings of the live products
@@ -167,3 +170,5 @@ greys (#161616), square corners, 1px rules, blue links (#78a9ff), green only for
 - 2026-11-01 — Round 3: researched real developer portfolios and AI-design tells; rebuilt on IBM Plex +
   Carbon Gray 100 (dark default), no cards or motion kit, header/footer as static partials, Services kept in full,
   drawn mockups removed. Step 3 (captures, notes) waits on Elijah.
+- 2026-11-01 — Added Bold Petals (Next.js, Firebase, Paystack; facts from the live site). FREYA promoted to a featured
+  project with screenshots of sites she built; her ADA dashboard output and contact pages (his name/email) left out.

@@ -104,7 +104,7 @@ tech.
 
 ### 18. Miller's Law
 *People hold roughly 7 (±2) things in working memory.*
-Six projects on the homepage (three featured, three listed). Five navigation links. Services in five
+Seven projects on the homepage (five featured, two listed). Five navigation links. Services in five
 groups, none longer than nine. Four tool groups. Four key facts at the top of each project page.
 
 ### 19. Occam's Razor

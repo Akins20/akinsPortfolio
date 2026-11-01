@@ -73,11 +73,23 @@
 
         <dl class="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-6 md:grid-cols-4">
           <div><dt class="text-sm text-subtle">Type</dt><dd class="mt-1">Personal project</dd></div>
-          <div><dt class="text-sm text-subtle">Runs on</dt><dd class="mt-1">Desktop · voice · terminal</dd></div>
+          <div><dt class="text-sm text-subtle">Runs on</dt><dd class="mt-1">Her own window · voice · terminal</dd></div>
           <div><dt class="text-sm text-subtle">Stack</dt><dd class="mt-1">Go, no outside libraries</dd></div>
-          <div><dt class="text-sm text-subtle">Status</dt><dd class="mt-1">Open source</dd></div>
+          <div><dt class="text-sm text-subtle">Status</dt><dd class="mt-1">Open source, running on my desktop</dd></div>
         </dl>
       </header>
+
+    <figure class="wrap mt-12 sm:mt-16">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-plant-nursery.webp"><img src="/assets/shots/freya-built-plant-nursery.jpg" alt="Greenwood & Sprout, a plant nursery: a site Freya built" width="960" height="600" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-barbershop.webp"><img src="/assets/shots/freya-built-barbershop.jpg" alt="Iron & Shear, a barbershop: a site Freya built" width="960" height="600" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-crumb-and-crust-bakery.webp"><img src="/assets/shots/freya-built-crumb-and-crust-bakery.jpg" alt="Crumb & Crust, a bakery: a site Freya built" width="960" height="600" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-record-shop.webp"><img src="/assets/shots/freya-built-record-shop.jpg" alt="Groove & Grain, a record shop: a site Freya built" width="960" height="600" loading="lazy" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-pottery-studio.webp"><img src="/assets/shots/freya-built-pottery-studio.jpg" alt="Stoneware & Soul, a pottery studio: a site Freya built" width="960" height="600" loading="lazy" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+        <picture><source type="image/webp" srcset="/assets/shots/freya-built-bike-repair-shop.webp"><img src="/assets/shots/freya-built-bike-repair-shop.jpg" alt="Velocity Cycle Lab, a bike repair shop: a site Freya built" width="960" height="600" loading="lazy" decoding="async" class="shot aspect-[16/10] object-cover object-top"></picture>
+      </div>
+      <figcaption class="meta mt-4">Six of the sites Freya has built in her workspace. She wrote every page, checked it and served it herself.</figcaption>
+    </figure>
 
       <div class="wrap mt-14 sm:mt-20">
         <div class="prose-case">
@@ -90,12 +102,26 @@ single outside library, so she’s one small program that builds in seconds. The
 form that goes nowhere. I kept running into this, so I built Freya to check her own work.</p>
 <blockquote>Telling her to be careful made her a little better. Having her count the broken links as she wrote them took the number to zero, and it stayed there.</blockquote>
 
+<h2>One real run</h2>
+<p>This is a real run of her building a four-page site for a plant nursery, tool by tool, with her reasoning between the steps cut for length:</p>
+<pre><code>❯ build a four page site for my plant nursery
+
+  → file_write   index.html · catalog.html · care.html · contact.html
+  → site_check   contact.html: form action="#" submits to nowhere
+  → file_edit    contact.html
+  → site_check   4 pages, nothing leads nowhere
+  → review       three weakest things, from someone who has never seen her work
+  → file_write   ×4  rewritten against the review
+  → site_check   still clean</code></pre>
+<p>24 rounds. Nobody asked her to check the form or to have the work reviewed.</p>
+
 <h2>What she can do</h2>
 <ul>
-  <li>Drive a real Chrome browser: click, type, upload files, switch tabs and read pages that keep loading as you scroll.</li>
+  <li>Drive a real Chrome browser, with 43 tools for it: click, type, upload files, switch tabs and read pages that keep loading as you scroll.</li>
   <li>Use desktop apps by reading their buttons, fields and menus, the same way a screen reader does.</li>
   <li>Build a website, check every link and image, serve it and open it on your screen.</li>
   <li>Remember where your things live, like which email you use and where your calendar is.</li>
+  <li>Show her work in a window of her own, where her thinking and every tool call stream in as they happen.</li>
   <li>Around 150 tools in all, plus voice input and spoken replies.</li>
 </ul>
 
@@ -119,15 +145,15 @@ run well anywhere.</p>
 
     <nav aria-label="More projects" class="wrap mt-12 mb-8">
       <div class="grid border-y border-line sm:grid-cols-2">
-        <a href="/work/otesc-store" class="group block py-6 sm:pr-8">
+        <a href="/work/rooster" class="group block py-6 sm:pr-8">
           <span class="meta">← Previous</span>
+          <span class="mt-1 block text-xl font-semibold group-hover:text-accent">Rooster</span>
+          <span class="text-sm text-muted">Mobile · Messaging</span>
+        </a>
+        <a href="/work/otesc-store" class="group block border-t border-line py-6 sm:border-t-0 sm:border-l sm:pl-8 sm:text-right">
+          <span class="meta">Next →</span>
           <span class="mt-1 block text-xl font-semibold group-hover:text-accent">OTESC Store</span>
           <span class="text-sm text-muted">Marketplace</span>
-        </a>
-        <a href="/work/postal" class="group block border-t border-line py-6 sm:border-t-0 sm:border-l sm:pl-8 sm:text-right">
-          <span class="meta">Next →</span>
-          <span class="mt-1 block text-xl font-semibold group-hover:text-accent">Postal</span>
-          <span class="text-sm text-muted">SaaS · Social media</span>
         </a>
       </div>
     </nav>

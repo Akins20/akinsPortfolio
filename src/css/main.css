@@ -294,6 +294,12 @@
   .prose-case code {
     @apply bg-surface px-1.5 py-0.5 font-mono text-[0.875em] text-fg;
   }
+  .prose-case pre {
+    @apply overflow-x-auto border border-line bg-surface p-5 font-mono text-[0.8125rem] leading-relaxed text-fg;
+  }
+  .prose-case pre code {
+    @apply bg-transparent p-0 text-[1em];
+  }
   .prose-case blockquote {
     @apply border-l-2 border-line-strong pl-5 text-fg;
   }
