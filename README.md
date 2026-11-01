@@ -16,7 +16,7 @@ drives don't report file changes), use `POLL=1 npm run dev`.
 ## Build
 
 ```bash
-npm run build        # minified CSS + SEO URLs/sitemap, then copies the site into dist/
+npm run build        # header/footer into every page, minified CSS, SEO URLs/sitemap, then dist/
 ```
 
 Commit `assets/css/site.css` after building. It's generated, but committing it means the site works as
@@ -25,45 +25,47 @@ plain static files anywhere.
 ## Where things live
 
 ```
-index.html                 Homepage: hero, work, about, experience, contact
+index.html                 Homepage: intro, work, services, about, experience, contact
 work/*.html                One page per project
 404.html                   Not-found page
+src/partials/              Shared header and footer, copied into every page by scripts/partials.mjs
 src/css/main.css           All styling: theme colours, fonts, components (edit this)
 assets/css/site.css        Built stylesheet (generated, don't edit)
-assets/js/config.js        Email, WhatsApp, links, CV path, form endpoint, nav, availability
-assets/js/components/      <site-header>, <site-footer>, <svg-include>
-assets/js/*.js             Theme, motion (motion.js, reveal.js), clock, contact form, maze, shortcuts
+assets/js/config.js        Email, WhatsApp, links, CV path, form endpoint, availability
+assets/js/*.js             Theme toggle, clock, contact form, toast, 404 maze
 assets/shots/              Real screenshots of live projects (desktop + mobile)
-assets/covers/             Illustrated project covers (SVG, follow the theme)
-assets/img/                Portrait, logo files (logo.svg, logo-mark*.svg), icons, share image (og.png)
+assets/fonts/              IBM Plex Sans (variable) and IBM Plex Mono, latin subset
+assets/img/                Portrait, favicons and app icons, share image (og.png)
 site.config.json           Your live URL, used for link previews and the sitemap
 UX-LAWS.md                 How the Laws of UX and UI principles are applied
 ```
 
 ## Common edits
 
-**Contact details, links, availability.** Change them once in `assets/js/config.js`. The header, footer,
-contact section and WhatsApp links all read from it. Set `available: false` to hide the
+**Contact details, links, availability.** Change them once in `assets/js/config.js`. Every link marked
+`data-link="…"` (header, footer, contact section, WhatsApp buttons) is filled from it. Set `available: false` to hide the
 "Available for freelance work" badges.
 
-**Homepage copy.** Edit `index.html` directly. Every section is marked with a comment banner.
+**Homepage copy.** Edit `index.html` directly. Every section is marked with a comment.
+
+**Header and footer.** Edit `src/partials/header.html` or `footer.html`, never the copies inside the pages.
+`npm run dev` and `npm run build` copy them into every page between the `<!-- header -->` /
+`<!-- footer -->` markers (or run `npm run build:partials`).
 
 **A project page.** Edit `work/<project>.html`. The text lives inside `<div class="prose-case">`.
 
 **Add a project.**
 1. Copy an existing `work/*.html` page and change the text, facts and links.
-2. Add a card for it in the `#work` section of `index.html` (copy an `<article>` block).
-3. Update the "01 / 06" counters and the previous/next links on the neighbouring pages.
+2. Add it to the `#work` section of `index.html`: a full `<article>` if it's live with screenshots, or a
+   row under "Also building".
+3. Update the previous/next links on the neighbouring pages.
 
 **Screenshots.** Put new images in `assets/shots/`: desktop at 1600×1000 (plus a 960-wide WebP) and
-mobile at 585×1266, in WebP with a JPEG fallback.
+mobile at 585×1266, in WebP with a JPEG fallback. Show them with `class="shot"` (a hairline border, no frame).
 
-**Motion.** Durations and easings are tokens at the top of `src/css/main.css` (`--dur-*`, `--ease-*`).
-Add `data-reveal` to fade something in, `data-reveal="clip"` to wipe it in, `data-split` to make a heading
-rise word by word. Everything turns off automatically for visitors who prefer reduced motion.
-
-**Colours and fonts.** The theme tokens are at the top of `src/css/main.css`, in a dark block and a light
-block. Change a token and both themes update everywhere.
+**Colours and fonts.** The theme tokens are at the top of `src/css/main.css`: IBM Carbon's Gray 100
+(dark, the default) and White (light) themes. Blue is for links and focus only, green for "Live", yellow for
+"In development". Change a token and both themes update everywhere.
 
 ## Contact form
 

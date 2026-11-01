@@ -101,6 +101,54 @@ Legend: `[ ]` todo · `[x]` done
 - [ ] Deploy to Vercel — **only on Elijah's go-ahead**
 - [ ] Commit & push — **only on Elijah's go-ahead**
 
+## Phase 8 — Developer-portfolio redesign (round 3)
+
+Why: the round-2 look is the recognisable "Claude design" template: Instrument Serif + Geist,
+one italic accent word per heading, warm near-black with amber, glow blobs, grid backgrounds,
+uppercase mono eyebrows, cards around everything, and a full motion kit.
+
+Research (2026-11-01):
+- Refero's anti-AI-slop guide names these exact tells: the one-word italic serif highlight,
+  "calm editorial serif on autopilot", cards everywhere, fake graphics, and *reference averaging*
+  (blending many references into a safe middle). Rule taken: pick one direction and keep its traits.
+- A Show HN analysis (Gigazine, Apr 2026) lists Instrument Serif, Geist, Space Grotesk, Syne and
+  Fraunces as the recurring fonts on Claude Code-built sites; Mitchell Hashimoto called serif +
+  italics "the new AI web design giveaway".
+- Real developer sites looked at: jhey.dev, paco.me, emilkowal.ski, brittanychiang.com,
+  taniarascia.com, antfu.me, overreacted.io, delba.dev, lynnandtonic.com, joshwcomeau.com,
+  zenorocha.com. Shared traits: one sans + a mono for small details, small confident type,
+  left-aligned single column, plain underlined links, lists and rules instead of cards, dates in
+  a mono column, real work instead of illustrations, very little motion, a voice.
+
+Direction (decided with Elijah): dark by default, IBM Plex Sans + IBM Plex Mono, keep the full
+Services list. Plex's native system (IBM Carbon, Gray 100 theme) supplies the rest: cool neutral
+greys (#161616), square corners, 1px rules, blue links (#78a9ff), green only for "Live".
+
+### Step 1 — Remove the template tells
+- [x] Plex Sans (variable) + Plex Mono, self-hosted; drop Instrument Serif and Geist
+- [x] Carbon Gray 100 tokens (dark) and White tokens (light); no amber, glows, grain or grid
+- [x] No italic accent words, no amber full stops, no uppercase eyebrows, no "01 / 06" counters
+- [x] No cards, fake browser chrome, marquee, extra clocks, pulsing dots, shortcut tips
+- [x] Motion cut to hover states; content shows on first paint
+- [x] New favicon / logo / OG image in the new style
+
+### Step 2 — Restructure around the work
+- [x] Header and footer as plain HTML in every page (shared snippets, synced at build), no JS needed
+- [x] Hero: name, role, plain intro, availability, links, smaller photo
+- [x] Work: Ogascounty, LettsTV, Rooster as features with real screenshots; OTESC Store, FREYA,
+      Postal as a compact list
+- [x] Remove the illustrated mockups (fake UIs) until real captures exist
+- [x] Services kept in full as a dense list; Experience as a dated list; skills as plain text
+- [x] Case-study pages on the same system
+
+### Step 3 — Developer proof (needs Elijah)
+- [ ] Real captures for OTESC Store and Postal (dev builds) and a FREYA screen recording
+- [ ] Notes: 2–3 short write-ups in Elijah's voice (hosting cut, Freya checking her work,
+      Rooster's private contact matching)
+- [ ] Short muted screen recordings of the live products
+- Dropped: a GitHub repo widget. His public repos show 0 stars and mostly forks, which hurts more
+  than it helps.
+
 ---
 
 ## Decisions log
@@ -116,3 +164,6 @@ Legend: `[ ]` todo · `[x]` done
   LettsTV's AI editorial pipeline. Removed Ogascounty traffic/abandonment numbers; 78% hosting cut kept (confirmed).
 - 2026-11-01 — Rooster is live on Google Play (com.otesc.rooster): status, store link and features updated.
   Chomp removed: a game broke the pattern of client-style work. The 404 keeps its maze, without the Chomp link.
+- 2026-11-01 — Round 3: researched real developer portfolios and AI-design tells; rebuilt on IBM Plex +
+  Carbon Gray 100 (dark default), no cards or motion kit, header/footer as static partials, Services kept in full,
+  drawn mockups removed. Step 3 (captures, notes) waits on Elijah.

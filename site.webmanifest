@@ -4,8 +4,8 @@
   "description": "Portfolio of Elijah Ogunbiyi, full-stack & AI engineer in Lagos, Nigeria.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#0d0d0c",
-  "theme_color": "#0d0d0c",
+  "background_color": "#161616",
+  "theme_color": "#161616",
   "icons": [
     {
       "src": "/assets/img/icon-192.png",

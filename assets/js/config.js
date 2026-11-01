@@ -1,6 +1,6 @@
-// Site-wide settings. Change contact details, links or navigation here and
-// every page picks them up: the header, the footer, the contact form and
-// any element marked with data-link="…" (see bindLinks in main.js).
+// Site-wide settings. Change contact details or links here and every page
+// picks them up: the contact form and any element marked with data-link="…"
+// or data-text="…" (see bind.js).
 
 export const SITE = {
   name: 'Elijah Ogunbiyi',
@@ -23,16 +23,9 @@ export const SITE = {
   // Contact form endpoint (Formspree). Swap for another form backend if needed.
   formEndpoint: 'https://formspree.io/f/mleynole',
 
-  // Set to false to hide the "Available for new projects" badges.
+  // Set to false to hide the "Available for freelance work" line.
   available: true,
   availabilityText: 'Available for freelance work',
-
-  nav: [
-    { label: 'Work', href: '/#work', id: 'work' },
-    { label: 'Services', href: '/#services', id: 'services' },
-    { label: 'About', href: '/#about', id: 'about' },
-    { label: 'Experience', href: '/#experience', id: 'experience' },
-  ],
 };
 
 export const LINKS = {

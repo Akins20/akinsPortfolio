@@ -3,6 +3,7 @@
 // Usage: npm run dev            (PORT=4000 npm run dev to change the port)
 
 import { createServer } from 'node:http';
+import { watch } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve } from 'node:path';
@@ -28,6 +29,12 @@ const TYPES = {
   '.txt': 'text/plain; charset=utf-8',
   '.xml': 'application/xml; charset=utf-8',
 };
+
+import { syncPartials } from './partials.mjs';
+
+// Shared header/footer: copy them into every page now and whenever they change.
+await syncPartials();
+watch(join(resolve(import.meta.dirname, '..'), 'src/partials'), () => syncPartials().catch(console.error));
 
 // --watch=always keeps watching even when stdin is closed (e.g. run in the
 // background). Set POLL=1 if file changes aren't picked up (some network or

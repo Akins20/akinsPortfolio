@@ -7,7 +7,7 @@ export function toast(message) {
   if (!el) {
     el = document.createElement('div');
     el.className =
-      'toast fixed bottom-6 left-1/2 z-[80] rounded-full border border-line-strong bg-surface px-5 py-3 font-mono text-xs text-fg shadow-card';
+      'toast fixed bottom-6 left-1/2 z-50 border border-line-strong bg-surface px-4 py-2.5 font-mono text-[0.8125rem] text-fg';
     el.setAttribute('role', 'status');
     el.setAttribute('aria-live', 'polite');
     document.body.append(el);

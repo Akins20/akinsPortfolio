@@ -3,13 +3,14 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "Portfolio of Elijah Ogunbiyi, AI & backend engineer. Vanilla HTML/JS + Tailwind CSS v4.",
+  "description": "Portfolio of Elijah Ogunbiyi, full-stack & AI engineer. Vanilla HTML/JS + Tailwind CSS v4.",
   "scripts": {
     "dev": "node scripts/dev.mjs",
+    "build:partials": "node scripts/partials.mjs",
     "build:css": "tailwindcss -i src/css/main.css -o assets/css/site.css --minify",
     "build:seo": "node scripts/seo.mjs",
-    "build": "npm run build:css && npm run build:seo && npm run build:dist",
-    "build:dist": "node scripts/dist.mjs"
+    "build:dist": "node scripts/dist.mjs",
+    "build": "npm run build:partials && npm run build:css && npm run build:seo && npm run build:dist"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
