@@ -8,14 +8,14 @@ const base = url.trim().replace(/\/+$/, '');
 if (base && !/^https?:\/\//i.test(base)) throw new Error('site.config.json url must be an absolute HTTP(S) URL');
 
 const workPages = (await readdir(join(ROOT, 'work'))).filter((file) => file.endsWith('.html')).sort();
-const pages = ['index.html', ...workPages];
+const pages = ['index.html', ...workPages.map((file) => join('work', file))];
 
 for (const page of pages) {
   const file = join(ROOT, page);
   const before = await readFile(file, 'utf8');
   let html = before;
   if (base) {
-    const path = page === 'index.html' ? '/' : `/${page.replace(/\.html$/, '')}`;
+    const path = page === 'index.html' ? '/' : `/${page.replace(/\\.html$/, '')}`;
     const canonical = `${base}${path}`;
     html = html.replace(/(<link rel="canonical" href=")[^"]*(")/i, `$1${canonical}$2`);
     html = html.replace(/(<meta property="og:url" content=")[^"]*(")/i, `$1${canonical}$2`);
@@ -38,7 +38,7 @@ try {
 
 await writeFile(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\n${base ? `\nSitemap: ${base}/sitemap.xml\n` : ''}`);
 if (base) {
-  const urls = ['/', ...workPages.map((file) => `/work/${file.replace(/\.html$/, '')}`)];
+  const urls = pages.map((page) => page === 'index.html' ? '/' : `/${page.replace(/\\.html$/, '')}`);
   const xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map((path) => `  <url><loc>${base}${path}</loc></url>`).join('\n') +
