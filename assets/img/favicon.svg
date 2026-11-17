@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Elijah Ogunbiyi brand symbol</title>
+<defs><linearGradient id="g" x1="10" y1="8" x2="118" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#7138ff"/><stop offset=".52" stop-color="#bd69f5"/><stop offset="1" stop-color="#f0a8ff"/></linearGradient></defs>
+<rect width="128" height="128" rx="27" fill="#111018"/>
+<g transform="translate(4 4) scale(1.08)">
+<path d="M22 31h47l-12 13H31l-8 9h34L45 66H19l-6 12h44L45 92H12l8-19 8-20-6-22Z" fill="url(#g)"/>
+<path d="M79 24a34 34 0 1 1-24 58l10-10a20 20 0 1 0-2-27l-12-8a34 34 0 0 1 28-13Z" fill="url(#g)"/>
+<path d="m47 76 59-26-4 15-57 26 2-15Z" fill="url(#g)"/>
+<path d="M101 17h11v11h-11zM91 30h8v8h-8zM105 36h6v6h-6z" fill="#d99aff"/>
+</g></svg>
