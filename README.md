@@ -1,7 +1,7 @@
 # Elijah Ogunbiyi — portfolio
 
 Personal portfolio of Elijah Ogunbiyi, full-stack & AI engineer in Lagos.
-Plain HTML and vanilla JavaScript, styled with Tailwind CSS v4. No framework.
+Plain HTML and vanilla JavaScript, styled with Tailwind CSS v4. No frontend framework.
 
 ## Run it locally
 
@@ -28,6 +28,8 @@ plain static files anywhere.
 index.html                 Homepage: intro, work, services, about, experience, contact
 work/*.html                One page per project
 404.html                   Not-found page
+api/contact.js             Server-side contact form delivery through Resend
+api/inbound.js             Verified Resend inbound webhook and Gmail forwarding
 src/partials/              Shared header and footer, copied into every page by scripts/partials.mjs
 src/css/main.css           All styling: theme colours, fonts, components (edit this)
 assets/css/site.css        Built stylesheet (generated, don't edit)
@@ -67,16 +69,35 @@ mobile at 585×1266, in WebP with a JPEG fallback. Show them with `class="shot"`
 (dark, the default) and White (light) themes. Blue is for links and focus only, green for "Live", yellow for
 "In development". Change a token and both themes update everywhere.
 
-## Contact form
+## Contact form and email receiving
 
-The form sends to Formspree (`formEndpoint` in `config.js`) without leaving the page. It has inline
-validation and a hidden spam trap, and falls back to a direct email link if sending fails. Send yourself one
-test message after deploying to confirm the endpoint is still active on your Formspree account.
+The contact form posts to `/api/contact`, which sends through Resend from
+`contact@elijahogunbiyi.com` to `ogunbiye@gmail.com`. Visitor replies go to the visitor's email address.
+
+The inbound endpoint `/api/inbound` verifies Resend webhook signatures, retrieves received email content,
+and forwards it to `ogunbiye@gmail.com`. It also forwards attachments up to a combined 15 MB.
+
+### Required Vercel environment variables
+
+Set these under **Vercel → Project → Settings → Environment Variables** for Production (and Preview if you want to test previews):
+
+- `RESEND_API_KEY`: your Resend API key. Keep it server-side; never add it to frontend files or Git.
+- `RESEND_WEBHOOK_SECRET`: the signing secret shown when you create the Resend webhook.
+
+### Resend webhook
+
+After deploying, create a webhook in Resend with this endpoint:
+
+`https://elijahogunbiyi.com/api/inbound`
+
+Subscribe to the `email.received` event and copy its signing secret into Vercel as `RESEND_WEBHOOK_SECRET`.
+The custom domain's MX record must point to the receiving MX value Resend gives you. Resend may need time
+to propagate DNS changes. Verify the domain's receiving status in the Resend dashboard.
 
 ## Deploy (Vercel)
 
 1. Push the repo to GitHub and import it in Vercel, or run `vercel` from this folder.
 2. Vercel runs `npm run build` and serves the `dist/` folder it produces (set in `vercel.json`, along with
-   clean URLs like `/work/freya`, caching and security headers).
+   clean URLs like `/work/freya`, caching and security headers). The root `api/` directory contains Vercel serverless functions.
 3. Once you know the live address, put it in `site.config.json` (`"url": "https://your-domain.com"`) and
    redeploy, so link previews on WhatsApp, LinkedIn and X show the share image.
