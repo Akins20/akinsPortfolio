@@ -10,6 +10,7 @@ export const SITE = {
   timeZoneLabel: 'WAT',
 
   email: 'ogunbiye@gmail.com',
+  contactEmail: 'contact@elijahogunbiyi.com',
 
   // WhatsApp: digits only, international format, no "+".
   whatsapp: '2348113209561',
@@ -20,8 +21,8 @@ export const SITE = {
   linkedin: 'https://www.linkedin.com/in/ogunbiyi-elijah',
   cv: '/assets/cv/Ogunbiyi_Elijah_CV_2026.pdf',
 
-  // Contact form endpoint (Formspree). Swap for another form backend if needed.
-  formEndpoint: 'https://formspree.io/f/mleynole',
+  // Vercel serverless endpoint sends contact form submissions through Resend.
+  formEndpoint: '/api/contact',
 
   // Set to false to hide the "Available for freelance work" line.
   available: true,

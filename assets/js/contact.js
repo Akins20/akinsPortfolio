@@ -1,8 +1,7 @@
-// Contact form (Formspree over fetch) and copy-to-clipboard buttons.
+// Contact form (Resend API) and copy-to-clipboard buttons.
 //
-// The form posts to SITE.formEndpoint with `Accept: application/json`, so the
-// visitor never leaves the page. A hidden honeypot field (_gotcha) catches
-// most bots; if it's filled we pretend to succeed and send nothing.
+// The browser sends only the form fields to the same-origin Vercel endpoint.
+// API credentials stay on the server and are never exposed to visitors.
 
 import { SITE } from './config.js';
 import { toast } from './toast.js';
@@ -37,10 +36,12 @@ function validate(form) {
 
 function buildPayload(form) {
   const data = new FormData(form);
-  // Be liberal in what we accept: trim stray whitespace before sending.
-  for (const key of ['name', 'email', 'message']) data.set(key, String(data.get(key) ?? '').trim());
-  data.set('_subject', `Portfolio enquiry from ${data.get('name')}`);
-  return data;
+  return {
+    name: String(data.get('name') ?? '').trim(),
+    email: String(data.get('email') ?? '').trim(),
+    message: String(data.get('message') ?? '').trim(),
+    _gotcha: String(data.get('_gotcha') ?? ''),
+  };
 }
 
 function setStatus(form, state, message = '') {
@@ -51,7 +52,7 @@ function setStatus(form, state, message = '') {
   button.setAttribute('aria-busy', String(state === 'sending'));
   label.textContent = state === 'sending' ? 'Sending…' : 'Send message';
   status.hidden = state !== 'error';
-  if (state === 'error') status.innerHTML = message;
+  if (state === 'error') status.textContent = message;
 }
 
 export function initContact() {
@@ -61,7 +62,6 @@ export function initContact() {
   if (!form) return;
   form.setAttribute('action', SITE.formEndpoint);
 
-  // Clear a field's error as soon as it becomes valid.
   form.addEventListener('input', (e) => {
     const name = e.target.name;
     if (RULES[name] && e.target.getAttribute('aria-invalid') === 'true') {
@@ -81,7 +81,8 @@ export function initContact() {
       success.focus();
     };
 
-    if (form.elements._gotcha?.value) {
+    const payload = buildPayload(form);
+    if (payload._gotcha) {
       showSuccess();
       return;
     }
@@ -90,13 +91,11 @@ export function initContact() {
     try {
       const res = await fetch(SITE.formEndpoint, {
         method: 'POST',
-        body: buildPayload(form),
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.errors?.map((x) => x.message).join(' ') || `Request failed (${res.status}).`);
-      }
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || `Request failed (${res.status}).`);
       setStatus(form, 'idle');
       showSuccess();
       form.reset();
@@ -104,8 +103,7 @@ export function initContact() {
       setStatus(
         form,
         'error',
-        `Sorry, the message didn’t go through (${escapeHtml(err.message)}). ` +
-          `Please email me directly at <a class="link text-fg" href="mailto:${SITE.email}">${SITE.email}</a>.`,
+        `Sorry, the message didn’t go through (${err.message}). Please email me directly at ${SITE.email}.`,
       );
     }
   });
@@ -129,8 +127,4 @@ function initCopyButtons() {
       }
     });
   });
-}
-
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 }
